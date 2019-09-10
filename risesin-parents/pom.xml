@@ -77,37 +77,37 @@
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
-                <version>#{mysql.version}</version>
+                <version>${mysql.version}</version>
             </dependency>
             <!-- mybatis依赖 -->
             <dependency>
                 <groupId>org.mybatis.spring.boot</groupId>
                 <artifactId>mybatis-spring-boot-starter</artifactId>
-                <version>#{mybatis-spring-boot-starter.version}</version>
+                <version>${mybatis-spring-boot-starter.version}</version>
             </dependency>
             <!-- 连接池 -->
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>druid-spring-boot-starter</artifactId>
-                <version>#{druid-spring-boot-starter.version}</version>
+                <version>${druid-spring-boot-starter.version}</version>
             </dependency>
             <!-- 分页 -->
             <dependency>
                 <groupId>com.github.pagehelper</groupId>
                 <artifactId>pagehelper-spring-boot-starter</artifactId>
-                <version>#{pagehelper-spring-boot-starter.version}</version>
+                <version>${pagehelper-spring-boot-starter.version}</version>
             </dependency>
             <!-- io -->
             <dependency>
                 <groupId>commons-io</groupId>
                 <artifactId>commons-io</artifactId>
-                <version>#{commons-io.version}</version>
+                <version>${commons-io.version}</version>
             </dependency>
             <!-- fileupload -->
             <dependency>
                 <groupId>commons-fileupload</groupId>
                 <artifactId>commons-fileupload</artifactId>
-                <version>#{commons-fileupload.version}</version>
+                <version>${commons-fileupload.version}</version>
             </dependency>
 
             <dependency>
@@ -120,19 +120,19 @@
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
-                <version>#{commons-lang3.version}</version>
+                <version>${commons-lang3.version}</version>
             </dependency>
 
             <dependency>
                 <groupId>commons-lang</groupId>
                 <artifactId>commons-lang</artifactId>
-                <version>#{commons-lang.version}</version>
+                <version>${commons-lang.version}</version>
             </dependency>
 
             <dependency>
                 <groupId>commons-codec</groupId>
                 <artifactId>commons-codec</artifactId>
-                <version>#{commons-codec.version}</version>
+                <version>${commons-codec.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
