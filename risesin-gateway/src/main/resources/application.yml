@@ -14,7 +14,7 @@ spring:
     username: root
     password: go_ROOT<0
     type: com.alibaba.druid.pool.DruidDataSource
-    url: jdbc:mysql://192.168.1.199:3306/risesin_system?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    url: jdbc:mysql://192.168.1.199:3306/risesin?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false
     druid:
       initialSize: 1
       maxActive: 10
