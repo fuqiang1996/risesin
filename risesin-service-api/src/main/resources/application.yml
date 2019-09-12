@@ -1,0 +1,23 @@
+# Tomcat
+server:
+  tomcat:
+    uri-encoding: UTF-8
+    max-threads: 1000
+    min-spare-threads: 30
+  port: 8082
+  servlet:
+    context-path: /ktz-generator
+
+# mysql
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: go_ROOT<0
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://192.168.1.199:3306/risesin?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    druid:
+      initialSize: 1
+      maxActive: 10
+      minIdle: 1
+      maxWait: 60000
