@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class RisesinServiceApplication {
+public class RisesinServiceApiApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(RisesinServiceApplication.class, args);
+        SpringApplication.run(RisesinServiceApiApplication.class, args);
     }
 
 }
