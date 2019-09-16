@@ -6,7 +6,7 @@ server:
     min-spare-threads: 30
   port: 8082
   servlet:
-    context-path: /ktz-generator
+    context-path: /risesin
 
 # mysql
 spring:
@@ -21,3 +21,9 @@ spring:
       maxActive: 10
       minIdle: 1
       maxWait: 60000
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: update
