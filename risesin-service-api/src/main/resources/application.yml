@@ -6,7 +6,7 @@ server:
     min-spare-threads: 30
   port: 8082
   servlet:
-    context-path: /risesin
+    context-path: /risesin-api
 
 # mysql
 spring:
