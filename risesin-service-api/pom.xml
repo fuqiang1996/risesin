@@ -74,30 +74,15 @@
     </build>
 
     <!--指定仓库 -->
-    <!--<repositories>-->
-        <!--<repository>-->
-            <!--<id>central</id>-->
-            <!--<url>http://192.168.1.199:8081/nexus/content/groups/public/com/</url>-->
-            <!--<releases>-->
-                <!--<enabled>true</enabled>-->
-            <!--</releases>-->
-            <!--<snapshots>-->
-                <!--<enabled>true</enabled>-->
-            <!--</snapshots>-->
-        <!--</repository>-->
-    <!--</repositories>-->
-    <!--&lt;!&ndash;指定插件仓库 &ndash;&gt;-->
-    <!--<pluginRepositories>-->
-        <!--<pluginRepository>-->
-            <!--<id>central</id>-->
-            <!--<url>http://192.168.1.199:8081/nexus/content/groups/public/com/</url>-->
-            <!--<releases>-->
-                <!--<enabled>true</enabled>-->
-            <!--</releases>-->
-            <!--<snapshots>-->
-                <!--<enabled>true</enabled>-->
-            <!--</snapshots>-->
-        <!--</pluginRepository>-->
-    <!--</pluginRepositories>-->
+    <distributionManagement>
+        <repository>
+            <id>maven-releases</id>
+            <url>http://192.168.1.199:8083/repository/maven-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>maven-snapshots</id>
+            <url>http://192.168.1.199:8083/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
 
 </project>
