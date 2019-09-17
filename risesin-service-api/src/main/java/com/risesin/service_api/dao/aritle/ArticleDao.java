@@ -1,7 +1,7 @@
 package com.risesin.service_api.dao.aritle;
 
 import com.risesin.service_api.modules.aritle.entity.Article;
-import org.springframework.data.repository.Repository;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 
 /**
@@ -9,6 +9,6 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
  *
  * @author honey
  */
-public interface ArticleDao extends Repository<Article, Long>, JpaSpecificationExecutor<Article> {
+public interface ArticleDao extends JpaRepository<Article, Long>, JpaSpecificationExecutor<Article> {
 
 }

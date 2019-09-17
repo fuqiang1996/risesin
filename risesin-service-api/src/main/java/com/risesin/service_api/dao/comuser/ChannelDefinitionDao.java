@@ -1,6 +1,7 @@
 package com.risesin.service_api.dao.comuser;
 
 import com.risesin.service_api.modules.comuser.entity.ChannelDefinition;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.Repository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 
@@ -9,6 +10,6 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
  *
  * @author honey
  */
-public interface ChannelDefinitionDao extends Repository<ChannelDefinition, Long>, JpaSpecificationExecutor<ChannelDefinition> {
+public interface ChannelDefinitionDao extends JpaRepository<ChannelDefinition, Long>, JpaSpecificationExecutor<ChannelDefinition> {
 
 }

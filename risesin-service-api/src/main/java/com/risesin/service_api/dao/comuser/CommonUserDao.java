@@ -1,7 +1,7 @@
 package com.risesin.service_api.dao.comuser;
 
 import com.risesin.service_api.modules.comuser.entity.CommonUser;
-import org.springframework.data.repository.Repository;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 
 /**
@@ -9,6 +9,6 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
  *
  * @author honey
  */
-public interface CommonUserDao extends Repository<CommonUser, Long>, JpaSpecificationExecutor<CommonUser> {
+public interface CommonUserDao extends JpaRepository<CommonUser, Long>, JpaSpecificationExecutor<CommonUser> {
 
 }

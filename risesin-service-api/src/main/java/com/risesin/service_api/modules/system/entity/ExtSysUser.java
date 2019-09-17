@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 import java.io.Serializable;
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -24,6 +25,7 @@ import java.util.Date;
 @Getter
 @ToString
 @Entity
+@EqualsAndHashCode(callSuper = true)
 @Table(name = "ext_sys_user", schema = "risesin", catalog = "")
 public class ExtSysUser implements Serializable {
 
