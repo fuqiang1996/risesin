@@ -65,37 +65,6 @@ public interface TopInterface<T> {
      */
     void deleteById(Long id);
 
-    /**
-     * 动态条件构建
-     * @param searchMap
-     * @return
-     */
-    default Specification<T> createSpecification(Map searchMap) {
-
-        return new Specification<T>() {
-
-            @Override
-            public Predicate toPredicate(Root<T> root, CriteriaQuery<?> query, CriteriaBuilder cb) {
-                List<Predicate> predicateList = new ArrayList<Predicate>();
-                // 编号
-                if (searchMap.get("finStoCode")!=null && !"".equals(searchMap.get("finStoCode"))) {
-                    predicateList.add(cb.like(root.get("finStoCode").as(String.class), "%"+(String)searchMap.get("finStoCode")+"%"));
-                }
-                // 征信状况
-                if (searchMap.get("finStoCreditstatus")!=null && !"".equals(searchMap.get("finStoCreditstatus"))) {
-                    predicateList.add(cb.like(root.get("finStoCreditstatus").as(String.class), "%"+(String)searchMap.get("finStoCreditstatus")+"%"));
-                }
-                // 姓名
-                if (searchMap.get("finStoName")!=null && !"".equals(searchMap.get("finStoName"))) {
-                    predicateList.add(cb.like(root.get("finStoName").as(String.class), "%"+(String)searchMap.get("finStoName")+"%"));
-                }
-
-                return cb.and( predicateList.toArray(new Predicate[predicateList.size()]));
-
-            }
-        };
-
-    }
 
 
 }
