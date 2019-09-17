@@ -14,7 +14,7 @@ import java.util.Map;
 /**
  * @AUTHOR Baby
  * @CREATE 2019/9/17
- * @DESCRIPTION 顶级接口, 作为每个service的父级接口
+ * @DESCRIPTION 顶级接口, 作为每个service的实现父级接口
  * @since 1.0.0
  */
 public interface TopInterface<T> {
