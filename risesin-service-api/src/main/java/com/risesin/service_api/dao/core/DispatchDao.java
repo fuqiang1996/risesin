@@ -9,6 +9,6 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
  * @author Darling
  *
  */
-public interface DispatchDao extends JpaRepository<Dispatch,Integer>,JpaSpecificationExecutor<Dispatch>{
+public interface DispatchDao extends JpaRepository<Dispatch,Long>,JpaSpecificationExecutor<Dispatch>{
 	
 }

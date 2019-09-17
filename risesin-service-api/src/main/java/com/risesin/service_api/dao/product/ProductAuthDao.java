@@ -1,6 +1,6 @@
 package com.risesin.service_api.dao.product;
 
-import com.risesin.service.modules.product.entity.ProductAuth;
+import com.risesin.service_api.modules.product.entity.ProductAuth;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 

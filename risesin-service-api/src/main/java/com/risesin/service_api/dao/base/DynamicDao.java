@@ -9,6 +9,6 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
  * @author Darling
  *
  */
-public interface DynamicDao extends JpaRepository<Dynamic,Integer>,JpaSpecificationExecutor<Dynamic>{
+public interface DynamicDao extends JpaRepository<Dynamic,Long>,JpaSpecificationExecutor<Dynamic>{
 	
 }

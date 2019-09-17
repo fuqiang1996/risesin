@@ -1,6 +1,6 @@
 package com.risesin.service_api.dao.pay;
 
-import com.risesin.service.modules.pay.entity.ProjectExpenseOrder;
+import com.risesin.service_api.modules.pay.entity.ProjectExpenseOrder;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 
@@ -9,6 +9,6 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
  * @author Darling
  *
  */
-public interface ProjectExpenseOrderDao extends JpaRepository<ProjectExpenseOrder,Integer>,JpaSpecificationExecutor<ProjectExpenseOrder>{
+public interface ProjectExpenseOrderDao extends JpaRepository<ProjectExpenseOrder,Long>,JpaSpecificationExecutor<ProjectExpenseOrder>{
 	
 }

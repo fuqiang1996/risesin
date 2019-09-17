@@ -1,6 +1,6 @@
 package com.risesin.service_api.dao.core;
 
-import com.risesin.service.modules.core.entity.EntDebtHistory;
+import com.risesin.service_api.modules.core.entity.EntDebtHistory;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 
@@ -9,6 +9,6 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
  * @author Darling
  *
  */
-public interface EntDebtHistoryDao extends JpaRepository<EntDebtHistory,Integer>,JpaSpecificationExecutor<EntDebtHistory>{
+public interface EntDebtHistoryDao extends JpaRepository<EntDebtHistory,Long>,JpaSpecificationExecutor<EntDebtHistory>{
 	
 }

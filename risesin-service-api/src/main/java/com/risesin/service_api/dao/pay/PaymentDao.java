@@ -1,6 +1,6 @@
 package com.risesin.service_api.dao.pay;
 
-import com.risesin.service.modules.pay.entity.Payment;
+import com.risesin.service_api.modules.pay.entity.Payment;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 
