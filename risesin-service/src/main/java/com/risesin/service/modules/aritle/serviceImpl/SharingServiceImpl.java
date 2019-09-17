@@ -27,7 +27,7 @@ public class SharingServiceImpl {
 
 	@Autowired
 	private SharingDao sharingDao;
-	
+
 
 	/**
 	 * 查询全部列表
