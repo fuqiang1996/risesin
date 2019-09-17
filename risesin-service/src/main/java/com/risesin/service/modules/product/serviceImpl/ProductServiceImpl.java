@@ -1,5 +1,6 @@
 package com.risesin.service.modules.product.serviceImpl;
 
+import com.risesin.service.modules.TopInterface;
 import com.risesin.service_api.dao.product.ProductDao;
 import com.risesin.service_api.modules.product.entity.Product;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,13 +18,13 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * product服务层
+ * Product服务层
  * 
- * @author Administrator
+ * @author Darling
  *
  */
 @Service
-public class ProductServiceImpl {
+public class ProductServiceImpl implements TopInterface<Product> {
 
 	@Autowired
 	private ProductDao productDao;

@@ -29,7 +29,7 @@ public class Industry  implements Serializable {
    	@Column(name = "pk_ind_id" )
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private String industryId;
+	private Long industryId;
 
 	/**
 	 * 编号

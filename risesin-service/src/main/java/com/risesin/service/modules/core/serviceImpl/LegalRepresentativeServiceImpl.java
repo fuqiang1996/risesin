@@ -1,5 +1,6 @@
 package com.risesin.service.modules.core.serviceImpl;
 
+import com.risesin.service.modules.TopInterface;
 import com.risesin.service_api.dao.core.LegalRepresentativeDao;
 import com.risesin.service_api.modules.core.entity.LegalRepresentative;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,13 +18,13 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * representative服务层
+ * LegalRepresentative服务层
  *
  * @author Administrator
  *
  */
 @Service
-public class RepresentativeServiceImpl {
+public class LegalRepresentativeServiceImpl implements TopInterface<LegalRepresentative> {
 
 	@Autowired
 	private LegalRepresentativeDao legalRepresentativeDao;

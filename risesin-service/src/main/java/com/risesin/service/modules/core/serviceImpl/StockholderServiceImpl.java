@@ -1,36 +1,33 @@
 package com.risesin.service.modules.core.serviceImpl;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Expression;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
-import javax.persistence.criteria.Selection;
 
+import com.risesin.service.modules.TopInterface;
 import com.risesin.service_api.dao.core.StockholderDao;
 import com.risesin.service_api.modules.core.entity.Stockholder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 
 
 /**
- * stockholder服务层
+ * Stockholder服务层
  * 
- * @author Administrator
+ * @author Darling
  *
  */
 @Service
-public class StockholderServiceImpl {
+public class StockholderServiceImpl implements TopInterface<Stockholder> {
 
 	@Autowired
 	private StockholderDao stockholderDao;

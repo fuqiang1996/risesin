@@ -19,7 +19,7 @@ import java.util.Date;
 @ToString
 @Entity
 @Table ( name ="sys_tas_log" )
-public class SysTasLog  implements Serializable {
+public class TasLog implements Serializable {
 
 	private static final long serialVersionUID =  8693966321523029171L;
 

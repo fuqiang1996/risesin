@@ -29,7 +29,7 @@ public class FinancingType  implements Serializable {
    	@Column(name = "pk_fin_type_id" )
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private String finTypeId;
+	private Long finTypeId;
 
 	/**
 	 * 名称
