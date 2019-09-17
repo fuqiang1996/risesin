@@ -1,15 +1,12 @@
 package com.risesin.service_api.modules.servicePack.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import javax.persistence.Id;
 import java.util.Date;
 
 /**
@@ -25,7 +22,7 @@ import java.util.Date;
 @ToString
 @Entity
 @Table(name = "user_package")
-public class UserPackage implements Serializable{
+public class UserPackage implements Serializable {
 
     private static final long serialVersionUID = 6330794539016641815L;
 
@@ -34,6 +31,7 @@ public class UserPackage implements Serializable{
      */
     @Id
     @Column(name = "pk_user_pack_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     /**

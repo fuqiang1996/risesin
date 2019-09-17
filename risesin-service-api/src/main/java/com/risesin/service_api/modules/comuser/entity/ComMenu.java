@@ -1,15 +1,12 @@
 package com.risesin.service_api.modules.comuser.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import javax.persistence.Id;
 import java.util.Date;
 
 /**
@@ -32,8 +29,9 @@ public class ComMenu implements Serializable {
     /**
      * 主键ID：自动增长
      */
-    @Column(name = "pk_menu_id")
     @Id
+    @Column(name = "pk_menu_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     /**

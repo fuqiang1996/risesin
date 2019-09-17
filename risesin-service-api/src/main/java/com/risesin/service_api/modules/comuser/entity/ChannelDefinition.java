@@ -1,15 +1,12 @@
 package com.risesin.service_api.modules.comuser.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import javax.persistence.Id;
 import java.util.Date;
 
 /**
@@ -32,8 +29,9 @@ public class ChannelDefinition implements Serializable {
     /**
      * 主键ID
      */
-    @Column(name = "pk_cha_def_id")
     @Id
+    @Column(name = "pk_cha_def_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     /**
