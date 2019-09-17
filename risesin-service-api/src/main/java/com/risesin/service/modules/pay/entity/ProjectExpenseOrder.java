@@ -11,7 +11,7 @@ import javax.persistence.Id;
 import java.util.Date;
 
 /**
- * @Description  ProjectExpenseOrder方案费用订单
+ * @Description  ProjectExpenseOrder融资项目费用订单
  * @Author  Baby
  * @Date 2019-09-16 
  */

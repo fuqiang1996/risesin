@@ -35,44 +35,44 @@ public class ServiceExpenseOrder  implements Serializable {
 	 * 编号
 	 */
    	@Column(name = "exp_ord_code" )
-	private String expOrderCode;
+	private String serOrderCode;
 
 	/**
 	 * 删除标记
 	 */
    	@Column(name = "exp_ord_delflag" )
-	private Long expOrdDelflag;
+	private Long delflag;
 
 	/**
 	 * 费用金额
 	 */
    	@Column(name = "exp_ord_money" )
-	private Double expOrdMoney;
+	private Double serOrderMoney;
 
 	/**
 	 * 订单状态
 	 */
    	@Column(name = "exp_ord_status" )
-	private Long expOrdStatus;
+	private Long serOrderStatus;
 
 	/**
 	 * 主键
 	 */
    	@Column(name = "pk_exp_ord_id" )
     @Id
-	private Long pkExpOrdId;
+	private Long serOrderId;
 
 	/**
 	 * 费用类型id
 	 */
    	@Column(name = "fk_exp_typ_id" )
-	private Long fkExpTypId;
+	private Long serTypeId;
 
 	/**
 	 * 用户名称
 	 */
    	@Column(name = "com_username" )
-	private String comUsername;
+	private String userName;
 
 	/**
 	 * 商品名称
@@ -102,13 +102,13 @@ public class ServiceExpenseOrder  implements Serializable {
 	 * 备注
 	 */
    	@Column(name = "exp_ord_remark" )
-	private String expOrdRemark;
+	private String serOrderRemark;
 
 	/**
 	 * 交易关闭时间
 	 */
    	@Column(name = "exp_ord_closetime" )
-	private Date expOrdClosetime;
+	private Date serOrdClosetime;
 
 	/**
 	 * 服务包code

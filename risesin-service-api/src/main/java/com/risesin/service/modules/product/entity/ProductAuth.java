@@ -11,7 +11,7 @@ import javax.persistence.Id;
 import java.util.Date;
 
 /**
- * @Description  
+ * @Description  ProductAuth产品代理类
  * @Author  Baby
  * @Date 2019-09-16 
  */
@@ -29,55 +29,55 @@ public class ProductAuth  implements Serializable {
 	 * 创建时间
 	 */
    	@Column(name = "fin_pro_aut_addtime" )
-	private Date finProAutAddtime;
+	private Date addtime;
 
 	/**
 	 * 编号
 	 */
    	@Column(name = "fin_pro_aut_code" )
-	private String finProAutCode;
+	private String proAuthCode;
 
 	/**
 	 * 删除标记
 	 */
    	@Column(name = "fin_pro_aut_delflag" )
-	private Long finProAutDelflag;
+	private Long delflag;
 
 	/**
 	 * 最后修改时间
 	 */
    	@Column(name = "fin_pro_aut_lastmodify" )
-	private Date finProAutLastmodify;
+	private Date lastmodify;
 
 	/**
 	 * 代理费率
 	 */
    	@Column(name = "fin_pro_auth_rate" )
-	private Double finProAuthRate;
+	private Double proAuthRate;
 
 	/**
 	 * 产品代理审核状态
 	 */
    	@Column(name = "fin_pro_auth_state" )
-	private String finProAuthState;
+	private String proAuthState;
 
 	/**
 	 * 产品id
 	 */
    	@Column(name = "fk_fin_pro_id" )
-	private Long fkFinProId;
+	private Long productId;
 
 	/**
 	 * 审核人id
 	 */
    	@Column(name = "fk_sys_usr_id" )
-	private Long fkSysUsrId;
+	private Long sysUserId;
 
 	/**
 	 * 主键
 	 */
    	@Column(name = "pk_fin_pro_aut_id" )
     @Id
-	private Long pkFinProAutId;
+	private Long proAuthId;
 
 }
