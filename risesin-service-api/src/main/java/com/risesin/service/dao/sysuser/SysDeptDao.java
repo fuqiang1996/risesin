@@ -1,7 +1,6 @@
 package com.risesin.service.dao.sysuser;
-import java.util.List;
 
-import com.risesin.service.modules.sysuser.SysDept;
+import com.risesin.service.modules.system.entity.SysDept;
 import org.springframework.data.repository.Repository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 
