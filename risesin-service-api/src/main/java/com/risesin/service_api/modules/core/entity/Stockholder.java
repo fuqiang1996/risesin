@@ -1,13 +1,11 @@
 package com.risesin.service_api.modules.core.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import javax.persistence.Id;
+
 import java.util.Date;
 
 /**
@@ -90,6 +88,7 @@ public class Stockholder  implements Serializable {
 	 */
    	@Column(name = "pk_fin_sto_id" )
     @Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long StockholderId;
 
 }
