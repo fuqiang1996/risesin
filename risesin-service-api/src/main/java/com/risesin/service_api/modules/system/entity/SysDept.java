@@ -1,15 +1,13 @@
 package com.risesin.service_api.modules.system.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import javax.persistence.Id;
 import java.util.Date;
 
 /**
@@ -24,6 +22,7 @@ import java.util.Date;
 @Getter
 @ToString
 @Entity
+@Data
 @Table(name = "sys_dept")
 public class SysDept implements Serializable {
 
@@ -32,8 +31,9 @@ public class SysDept implements Serializable {
     /**
      * 主键
      */
-    @Column(name = "pk_dept_id")
     @Id
+    @Column(name = "pk_dept_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     /**
@@ -46,7 +46,7 @@ public class SysDept implements Serializable {
      * 上级部门ID，一级部门为0
      */
     @Column(name = "dept_parent_id")
-    private String parentId;
+    private Long parentId;
 
     /**
      * 排序
@@ -64,7 +64,7 @@ public class SysDept implements Serializable {
      * 公司ID
      */
     @Column(name = "fk_dept_bran_id")
-    private String branId;
+    private Long branId;
 
     /**
      * 创建时间
