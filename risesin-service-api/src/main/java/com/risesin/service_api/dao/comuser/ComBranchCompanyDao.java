@@ -1,7 +1,7 @@
 package com.risesin.service_api.dao.comuser;
 
 import com.risesin.service_api.modules.comuser.entity.ComBranchCompany;
-import org.springframework.data.repository.Repository;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 
 /**
@@ -10,6 +10,6 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 * @author honey
 *
 */
-public interface ComBranchCompanyDao extends Repository<ComBranchCompany, Long>, JpaSpecificationExecutor<ComBranchCompany> {
+public interface ComBranchCompanyDao extends JpaRepository<ComBranchCompany, Long>, JpaSpecificationExecutor<ComBranchCompany> {
 
 }

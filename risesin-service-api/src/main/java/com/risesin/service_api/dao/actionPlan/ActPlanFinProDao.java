@@ -1,7 +1,7 @@
 package com.risesin.service_api.dao.actionPlan;
 
 import com.risesin.service_api.modules.actionPlan.entity.ActPlanFinPro;
-import org.springframework.data.repository.Repository;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 
 /**
@@ -9,6 +9,6 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
  *
  * @author honey
  */
-public interface ActPlanFinProDao extends Repository<ActPlanFinPro, Long>, JpaSpecificationExecutor<ActPlanFinPro> {
+public interface ActPlanFinProDao extends JpaRepository<ActPlanFinPro, Long>, JpaSpecificationExecutor<ActPlanFinPro> {
 
 }

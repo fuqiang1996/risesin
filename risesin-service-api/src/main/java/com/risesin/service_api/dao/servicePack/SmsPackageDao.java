@@ -1,7 +1,7 @@
 package com.risesin.service_api.dao.servicePack;
 
 import com.risesin.service_api.modules.servicePack.entity.SmsPackage;
-import org.springframework.data.repository.Repository;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 
 /**
@@ -9,6 +9,6 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
  *
  * @author honey
  */
-public interface SmsPackageDao extends Repository<SmsPackage, Long>, JpaSpecificationExecutor<SmsPackage> {
+public interface SmsPackageDao extends JpaRepository<SmsPackage, Long>, JpaSpecificationExecutor<SmsPackage> {
 
 }
