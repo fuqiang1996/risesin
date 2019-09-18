@@ -1,7 +1,9 @@
 package com.risesin.service_api;
 
 import com.risesin.service_api.dao.actionPlan.ActPlanFinProDao;
+import com.risesin.service_api.dao.comment.LoanAgencyCommentDao;
 import com.risesin.service_api.modules.actionPlan.entity.ActPlanFinPro;
+import com.risesin.service_api.modules.comment.entity.LoanAgencyComment;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +16,9 @@ public class RisesinServiceApiApplicationTests {
 
     @Autowired
     private ActPlanFinProDao actPlanFinProDao;
+
+    @Autowired
+    private LoanAgencyCommentDao loanAgencyCommentDao;
 
     @Test
     public void testDao_save(){
@@ -42,6 +47,13 @@ public class RisesinServiceApiApplicationTests {
     @Test
     public void testDao_delete(){
         actPlanFinProDao.deleteById(1L);
+    }
+
+    @Test
+    public void test01(){
+        LoanAgencyComment loanAgencyComment = new LoanAgencyComment();
+        loanAgencyComment.setCommentScore(5);
+        loanAgencyCommentDao.save(loanAgencyComment);
     }
 
 }
