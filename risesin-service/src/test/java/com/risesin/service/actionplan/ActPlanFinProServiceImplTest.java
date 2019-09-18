@@ -1,14 +1,30 @@
 package com.risesin.service.actionplan;
 
-import org.junit.runner.RunWith;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
+import com.risesin.service.RisesinServiceApplicationTests;
+import com.risesin.service.modules.actionplan.serviceimpl.ActPlanFinProServiceImpl;
+import com.risesin.service_api.modules.actionPlan.entity.ActPlanFinPro;
+import org.junit.Assert;
+import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
+ * ActPlanFinProServiceImplTest 测试类
  */
-@SpringBootTest
-@RunWith(SpringRunner.class)
-public class ActPlanFinProServiceImplTest  {
+public class ActPlanFinProServiceImplTest extends RisesinServiceApplicationTests {
 
+    @Autowired
+    private ActPlanFinProServiceImpl actPlanFinProService;
 
+    @Test
+    public void testActPlan_add(){
+
+        ActPlanFinPro actPlanFinPro = new ActPlanFinPro();
+        actPlanFinPro.setFinProId(1L);
+        actPlanFinPro.setProId(2L);
+
+        Assert.assertTrue("测试通过",true);
+        actPlanFinProService.add(actPlanFinPro);
+        actPlanFinProService.add(actPlanFinPro);
+        actPlanFinProService.add(actPlanFinPro);
+    }
 }
