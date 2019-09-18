@@ -24,7 +24,6 @@ public class ActPlanFinProServiceImplTest extends RisesinServiceApplicationTests
 
         actPlanFinProService.add(actPlanFinPro);
         actPlanFinProService.add(actPlanFinPro);
-        actPlanFinProService.add(actPlanFinPro);
     }
 
     @Test
