@@ -22,9 +22,15 @@ public class ActPlanFinProServiceImplTest extends RisesinServiceApplicationTests
         actPlanFinPro.setFinProId(1L);
         actPlanFinPro.setProId(2L);
 
-        Assert.assertTrue("测试通过",true);
         actPlanFinProService.add(actPlanFinPro);
         actPlanFinProService.add(actPlanFinPro);
         actPlanFinProService.add(actPlanFinPro);
+    }
+
+    @Test
+    public void testActPlan_query(){
+        ActPlanFinPro actPlanFinPro = actPlanFinProService.findById(1L);
+        Assert.assertNotNull("根据ID查询不为空",actPlanFinPro);
+
     }
 }
