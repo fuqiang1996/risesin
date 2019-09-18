@@ -9,6 +9,7 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
+import com.risesin.service.modules.TopInterface;
 import com.risesin.service_api.dao.base.CommentTypeDao;
 import com.risesin.service_api.modules.base.entity.CommentType;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +27,7 @@ import org.springframework.stereotype.Service;
  *
  */
 @Service
-public class CommentTypeServiceImpl {
+public class CommentTypeServiceImpl implements TopInterface<CommentType> {
 
 	@Autowired
 	private CommentTypeDao typeDao;
