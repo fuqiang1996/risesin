@@ -1,17 +1,15 @@
-package com.risesin.service.pay;
-
+package com.risesin.service.commonuser;
 
 import com.risesin.service.RisesinServiceApplicationTests;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
 
 /**
+ * @AUTHOR Baby
+ * @CREATE 2019/9/18
+ * @DESCRIPTION 测试
+ * @since 1.0.0
  */
-@SpringBootTest
-@RunWith(SpringRunner.class)
-public class PaymentServiceImplTest extends RisesinServiceApplicationTests {
+public class CommonUserRoleServiceImplTest extends RisesinServiceApplicationTests {
 
     @Test
     public void findAll() {

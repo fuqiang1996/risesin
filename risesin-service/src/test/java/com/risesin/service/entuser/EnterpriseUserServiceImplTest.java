@@ -1,6 +1,8 @@
 package com.risesin.service.entuser;
 
 
+import com.risesin.service.RisesinServiceApplicationTests;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -9,6 +11,41 @@ import org.springframework.test.context.junit4.SpringRunner;
  */
 @SpringBootTest
 @RunWith(SpringRunner.class)
-public class EnterpriseUserServiceImplTest{
+public class EnterpriseUserServiceImplTest extends RisesinServiceApplicationTests {
 
+    @Test
+    public void findAll() {
+    }
+
+    @Test
+    public void findSearch() {
+    }
+
+    @Test
+    public void testFindSearch() {
+    }
+
+    @Test
+    public void findById() {
+    }
+
+    @Test
+    public void add() {
+    }
+
+    @Test
+    public void update() {
+    }
+
+    @Test
+    public void testAdd() {
+    }
+
+    @Test
+    public void testUpdate() {
+    }
+
+    @Test
+    public void deleteById() {
+    }
 }

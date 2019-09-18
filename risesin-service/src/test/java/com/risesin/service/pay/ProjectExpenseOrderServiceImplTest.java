@@ -11,7 +11,7 @@ import org.springframework.test.context.junit4.SpringRunner;
  */
 @SpringBootTest
 @RunWith(SpringRunner.class)
-public class PaymentServiceImplTest extends RisesinServiceApplicationTests {
+public class ProjectExpenseOrderServiceImplTest extends RisesinServiceApplicationTests {
 
     @Test
     public void findAll() {
