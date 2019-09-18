@@ -1,13 +1,10 @@
 package com.risesin.service_api.modules.core.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import javax.persistence.Id;
 
 /**
  * @Description  
@@ -25,17 +22,23 @@ public class ExcludeFinancingType  implements Serializable {
 	private static final long serialVersionUID =  6427236295029673723L;
 
 	/**
+	 * 主键
+	 */
+	@Column(name = "pk_exc_id" )
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long excludeId;
+
+	/**
 	 * 融资预案主键
 	 */
    	@Column(name = "pk_fin_pla_id" )
-    @Id
 	private Long finPlanId;
 
 	/**
 	 * 融资类型主键
 	 */
    	@Column(name = "pk_fin_type_id" )
-    @Id
 	private Long finTypeId;
 
 }

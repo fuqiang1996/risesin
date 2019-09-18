@@ -22,17 +22,24 @@ public class ChildcaseLinEntatoinfo  implements Serializable {
 	private static final long serialVersionUID =  3564013982715408503L;
 
 	/**
+	 * 主键
+	 */
+	@Column(name = "fk_fin_cas_id" )
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long casLinAtoInfoId;
+
+
+	/**
 	 * 支线方案id
 	 */
    	@Column(name = "pk_fin_cas_id" )
-    @Id
 	private Long caseId;
 
 	/**
 	 * 企业独立信息id
 	 */
 	@Column(name = "pk_fin_entinfo_id" )
-    @Id
 	private Long atoInfoId;
 
 }
