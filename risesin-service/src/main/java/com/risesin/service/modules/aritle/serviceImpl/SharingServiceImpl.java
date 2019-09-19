@@ -1,5 +1,6 @@
 package com.risesin.service.modules.aritle.serviceImpl;
 
+import com.risesin.service.modules.TopInterface;
 import com.risesin.service_api.dao.aritle.SharingDao;
 import com.risesin.service_api.modules.aritle.entity.Sharing;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +24,7 @@ import java.util.Map;
  *
  */
 @Service
-public class SharingServiceImpl {
+public class SharingServiceImpl implements TopInterface<Sharing> {
 
 	@Autowired
 	private SharingDao sharingDao;

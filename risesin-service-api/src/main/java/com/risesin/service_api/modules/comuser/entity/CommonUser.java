@@ -23,14 +23,13 @@ import java.util.Date;
 public class CommonUser implements Serializable {
 
     private static final long serialVersionUID = 5128547209917754623L;
-
     /**
      * 主键
      */
     @Id
     @Column(name = "pk_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long pkId;
+    private Long id;
 
     /**
      * 账户
