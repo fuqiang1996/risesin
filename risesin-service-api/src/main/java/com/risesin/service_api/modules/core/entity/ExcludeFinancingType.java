@@ -32,13 +32,13 @@ public class ExcludeFinancingType  implements Serializable {
 	/**
 	 * 融资预案主键
 	 */
-   	@Column(name = "pk_fin_pla_id" )
+   	@Column(name = "fk_fin_pla_id" )
 	private Long finPlanId;
 
 	/**
 	 * 融资类型主键
 	 */
-   	@Column(name = "pk_fin_type_id" )
+   	@Column(name = "fk_fin_type_id" )
 	private Long finTypeId;
 
 }
