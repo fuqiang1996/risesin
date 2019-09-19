@@ -2,7 +2,6 @@ package com.risesin.service.commonuser;
 
 import com.risesin.service.RisesinServiceApplicationTests;
 import com.risesin.service.modules.commonuser.serviceImpl.ComMenuServiceImpl;
-import com.risesin.service_api.modules.comuser.entity.ComLog;
 import com.risesin.service_api.modules.comuser.entity.ComMenu;
 import org.junit.Assert;
 import org.junit.Test;
