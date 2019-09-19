@@ -42,6 +42,7 @@ public class ComBranchCompanyServiceImplTest extends RisesinServiceApplicationTe
         comBranchCompany.setLeader("leader");
         comBranchCompany.setOrderNum(1L);
         comBranchCompany.setLoanAgenId(1L);
+        comBranchCompany.setDelFlag(0l);
 
         comBranchCompanyService.add(comBranchCompany);
         Assert.assertTrue("查询信息为空",comBranchCompanyService.findAll().size() >=1 );
