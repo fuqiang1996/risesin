@@ -6,6 +6,8 @@ import java.io.Serializable;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 
 import java.util.Date;
 
@@ -21,6 +23,8 @@ import java.util.Date;
 @Getter
 @ToString
 @Entity
+@DynamicUpdate
+@DynamicInsert
 @Table(name = "ext_enterprise_atomicity_info")
 public class ExtEnterpriseAtomicityInfo implements Serializable {
 
@@ -62,7 +66,7 @@ public class ExtEnterpriseAtomicityInfo implements Serializable {
      * 创建时间
      */
     @Column(name = "ext_addtime")
-    private Date addtime;
+    private java.time.Instant addtime;
 
     /**
      * 是否删除  -1：已删除  0：正常
@@ -80,6 +84,6 @@ public class ExtEnterpriseAtomicityInfo implements Serializable {
      * 最后修改时期
      */
     @Column(name = "ext_lastmodified")
-    private Date lastmodified;
+    private java.time.Instant lastmodified;
 
 }

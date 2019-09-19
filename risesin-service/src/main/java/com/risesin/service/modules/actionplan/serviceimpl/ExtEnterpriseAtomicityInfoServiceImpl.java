@@ -25,7 +25,7 @@ import java.util.Map;
  * @author honey
  */
 @Service
-public class ExtEnterpriseAtomicityInfoServiceImpl implements TopInterface {
+public class ExtEnterpriseAtomicityInfoServiceImpl implements TopInterface<ExtEnterpriseAtomicityInfo> {
     private final Logger LOG = LogManager.getLogger(this.getClass());
 
     @Autowired
@@ -75,17 +75,7 @@ public class ExtEnterpriseAtomicityInfoServiceImpl implements TopInterface {
      * @return
      */
     public ExtEnterpriseAtomicityInfo findById(Long id) {
-        return extEnterpriseAtomicityInfoDao.findById(id).get();
-    }
-
-    @Override
-    public void add(Object o) {
-
-    }
-
-    @Override
-    public void update(Object o) {
-
+        return extEnterpriseAtomicityInfoDao.getById(id);
     }
 
     /**
@@ -112,7 +102,7 @@ public class ExtEnterpriseAtomicityInfoServiceImpl implements TopInterface {
      * @param id
      */
     public void deleteById(Long id) {
-        extEnterpriseAtomicityInfoDao.deleteById(id);
+        extEnterpriseAtomicityInfoDao.softDeleteById(id);
     }
 
     /**

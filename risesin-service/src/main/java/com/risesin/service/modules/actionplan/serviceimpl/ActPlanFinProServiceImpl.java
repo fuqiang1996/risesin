@@ -25,7 +25,7 @@ import java.util.Map;
  * @author honey
  */
 @Service
-public class ActPlanFinProServiceImpl implements TopInterface {
+public class ActPlanFinProServiceImpl implements TopInterface<ActPlanFinPro> {
     private final Logger LOG = LogManager.getLogger(this.getClass());
 
     @Autowired
@@ -78,15 +78,6 @@ public class ActPlanFinProServiceImpl implements TopInterface {
         return actPlanFinProDao.findById(id).get();
     }
 
-    @Override
-    public void add(Object o) {
-
-    }
-
-    @Override
-    public void update(Object o) {
-
-    }
 
     /**
      * 增加
@@ -107,12 +98,12 @@ public class ActPlanFinProServiceImpl implements TopInterface {
     }
 
     /**
-     * 删除
+     * 软删除
      *
      * @param id
      */
     public void deleteById(Long id) {
-        actPlanFinProDao.deleteById(id);
+        actPlanFinProDao.deleteByIds(id);
     }
 
     /**
