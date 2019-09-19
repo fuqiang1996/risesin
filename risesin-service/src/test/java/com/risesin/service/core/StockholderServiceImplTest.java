@@ -1,7 +1,13 @@
 package com.risesin.service.core;
 
 import com.risesin.service.RisesinServiceApplicationTests;
+import com.risesin.service.modules.core.serviceImpl.StockholderServiceImpl;
+import com.risesin.service_api.modules.core.entity.Stockholder;
+import org.junit.Assert;
 import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.List;
 
 /**
  * @AUTHOR Baby
@@ -11,39 +17,55 @@ import org.junit.Test;
  */
 public class StockholderServiceImplTest extends RisesinServiceApplicationTests {
 
+    @Autowired
+    private StockholderServiceImpl stockholderService;
+
     @Test
     public void findAll() {
-    }
-
-    @Test
-    public void findSearch() {
-    }
-
-    @Test
-    public void testFindSearch() {
+        List<Stockholder> all = stockholderService.findAll();
+        Assert.assertTrue("查询信息为空",all.size() >=0 );
     }
 
     @Test
     public void findById() {
+        Stockholder serviceById = stockholderService.findById(1L);
+        Assert.assertTrue("根据id查询实体为空",serviceById.getStockholderId() == 1l);
     }
 
     @Test
     public void add() {
+        Stockholder bean = new Stockholder();
+        bean.setHasLegalcase(2l);
+        bean.setStoAge(0l);
+        bean.setStoAge(2l);
+        bean.setStoCode("123l");
+        stockholderService.add(bean);
+
+        Assert.assertTrue("查询信息为空",stockholderService.findAll().size() >=1 );
     }
 
     @Test
     public void update() {
+        Stockholder bean = new Stockholder();
+        bean.setHasLegalcase(2l);
+        bean.setStoAge(0l);
+        bean.setStoAge(2l);
+        bean.setStoCode("3l");
+        bean.setStockholderId(1l);
+        stockholderService.update(bean);
+
+        Stockholder byId = stockholderService.findById(1l);
+        Assert.assertTrue("根据id查询实体为空",byId.getStoCode().equals("3l"));
+
     }
 
-    @Test
-    public void testAdd() {
-    }
-
-    @Test
-    public void testUpdate() {
-    }
 
     @Test
     public void deleteById() {
+        stockholderService.deleteById(1L);
+        List<Stockholder> channelDefinitionList = stockholderService.findAll();
+        channelDefinitionList.forEach((Stockholder bean)->{
+            Assert.assertTrue("根据ID删除失败",bean.getStockholderId() == 1L);
+        });
     }
 }
