@@ -24,7 +24,7 @@ public class ChildcaseLinEntatoinfo  implements Serializable {
 	/**
 	 * 主键
 	 */
-	@Column(name = "fk_fin_cas_id" )
+	@Column(name = "pk_cas_lin_inf_id" )
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long casLinAtoInfoId;
@@ -33,13 +33,13 @@ public class ChildcaseLinEntatoinfo  implements Serializable {
 	/**
 	 * 支线方案id
 	 */
-   	@Column(name = "pk_fin_cas_id" )
+   	@Column(name = "fk_fin_cas_id" )
 	private Long caseId;
 
 	/**
 	 * 企业独立信息id
 	 */
-	@Column(name = "pk_fin_entinfo_id" )
+	@Column(name = "fk_fin_entinfo_id" )
 	private Long atoInfoId;
 
 }

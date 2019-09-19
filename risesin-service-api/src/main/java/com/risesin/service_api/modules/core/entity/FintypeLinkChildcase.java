@@ -33,13 +33,13 @@ public class FintypeLinkChildcase  implements Serializable {
 	/**
 	 * 融资类型id
 	 */
-   	@Column(name = "pk_fin_type_id" )
+   	@Column(name = "fk_fin_type_id" )
 	private Long finTypeId;
 
 	/**
 	 * 支线方案id
 	 */
-   	@Column(name = "pk_fin_cas_id" )
+   	@Column(name = "fk_fin_cas_id" )
 	private Long caseId;
 
 }

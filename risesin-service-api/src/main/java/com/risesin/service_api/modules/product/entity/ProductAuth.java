@@ -5,6 +5,8 @@ import java.io.Serializable;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.Accessors;
+import org.hibernate.annotations.DynamicInsert;
 
 import java.util.Date;
 
@@ -13,12 +15,13 @@ import java.util.Date;
  * @Author  Baby
  * @Date 2019-09-16 
  */
-
+@Accessors(chain = true)
 @Setter
 @Getter
 @ToString
 @Entity
 @Table ( name ="product_auth" )
+@DynamicInsert
 public class ProductAuth  implements Serializable {
 
 	private static final long serialVersionUID =  6918880329740580610L;
@@ -26,7 +29,7 @@ public class ProductAuth  implements Serializable {
 	/**
 	 * 创建时间
 	 */
-   	@Column(name = "fin_pro_aut_addtime" )
+   	@Column(name = "fin_pro_aut_addtime")
 	private Date addtime;
 
 	/**
@@ -56,7 +59,7 @@ public class ProductAuth  implements Serializable {
 	/**
 	 * 产品代理审核状态
 	 */
-   	@Column(name = "fin_pro_auth_state" )
+   	@Column(name = "fin_pro_auth_state",columnDefinition="varchar(255) default '[]'")
 	private String proAuthState;
 
 	/**

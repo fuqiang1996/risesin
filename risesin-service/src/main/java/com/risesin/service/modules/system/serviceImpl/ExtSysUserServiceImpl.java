@@ -26,7 +26,7 @@ import javax.persistence.criteria.Root;
  * @author honey
  */
 @Service
-public class ExtSysUserServiceImpl implements TopInterface {
+public class ExtSysUserServiceImpl implements TopInterface<ExtSysUser> {
     private final Logger LOG = LogManager.getLogger(this.getClass());
 
     @Autowired
@@ -79,15 +79,6 @@ public class ExtSysUserServiceImpl implements TopInterface {
         return extSysUserDao.findById(id).get();
     }
 
-    @Override
-    public void add(Object o) {
-
-    }
-
-    @Override
-    public void update(Object o) {
-
-    }
 
     /**
      * 增加

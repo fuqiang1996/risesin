@@ -28,7 +28,7 @@ import javax.persistence.criteria.Root;
  * @author honey
  */
 @Service
-public class SmsPackageServiceImpl  implements TopInterface {
+public class SmsPackageServiceImpl  implements TopInterface<SmsPackage> {
     private final Logger LOG = LogManager.getLogger(this.getClass());
 
     @Autowired
@@ -81,15 +81,7 @@ public class SmsPackageServiceImpl  implements TopInterface {
         return smsPackageDao.findById(id).get();
     }
 
-    @Override
-    public void add(Object o) {
 
-    }
-
-    @Override
-    public void update(Object o) {
-
-    }
 
     /**
      * 增加
