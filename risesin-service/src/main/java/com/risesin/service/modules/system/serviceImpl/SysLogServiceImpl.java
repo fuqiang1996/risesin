@@ -28,7 +28,7 @@ import javax.persistence.criteria.Root;
  * @author honey
  */
 @Service
-public class SysLogServiceImpl  implements TopInterface {
+public class SysLogServiceImpl  implements TopInterface<SysLog> {
     private final Logger LOG = LogManager.getLogger(this.getClass());
 
     @Autowired
@@ -81,15 +81,6 @@ public class SysLogServiceImpl  implements TopInterface {
         return sysLogDao.findById(id).get();
     }
 
-    @Override
-    public void add(Object o) {
-
-    }
-
-    @Override
-    public void update(Object o) {
-
-    }
 
     /**
      * 增加

@@ -28,7 +28,7 @@ import javax.persistence.criteria.Root;
  * @author honey
  */
 @Service
-public class SysMenuServiceImpl implements TopInterface {
+public class SysMenuServiceImpl implements TopInterface<SysMenu> {
     private final Logger LOG = LogManager.getLogger(this.getClass());
 
     @Autowired
@@ -81,15 +81,6 @@ public class SysMenuServiceImpl implements TopInterface {
         return sysMenuDao.findById(id).get();
     }
 
-    @Override
-    public void add(Object o) {
-
-    }
-
-    @Override
-    public void update(Object o) {
-
-    }
 
     /**
      * 增加

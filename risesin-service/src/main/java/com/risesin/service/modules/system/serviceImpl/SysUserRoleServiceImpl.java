@@ -28,7 +28,7 @@ import javax.persistence.criteria.Root;
  * @author honey
  */
 @Service
-public class SysUserRoleServiceImpl implements TopInterface {
+public class SysUserRoleServiceImpl implements TopInterface<SysUserRole> {
     private final Logger LOG = LogManager.getLogger(this.getClass());
 
     @Autowired
@@ -81,15 +81,6 @@ public class SysUserRoleServiceImpl implements TopInterface {
         return sysUserRoleDao.findById(id).get();
     }
 
-    @Override
-    public void add(Object o) {
-
-    }
-
-    @Override
-    public void update(Object o) {
-
-    }
 
     /**
      * 增加
