@@ -7,6 +7,8 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.Accessors;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 
 import java.util.Date;
 
@@ -23,6 +25,8 @@ import java.util.Date;
 @ToString
 @Entity
 @Table(name = "sms_package")
+@DynamicInsert
+@DynamicUpdate
 public class SmsPackage implements Serializable {
 
     private static final long serialVersionUID = 6639127988807949346L;
@@ -81,13 +85,13 @@ public class SmsPackage implements Serializable {
      * 产品状态：-1 已删除 0 下架 1 上架
      */
     @Column(name = "sms_pack_delflag")
-    private Long packDelflag;
+    private Long delFlag;
 
     /**
      * 发布时间
      */
     @Column(name = "sms_pack_addtime")
-    private Date packAddtime;
+    private Date addTime;
 
     /**
      * 短信包编码：随机生成的一个字符串
@@ -105,6 +109,6 @@ public class SmsPackage implements Serializable {
      * 最后修改时间
      */
     @Column(name = "sms_pack_lastmidify")
-    private Date packLastmidify;
+    private Date lastMidify;
 
 }

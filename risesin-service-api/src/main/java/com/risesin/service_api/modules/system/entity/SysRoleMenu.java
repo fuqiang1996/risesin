@@ -6,6 +6,9 @@ import java.io.Serializable;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.Accessors;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 
 /**
  * SysRoleMenu 对象
@@ -14,12 +17,14 @@ import lombok.ToString;
  * @Author Baby
  * @Date 2019-09-16
  */
-
+@Accessors(chain = true)
 @Setter
 @Getter
 @ToString
 @Entity
 @Table(name = "sys_role_menu")
+@DynamicInsert
+@DynamicUpdate
 public class SysRoleMenu implements Serializable {
 
     private static final long serialVersionUID = 6912470049793540652L;
@@ -30,7 +35,7 @@ public class SysRoleMenu implements Serializable {
     @Id
     @Column(name = "pk_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long pkId;
+    private Long id;
 
     /**
      * 角色ID

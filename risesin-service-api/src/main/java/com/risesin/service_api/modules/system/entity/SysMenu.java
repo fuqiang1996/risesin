@@ -6,6 +6,9 @@ import java.io.Serializable;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.Accessors;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 
 import java.util.Date;
 
@@ -16,12 +19,14 @@ import java.util.Date;
  * @Author Baby
  * @Date 2019-09-16
  */
-
+@Accessors(chain = true)
 @Setter
 @Getter
 @ToString
 @Entity
 @Table(name = "sys_menu")
+@DynamicInsert
+@DynamicUpdate
 public class SysMenu implements Serializable {
 
     private static final long serialVersionUID = 7849772831117016774L;
@@ -32,7 +37,7 @@ public class SysMenu implements Serializable {
     @Id
     @Column(name = "pk_menu_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long pkMenuId;
+    private Long id;
 
     /**
      * 菜单名称
@@ -74,19 +79,19 @@ public class SysMenu implements Serializable {
      * 创建时间
      */
     @Column(name = "menu_addtime")
-    private Date menuAddtime;
+    private Date addTime;
 
     /**
      * 修改时间
      */
     @Column(name = "menu_lastmodified")
-    private Date menuLastmodified;
+    private Date lastModify;
 
     /**
      * 是否删除  -1：已删除  0：正常
      */
     @Column(name = "menu_delflag")
-    private Long menuDelflag;
+    private Long delFlag;
 
     /**
      * 排序

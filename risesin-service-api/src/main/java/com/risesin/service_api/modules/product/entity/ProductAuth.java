@@ -7,6 +7,7 @@ import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.Accessors;
 import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 
 import java.util.Date;
 
@@ -22,6 +23,7 @@ import java.util.Date;
 @Entity
 @Table ( name ="product_auth" )
 @DynamicInsert
+@DynamicUpdate
 public class ProductAuth  implements Serializable {
 
 	private static final long serialVersionUID =  6918880329740580610L;
@@ -30,7 +32,7 @@ public class ProductAuth  implements Serializable {
 	 * 创建时间
 	 */
    	@Column(name = "fin_pro_aut_addtime")
-	private Date addtime;
+	private Date addTime;
 
 	/**
 	 * 编号
@@ -42,13 +44,13 @@ public class ProductAuth  implements Serializable {
 	 * 删除标记
 	 */
    	@Column(name = "fin_pro_aut_delflag" )
-	private Long delflag;
+	private Long delFlag;
 
 	/**
 	 * 最后修改时间
 	 */
    	@Column(name = "fin_pro_aut_lastmodify" )
-	private Date lastmodify;
+	private Date lastModify;
 
 	/**
 	 * 代理费率
@@ -80,6 +82,6 @@ public class ProductAuth  implements Serializable {
    	@Column(name = "pk_fin_pro_aut_id" )
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long proAuthId;
+	private Long id;
 
 }

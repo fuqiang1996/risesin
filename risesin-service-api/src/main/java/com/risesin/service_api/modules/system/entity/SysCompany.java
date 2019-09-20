@@ -6,6 +6,9 @@ import java.io.Serializable;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.Accessors;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 
 import java.util.Date;
 
@@ -17,11 +20,14 @@ import java.util.Date;
  * @Date 2019-09-16
  */
 
+@Accessors(chain = true)
 @Setter
 @Getter
 @ToString
 @Entity
 @Table(name = "sys_company")
+@DynamicInsert
+@DynamicUpdate
 public class SysCompany implements Serializable {
 
     private static final long serialVersionUID = 1160233737434765698L;
@@ -80,7 +86,7 @@ public class SysCompany implements Serializable {
      * 最后修改时间
      */
     @Column(name = "bran_lastmodified")
-    private Date lastModified;
+    private Date lastModify;
 
     /**
      * 负责人

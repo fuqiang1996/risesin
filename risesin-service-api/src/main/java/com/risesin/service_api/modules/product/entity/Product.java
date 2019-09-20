@@ -5,6 +5,13 @@ import java.io.Serializable;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.Accessors;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 /**
@@ -13,12 +20,15 @@ import java.util.Date;
  * @Date 2019-09-16 
  */
 
+@Accessors(chain = true)
 @Setter
 @Getter
 @ToString
 @Entity
 @Table ( name ="product" )
-public class Product  implements Serializable {
+@DynamicInsert
+@DynamicUpdate
+public class Product implements Serializable {
 
 	private static final long serialVersionUID =  7314740654923115326L;
 
@@ -26,7 +36,8 @@ public class Product  implements Serializable {
 	 * 创建时间
 	 */
    	@Column(name = "fin_pro_addtime" )
-	private Date addtime;
+	@DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
+	private LocalDateTime addTime;
 
 	/**
 	 * 产品申请人
@@ -50,7 +61,7 @@ public class Product  implements Serializable {
 	 * 删除标记
 	 */
    	@Column(name = "fin_pro_delflag" )
-	private Long delflag;
+	private Long delFlag;
 
 	/**
 	 * 产品描述信息（申请流程）
@@ -68,7 +79,7 @@ public class Product  implements Serializable {
 	 * 最后修改时间
 	 */
    	@Column(name = "fin_pro_lastmodify" )
-	private Date lastmodify;
+	private Date lastModify;
 
 	/**
 	 * 借款周期
@@ -86,7 +97,7 @@ public class Product  implements Serializable {
 	 * 最小额度
 	 */
    	@Column(name = "fin_pro_minquota" )
-	private Double proMinquota;
+	private BigDecimal proMinquota;
 
 	/**
 	 * 产品审核状态
@@ -112,12 +123,12 @@ public class Product  implements Serializable {
    	@Column(name = "pk_fin_pro_id" )
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long productId;
+	private Long id;
 
 	/**
 	 * 最高额度
 	 */
    	@Column(name = "fin_pro_maxquota" )
-	private Double proMaxquota;
+	private BigDecimal proMaxquota;
 
 }
