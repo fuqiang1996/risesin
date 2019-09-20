@@ -2,7 +2,6 @@ package com.risesin.service.commonuser;
 
 import com.risesin.service.RisesinServiceApplicationTests;
 import com.risesin.service.modules.commonuser.serviceImpl.ComLogServiceImpl;
-import com.risesin.service_api.modules.comuser.entity.ComDept;
 import com.risesin.service_api.modules.comuser.entity.ComLog;
 import org.junit.Assert;
 import org.junit.Test;
@@ -10,8 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Date;
 import java.util.List;
-
-import static org.junit.Assert.*;
 
 public class ComLogServiceImplTest extends RisesinServiceApplicationTests {
 
@@ -33,7 +30,7 @@ public class ComLogServiceImplTest extends RisesinServiceApplicationTests {
     @Test
     public void add() {
         ComLog comLog = new ComLog();
-        comLog.setAddtime(new Date());
+        comLog.setAddTime(new Date());
         comLog.setIp("123");
         comLog.setMethod("save");
         comLog.setOperation("bbb");
@@ -46,7 +43,7 @@ public class ComLogServiceImplTest extends RisesinServiceApplicationTests {
     @Test
     public void update() {
         ComLog comLog = new ComLog();
-        comLog.setAddtime(new Date());
+        comLog.setAddTime(new Date());
         comLog.setIp("123");
         comLog.setMethod("save");
         comLog.setOperation("bbb");

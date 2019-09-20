@@ -36,7 +36,7 @@ public class ComMenuServiceImplTest extends RisesinServiceApplicationTests {
     @Test
     public void add() {
         ComMenu comMenu = new ComMenu();
-        comMenu.setAddtime(new Date());
+        comMenu.setAddTime(new Date());
         comMenu.setMenuName("bbbb");
         comMenu.setOrderNum(1l);
         comMenu.setMenuUrl("api/menu/");
@@ -47,7 +47,7 @@ public class ComMenuServiceImplTest extends RisesinServiceApplicationTests {
     @Test
     public void update() {
         ComMenu comMenu = new ComMenu();
-        comMenu.setAddtime(new Date());
+        comMenu.setAddTime(new Date());
         comMenu.setMenuName("aaaa");
         comMenu.setOrderNum(1l);
         comMenu.setMenuUrl("api/menu/");

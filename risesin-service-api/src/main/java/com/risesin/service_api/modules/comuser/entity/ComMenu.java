@@ -6,6 +6,9 @@ import java.io.Serializable;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.Accessors;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 
 import java.util.Date;
 
@@ -16,7 +19,9 @@ import java.util.Date;
  * @Author Baby
  * @Date 2019-09-16
  */
-
+@Accessors(chain = true) // 可将对象转换成链式设置值(流的形式)
+@DynamicInsert // 插入或者修改时 字符串为 ''
+@DynamicUpdate
 @Setter
 @Getter
 @ToString
@@ -74,13 +79,13 @@ public class ComMenu implements Serializable {
      * 创建时间
      */
     @Column(name = "menu_addtime")
-    private Date addtime;
+    private Date addTime;
 
     /**
      * 修改时间
      */
     @Column(name = "menu_lastmodified")
-    private Date lastmodified;
+    private Date lastModified;
 
     /**
      * 是否删除  -1：已删除  0：正常
