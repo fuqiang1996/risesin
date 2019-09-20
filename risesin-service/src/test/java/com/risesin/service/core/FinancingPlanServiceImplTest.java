@@ -7,6 +7,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 /**
@@ -38,7 +39,7 @@ public class FinancingPlanServiceImplTest extends RisesinServiceApplicationTests
         bean.setDelFlag(0l);
         bean.setPlanApplicant("2");
         bean.setPlanGuaranteemode("huazi");
-        bean.setFinPlaDemandquota(123d);
+        bean.setFinPlaDemandquota(new BigDecimal("123"));
         bean.setPlanPayment("streng");
         financingPlanService.add(bean);
 
@@ -52,7 +53,7 @@ public class FinancingPlanServiceImplTest extends RisesinServiceApplicationTests
         bean.setDelFlag(0l);
         bean.setPlanApplicant("2");
         bean.setPlanGuaranteemode("huazi");
-        bean.setFinPlaDemandquota(123d);
+        bean.setFinPlaDemandquota(new BigDecimal("123"));
         bean.setPlanPayment("streng");
         bean.setId(1l);
         financingPlanService.update(bean);

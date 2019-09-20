@@ -2,6 +2,7 @@ package com.risesin.service_api.modules.core.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 import lombok.Getter;
@@ -69,7 +70,7 @@ public class FinancingPlan  implements Serializable {
 	 * 资金需求额度
 	 */
    	@Column(name = "fin_pla_demandquota" )
-	private Double finPlaDemandquota;
+	private BigDecimal finPlaDemandquota;
 
 	/**
 	 * 最优时效

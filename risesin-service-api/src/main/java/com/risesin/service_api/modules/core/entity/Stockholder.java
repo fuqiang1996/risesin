@@ -2,6 +2,7 @@ package com.risesin.service_api.modules.core.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 import lombok.Getter;
@@ -75,13 +76,13 @@ public class Stockholder  implements Serializable {
 	 * 个人资产
 	 */
    	@Column(name = "fin_sto_personalasset" )
-	private Double stoPersonalAsset;
+	private BigDecimal stoPersonalAsset;
 
 	/**
 	 * 个人债务
 	 */
    	@Column(name = "fin_sto_personaldebt" )
-	private Double stoPersonalDebt;
+	private BigDecimal stoPersonalDebt;
 
 	/**
 	 * 股份所占比例

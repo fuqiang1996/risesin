@@ -2,6 +2,7 @@ package com.risesin.service_api.modules.core.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 import lombok.Getter;
@@ -87,13 +88,13 @@ public class LegalRepresentative  implements Serializable {
 	 * 个人资产
 	 */
    	@Column(name = "fin_legrep_personalasset" )
-	private Double repPersonalAsset;
+	private BigDecimal repPersonalAsset;
 
 	/**
 	 * 个人负债
 	 */
    	@Column(name = "fin_legrep_personaldebt" )
-	private Double repPersonalDebt;
+	private BigDecimal repPersonalDebt;
 
 	/**
 	 * 股份所占比例

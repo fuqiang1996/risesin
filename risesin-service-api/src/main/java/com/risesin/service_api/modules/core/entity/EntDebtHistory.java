@@ -76,7 +76,7 @@ public class EntDebtHistory  implements Serializable {
 	 * 未结清的款项
 	 */
    	@Column(name = "fin_debhis_nonpayment" )
-	private Double debNonpayment;
+	private BigDecimal debNonpayment;
 
 	/**
 	 * 已结清的款项

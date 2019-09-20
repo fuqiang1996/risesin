@@ -2,6 +2,7 @@ package com.risesin.service_api.modules.core.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 import lombok.Getter;
@@ -81,7 +82,7 @@ public class FinancingEnterprise  implements Serializable {
 	 * 上一年营收
 	 */
    	@Column(name = "fin_ent_lastyearrevenue" )
-	private Double lastyearRevenue;
+	private BigDecimal lastyearRevenue;
 
 	/**
 	 * 企业名称
@@ -93,19 +94,19 @@ public class FinancingEnterprise  implements Serializable {
 	 * 其他可质押资产
 	 */
    	@Column(name = "fin_ent_othpleasset" )
-	private Double entOtherAsset;
+	private BigDecimal entOtherAsset;
 
 	/**
 	 * 利润
 	 */
    	@Column(name = "fin_ent_profit" )
-	private Double entProfit;
+	private BigDecimal entProfit;
 
 	/**
 	 * 总税额
 	 */
    	@Column(name = "fin_ent_taxamount" )
-	private Double entTaxAmount;
+	private BigDecimal entTaxAmount;
 
 	/**
 	 * 行业id

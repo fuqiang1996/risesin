@@ -7,6 +7,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 /**
@@ -38,7 +39,7 @@ public class FinancingEnterpriseServiceImplTest extends RisesinServiceApplicatio
         bean.setDelFlag(0l);
         bean.setEntCode("2");
         bean.setEntName("huazi");
-        bean.setEntTaxAmount(123d);
+        bean.setEntTaxAmount(new BigDecimal("123"));
         financingEnterpriseService.add(bean);
 
         Assert.assertTrue("查询信息为空",financingEnterpriseService.findAll().size() >=1 );
@@ -50,7 +51,7 @@ public class FinancingEnterpriseServiceImplTest extends RisesinServiceApplicatio
         bean.setDelFlag(0l);
         bean.setEntCode("2");
         bean.setEntName("huazi");
-        bean.setEntTaxAmount(123d);
+        bean.setEntTaxAmount(new BigDecimal("123"));
         bean.setId(1l);
         financingEnterpriseService.update(bean);
 

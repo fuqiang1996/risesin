@@ -2,6 +2,7 @@ package com.risesin.service_api.modules.pay.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 import lombok.Getter;
@@ -56,7 +57,7 @@ public class Payment implements Serializable {
 	 * 支付金额
 	 */
    	@Column(name = "pay_money" )
-	private Double payMoney;
+	private BigDecimal payMoney;
 
 	/**
 	 * 支付状态

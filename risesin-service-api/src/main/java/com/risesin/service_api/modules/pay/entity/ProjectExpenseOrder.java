@@ -2,6 +2,7 @@ package com.risesin.service_api.modules.pay.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 import lombok.Getter;
@@ -44,7 +45,7 @@ public class ProjectExpenseOrder  implements Serializable {
 	 * 费用总额
 	 */
    	@Column(name = "exp_total_money" )
-	private Double totalMoney;
+	private BigDecimal totalMoney;
 
 	/**
 	 * 费用类型id
