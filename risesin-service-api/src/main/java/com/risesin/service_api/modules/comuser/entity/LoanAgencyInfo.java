@@ -2,6 +2,7 @@ package com.risesin.service_api.modules.comuser.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -10,7 +11,6 @@ import lombok.experimental.Accessors;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
-import java.util.Date;
 
 /**
  * 助贷机构公司实体
@@ -73,13 +73,13 @@ public class LoanAgencyInfo implements Serializable {
      * 创建时间
      */
     @Column(name = "loan_agen_addtime")
-    private Date loanAgenAddtime;
+    private LocalDateTime loanAgenAddtime;
 
     /**
      * 最后修改时间
      */
     @Column(name = "loan_lastmodify")
-    private Date loanLastmodify;
+    private LocalDateTime loanLastmodify;
 
     /**
      * 排序

@@ -2,14 +2,14 @@ package com.risesin.service_api.modules.pay.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.time.LocalDateTime;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.Accessors;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
-
-import java.util.Date;
 
 /**
  * @Description  Payment支付类
@@ -32,7 +32,7 @@ public class Payment implements Serializable {
 	 * 创建时间
 	 */
    	@Column(name = "pay_addtime" )
-	private Date addTime;
+	private LocalDateTime addTime;
 
 	/**
 	 * 编号

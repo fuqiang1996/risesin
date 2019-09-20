@@ -2,6 +2,8 @@ package com.risesin.service_api.modules.core.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.time.LocalDateTime;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -9,7 +11,6 @@ import lombok.experimental.Accessors;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
-import java.util.Date;
 
 /**
  * @Description  EnterpriseAtomicityInfo企业独立信息类
@@ -32,7 +33,7 @@ public class EnterpriseAtomicityInfo  implements Serializable {
 	 * 创建时间
 	 */
    	@Column(name = "fin_entinfo_addtime" )
-	private Date addTime;
+	private LocalDateTime addTime;
 
 	/**
 	 * 编号
@@ -56,7 +57,7 @@ public class EnterpriseAtomicityInfo  implements Serializable {
 	 * 最后修改时间
 	 */
    	@Column(name = "fin_entinfo_lastmodify" )
-	private Date lastModify;
+	private LocalDateTime lastModify;
 
 	/**
 	 * 名称

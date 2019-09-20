@@ -2,6 +2,8 @@ package com.risesin.service_api.modules.core.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.time.LocalDateTime;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -9,7 +11,6 @@ import lombok.experimental.Accessors;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
-import java.util.Date;
 
 /**
  * @Description  FinancingPlan融资预案类
@@ -32,7 +33,7 @@ public class FinancingPlan  implements Serializable {
 	 * 创建时间
 	 */
    	@Column(name = "fin_pla_addtime" )
-	private Date addTime;
+	private LocalDateTime addTime;
 
 	/**
 	 * 申请人
@@ -74,7 +75,7 @@ public class FinancingPlan  implements Serializable {
 	 * 最优时效
 	 */
    	@Column(name = "fin_pla_expecttime" )
-	private Date planExpectTime;
+	private LocalDateTime planExpectTime;
 
 	/**
 	 * 担保方式
@@ -86,7 +87,7 @@ public class FinancingPlan  implements Serializable {
 	 * 最后修改时间
 	 */
    	@Column(name = "fin_pla_lastmodify" )
-	private Date lastModify;
+	private LocalDateTime lastModify;
 
 	/**
 	 * 可接受成本上限

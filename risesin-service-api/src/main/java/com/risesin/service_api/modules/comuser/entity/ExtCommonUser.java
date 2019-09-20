@@ -2,6 +2,7 @@ package com.risesin.service_api.modules.comuser.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -10,7 +11,6 @@ import lombok.experimental.Accessors;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
-import java.util.Date;
 
 /**
  * 通用用户拓展
@@ -73,7 +73,7 @@ public class ExtCommonUser implements Serializable {
      * 用户名
      */
     @Column(name = "ext_com_user_addtime")
-    private Date extComUserAddtime;
+    private LocalDateTime extComUserAddtime;
 
     /**
      * 渠道名称

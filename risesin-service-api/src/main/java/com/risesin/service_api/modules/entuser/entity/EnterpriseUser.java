@@ -9,7 +9,7 @@ import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDateTime;
 
 /**
  * 企业用户
@@ -66,12 +66,12 @@ public class EnterpriseUser implements Serializable {
      * 创建时间
      */
     @Column(name = "ent_addtime")
-    private Date addTime;
+    private LocalDateTime addTime;
     /**
      * 修改时间
      */
     @Column(name = "ent_lastmodify")
-    private Date lastModify;
+    private LocalDateTime lastModify;
     /**
      * 创建人
      */

@@ -2,6 +2,9 @@ package com.risesin.service_api.modules.core.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -9,7 +12,6 @@ import lombok.experimental.Accessors;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
-import java.util.Date;
 
 /**
  * @Description  EntDebtHistory企业负债历史类
@@ -32,7 +34,7 @@ public class EntDebtHistory  implements Serializable {
 	 * 创建时间
 	 */
    	@Column(name = "fin_debhis_addtime" )
-	private Date addTime;
+	private LocalDateTime addTime;
 
 	/**
 	 * 编号
@@ -56,7 +58,7 @@ public class EntDebtHistory  implements Serializable {
 	 * 最后修改时间
 	 */
    	@Column(name = "fin_debhis_lastmodify" )
-	private Date lastModify;
+	private LocalDateTime lastModify;
 
 	/**
 	 * 负债类型
@@ -68,7 +70,7 @@ public class EntDebtHistory  implements Serializable {
 	 * 借款日期
 	 */
    	@Column(name = "fin_debhis_loandate" )
-	private Date debLoanDate;
+	private LocalDateTime debLoanDate;
 
 	/**
 	 * 未结清的款项
@@ -80,13 +82,13 @@ public class EntDebtHistory  implements Serializable {
 	 * 已结清的款项
 	 */
    	@Column(name = "fin_debhis_paid" )
-	private Double debPaid;
+	private BigDecimal debPaid;
 
 	/**
 	 * 期限
 	 */
    	@Column(name = "fin_debhis_timelimit" )
-	private Date debTimelimit;
+	private LocalDateTime debTimelimit;
 
 	/**
 	 * 融资主体id(企业)

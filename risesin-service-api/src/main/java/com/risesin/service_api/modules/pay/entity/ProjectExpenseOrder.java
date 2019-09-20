@@ -2,14 +2,14 @@ package com.risesin.service_api.modules.pay.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.time.LocalDateTime;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.Accessors;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
-
-import java.util.Date;
 
 /**
  * @Description  ProjectExpenseOrder融资项目费用订单
@@ -70,13 +70,13 @@ public class ProjectExpenseOrder  implements Serializable {
 	 * 创建时间
 	 */
    	@Column(name = "pro_ord_addtime" )
-	private Date addTime;
+	private LocalDateTime addTime;
 
 	/**
 	 * 交易关闭时间
 	 */
    	@Column(name = "pro_ord_closetime" )
-	private Date proOrderClosetime;
+	private LocalDateTime proOrderClosetime;
 
 	/**
 	 * 编号

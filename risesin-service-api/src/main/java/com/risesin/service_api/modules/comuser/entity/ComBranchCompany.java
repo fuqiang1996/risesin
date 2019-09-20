@@ -2,6 +2,7 @@ package com.risesin.service_api.modules.comuser.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -10,7 +11,6 @@ import lombok.experimental.Accessors;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
-import java.util.Date;
 
 /**
  * 分公司
@@ -79,13 +79,13 @@ public class ComBranchCompany implements Serializable {
      * 创建时间
      */
     @Column(name = "bran_addtime")
-    private Date addTime;
+    private LocalDateTime addTime;
 
     /**
      * 最后修改时间
      */
     @Column(name = "bran_lastmodified")
-    private Date lastModified;
+    private LocalDateTime lastModified;
 
     /**
      * 负责人

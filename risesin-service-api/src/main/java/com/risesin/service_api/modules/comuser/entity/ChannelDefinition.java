@@ -10,7 +10,7 @@ import lombok.experimental.Accessors;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 /**
  * 渠道定义实体
@@ -55,6 +55,6 @@ public class ChannelDefinition implements Serializable {
      * 创建时间
      */
     @Column(name = "cha_def_addtime")
-    private Date chaDefAddtime;
+    private LocalDateTime chaDefAddtime;
 
 }

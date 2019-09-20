@@ -2,6 +2,8 @@ package com.risesin.service_api.modules.core.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.time.LocalDateTime;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -9,7 +11,6 @@ import lombok.experimental.Accessors;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
-import java.util.Date;
 
 /**
  * @Description  LegalRepresentative法人代表类
@@ -32,7 +33,7 @@ public class LegalRepresentative  implements Serializable {
 	 * 创建时间
 	 */
    	@Column(name = "fin_legrep_addtime" )
-	private Date addTime;
+	private LocalDateTime addTime;
 
 	/**
 	 * 年龄
@@ -74,7 +75,7 @@ public class LegalRepresentative  implements Serializable {
 	 * 最后修改时间
 	 */
    	@Column(name = "fin_legrep_lastmodify" )
-	private Date lastModify;
+	private LocalDateTime lastModify;
 
 	/**
 	 * 法人代表姓名
@@ -104,7 +105,7 @@ public class LegalRepresentative  implements Serializable {
 	 * 起任时间
 	 */
    	@Column(name = "fin_legrep_startingtime" )
-	private Date repStartingTime;
+	private LocalDateTime repStartingTime;
 
 	/**
 	 * 主键

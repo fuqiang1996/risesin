@@ -2,6 +2,7 @@ package com.risesin.service_api.modules.comuser.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -10,7 +11,6 @@ import lombok.experimental.Accessors;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
-import java.util.Date;
 
 /**
  * 通用用户（助贷机构）部门
@@ -73,12 +73,12 @@ public class ComDept implements Serializable {
      * 创建时间
      */
     @Column(name = "dept_addtime")
-    private Date addTime;
+    private LocalDateTime addTime;
 
     /**
      * 修改时间
      */
     @Column(name = "dept_lastmodify")
-    private Date lastModify;
+    private LocalDateTime lastModify;
 
 }

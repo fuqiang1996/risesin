@@ -2,6 +2,8 @@ package com.risesin.service_api.modules.pay.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.time.LocalDateTime;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -9,7 +11,6 @@ import lombok.experimental.Accessors;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
-import java.util.Date;
 
 /**
  * @Description  ServiceExpenseOrder服务费用订单
@@ -32,7 +33,7 @@ public class ServiceExpenseOrder  implements Serializable {
 	 * 创建时间
 	 */
    	@Column(name = "exp_ord_addtime" )
-	private Date addTime;
+	private LocalDateTime addTime;
 
 	/**
 	 * 编号
@@ -112,7 +113,7 @@ public class ServiceExpenseOrder  implements Serializable {
 	 * 交易关闭时间
 	 */
    	@Column(name = "exp_ord_closetime" )
-	private Date serOrdClosetime;
+	private LocalDateTime serOrdClosetime;
 
 	/**
 	 * 服务包code

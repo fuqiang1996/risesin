@@ -2,6 +2,7 @@ package com.risesin.service_api.modules.comuser.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -10,7 +11,6 @@ import lombok.experimental.Accessors;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
-import java.util.Date;
 
 /**
  * @Description
@@ -70,13 +70,13 @@ public class CommonUser implements Serializable {
      * 创建时间
      */
     @Column(name = "com_gmt_create")
-    private Date comGmtCreate;
+    private LocalDateTime comGmtCreate;
 
     /**
      * 修改时间
      */
     @Column(name = "com_gmt_modified")
-    private Date comGmtModified;
+    private LocalDateTime comGmtModified;
 
     /**
      * 邮箱
