@@ -7,6 +7,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 /**
@@ -36,7 +37,7 @@ public class EntDebtHistoryServiceImplTest extends RisesinServiceApplicationTest
     public void add() {
         EntDebtHistory bean = new EntDebtHistory();
         bean.setDebHistoryCode("2");
-        bean.setDebPaid(123d);
+        bean.setDebPaid(new BigDecimal(123));
         bean.setDelFlag(0l);
         bean.setIsOverdue(3l);
         entDebtHistoryService.add(bean);
@@ -48,7 +49,7 @@ public class EntDebtHistoryServiceImplTest extends RisesinServiceApplicationTest
     public void update() {
         EntDebtHistory bean = new EntDebtHistory();
         bean.setDebHistoryCode("2");
-        bean.setDebPaid(123d);
+        bean.setDebPaid(new BigDecimal(123));
         bean.setDelFlag(0l);
         bean.setIsOverdue(2l);
         bean.setId(1l);

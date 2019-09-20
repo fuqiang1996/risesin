@@ -8,6 +8,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
@@ -33,12 +34,12 @@ public class ComBranchCompanyServiceImplTest extends RisesinServiceApplicationTe
     @Test
     public void add() {
         ComBranchCompany comBranchCompany = new ComBranchCompany();
-        comBranchCompany.setAddTime(new Date());
+        comBranchCompany.setAddTime(LocalDateTime.now());
         comBranchCompany.setBranArea("明城国际");
         comBranchCompany.setBranBusinessAddress("湖南");
         comBranchCompany.setBranName("com");
         comBranchCompany.setBranRegAddress("中国");
-        comBranchCompany.setLastModified(new Date());
+        comBranchCompany.setLastModified(LocalDateTime.now());
         comBranchCompany.setLeader("leader");
         comBranchCompany.setOrderNum(1L);
         comBranchCompany.setLoanAgenId(1L);
@@ -51,12 +52,12 @@ public class ComBranchCompanyServiceImplTest extends RisesinServiceApplicationTe
     @Test
     public void update() {
         ComBranchCompany comBranchCompany = new ComBranchCompany();
-        comBranchCompany.setAddTime(new Date());
+        comBranchCompany.setAddTime(LocalDateTime.now());
         comBranchCompany.setBranArea("明城国际");
         comBranchCompany.setBranBusinessAddress("湖南");
         comBranchCompany.setBranName("com");
         comBranchCompany.setBranRegAddress("中国");
-        comBranchCompany.setLastModified(new Date());
+        comBranchCompany.setLastModified(LocalDateTime.now());
         comBranchCompany.setLeader("aaaa");
         comBranchCompany.setOrderNum(1L);
         comBranchCompany.setLoanAgenId(1L);

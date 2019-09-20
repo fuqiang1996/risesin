@@ -7,6 +7,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
@@ -30,7 +31,7 @@ public class ComLogServiceImplTest extends RisesinServiceApplicationTests {
     @Test
     public void add() {
         ComLog comLog = new ComLog();
-        comLog.setAddTime(new Date());
+        comLog.setAddTime(LocalDateTime.now());
         comLog.setIp("123");
         comLog.setMethod("save");
         comLog.setOperation("bbb");
@@ -43,7 +44,7 @@ public class ComLogServiceImplTest extends RisesinServiceApplicationTests {
     @Test
     public void update() {
         ComLog comLog = new ComLog();
-        comLog.setAddTime(new Date());
+        comLog.setAddTime(LocalDateTime.now());
         comLog.setIp("123");
         comLog.setMethod("save");
         comLog.setOperation("bbb");

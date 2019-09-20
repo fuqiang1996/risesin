@@ -7,6 +7,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
@@ -36,7 +37,7 @@ public class ComMenuServiceImplTest extends RisesinServiceApplicationTests {
     @Test
     public void add() {
         ComMenu comMenu = new ComMenu();
-        comMenu.setAddTime(new Date());
+        comMenu.setAddTime(LocalDateTime.now());
         comMenu.setMenuName("bbbb");
         comMenu.setOrderNum(1l);
         comMenu.setMenuUrl("api/menu/");
@@ -47,7 +48,7 @@ public class ComMenuServiceImplTest extends RisesinServiceApplicationTests {
     @Test
     public void update() {
         ComMenu comMenu = new ComMenu();
-        comMenu.setAddTime(new Date());
+        comMenu.setAddTime(LocalDateTime.now());
         comMenu.setMenuName("aaaa");
         comMenu.setOrderNum(1l);
         comMenu.setMenuUrl("api/menu/");
