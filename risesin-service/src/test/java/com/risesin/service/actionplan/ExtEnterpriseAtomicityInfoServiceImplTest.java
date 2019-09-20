@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.time.Instant;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
+import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -28,11 +29,14 @@ public class ExtEnterpriseAtomicityInfoServiceImplTest extends ActPlanFinProServ
 
     @Test
     public void testFindAll() {
+        List<ExtEnterpriseAtomicityInfo> all = extEnterpriseAtomicityInfoService.findAll();
+        Assert.assertNotNull(all);
+        System.out.println(all);
     }
 
     @Test
     public void testFindById() {
-        ExtEnterpriseAtomicityInfo byId = extEnterpriseAtomicityInfoService.findById(2L);
+        ExtEnterpriseAtomicityInfo byId = extEnterpriseAtomicityInfoService.findById(1L);
         Assert.assertNotNull(byId);
         System.out.println(byId);
     }

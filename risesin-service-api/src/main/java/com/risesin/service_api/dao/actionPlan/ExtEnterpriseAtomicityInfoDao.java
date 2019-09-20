@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -25,11 +26,16 @@ public interface ExtEnterpriseAtomicityInfoDao extends JpaRepository<ExtEnterpri
     @Transactional
     @Modifying
     @Query(value = "update ExtEnterpriseAtomicityInfo  e set e.delFlag=-1  where e.id = :id")
-    void softDeleteById(@Param("id") Long id);
+    @Override
+    void deleteById(@Param("id") Long id);
 
 
     @Query("from ExtEnterpriseAtomicityInfo e  where e.id=:id and e.delFlag=0")
-    ExtEnterpriseAtomicityInfo getById(@Param("id") Long id);
+    @Override
+    Optional<ExtEnterpriseAtomicityInfo> findById(@Param("id") Long id);
 
 
+    @Query("from ExtEnterpriseAtomicityInfo e  where e.delFlag=0")
+    @Override
+    List<ExtEnterpriseAtomicityInfo> findAll();
 }

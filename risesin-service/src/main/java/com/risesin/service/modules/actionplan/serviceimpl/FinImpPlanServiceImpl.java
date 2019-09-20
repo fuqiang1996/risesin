@@ -11,10 +11,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Predicate;
-import javax.persistence.criteria.Root;
+import javax.persistence.criteria.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -25,7 +22,7 @@ import java.util.Map;
  * @author honey
  */
 @Service
-public class FinImpPlanServiceImpl  implements TopInterface {
+public class FinImpPlanServiceImpl implements TopInterface<FinImpPlan> {
     private final Logger LOG = LogManager.getLogger(this.getClass());
 
     @Autowired
@@ -78,16 +75,6 @@ public class FinImpPlanServiceImpl  implements TopInterface {
         return finImpPlanDao.findById(id).get();
     }
 
-    @Override
-    public void add(Object o) {
-
-    }
-
-    @Override
-    public void update(Object o) {
-
-    }
-
     /**
      * 增加
      *
@@ -130,51 +117,13 @@ public class FinImpPlanServiceImpl  implements TopInterface {
                 List
                         <Predicate> predicateList = new ArrayList
                         <Predicate>();
-                // 公司网址
-                if (searchMap.get("loanAgenWebsite") != null && !"".equals(searchMap.get("loanAgenWebsite"))) {
-                    predicateList.add(cb.like(root.get("loanAgenWebsite").as(String.class),
-                            "%" + (String) searchMap.get("loanAgenWebsite") + "%"));
+//                Predicate predicateExamDelFlag = cb.ge(root.get("delFlag").as(Integer.class), 0);
+//                Predicate predicateExamAll  = cb.and(predicateExamDelFlag);
+                // proName
+                if (searchMap.get("proName") != null && !"".equals(searchMap.get("proName"))) {
+                    predicateList.add(cb.like(root.get("proName").as(String.class),
+                            "%" + (String) searchMap.get("proName") + "%"));
                 }
-                // 公司名称
-                if (searchMap.get("loanAgenName") != null && !"".equals(searchMap.get("loanAgenName"))) {
-                    predicateList.add(cb.like(root.get("loanAgenName").as(String.class),
-                            "%" + (String) searchMap.get("loanAgenName") + "%"));
-                }
-                // 办公地址
-                if (searchMap.get("loanBusinessAddress") != null && !"".equals(searchMap.get("loanBusinessAddress"))) {
-                    predicateList.add(cb.like(root.get("loanBusinessAddress").as(String.class),
-                            "%" + (String) searchMap.get("loanBusinessAddress") + "%"));
-                }
-                // 英文名称
-                if (searchMap.get("loanEnglishName") != null && !"".equals(searchMap.get("loanEnglishName"))) {
-                    predicateList.add(cb.like(root.get("loanEnglishName").as(String.class),
-                            "%" + (String) searchMap.get("loanEnglishName") + "%"));
-                }
-                // 所属行业
-                if (searchMap.get("loanIndustryInvolved") != null && !"".equals(searchMap.get("loanIndustryInvolved"))) {
-                    predicateList.add(cb.like(root.get("loanIndustryInvolved").as(String.class),
-                            "%" + (String) searchMap.get("loanIndustryInvolved") + "%"));
-                }
-                // 电话
-                if (searchMap.get("loanPhone") != null && !"".equals(searchMap.get("loanPhone"))) {
-                    predicateList.add(cb.like(root.get("loanPhone").as(String.class), "%" + (String) searchMap.get("loanPhone") + "%"));
-                }
-                // 公司注册地址
-                if (searchMap.get("loanRegAddress") != null && !"".equals(searchMap.get("loanRegAddress"))) {
-                    predicateList.add(cb.like(root.get("loanRegAddress").as(String.class),
-                            "%" + (String) searchMap.get("loanRegAddress") + "%"));
-                }
-                // 区域
-                if (searchMap.get("loanAgenArea") != null && !"".equals(searchMap.get("loanAgenArea"))) {
-                    predicateList.add(cb.like(root.get("loanAgenArea").as(String.class),
-                            "%" + (String) searchMap.get("loanAgenArea") + "%"));
-                }
-                // 公司全称
-                if (searchMap.get("loanAgenFullname") != null && !"".equals(searchMap.get("loanAgenFullname"))) {
-                    predicateList.add(cb.like(root.get("loanAgenFullname").as(String.class),
-                            "%" + (String) searchMap.get("loanAgenFullname") + "%"));
-                }
-
                 return cb.and(predicateList.toArray(new Predicate[predicateList.size()]));
 
             }

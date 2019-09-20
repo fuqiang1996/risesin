@@ -6,6 +6,8 @@ import java.io.Serializable;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 
 import java.util.Date;
 
@@ -20,6 +22,8 @@ import java.util.Date;
 @Setter
 @Getter
 @ToString
+@DynamicInsert
+@DynamicUpdate
 @Entity
 @Table(name = "sharing")
 public class Sharing implements Serializable {

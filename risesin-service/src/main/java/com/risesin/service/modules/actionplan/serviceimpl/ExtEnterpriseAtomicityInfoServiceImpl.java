@@ -75,7 +75,7 @@ public class ExtEnterpriseAtomicityInfoServiceImpl implements TopInterface<ExtEn
      * @return
      */
     public ExtEnterpriseAtomicityInfo findById(Long id) {
-        return extEnterpriseAtomicityInfoDao.getById(id);
+        return extEnterpriseAtomicityInfoDao.findById(id).get();
     }
 
     /**
@@ -102,7 +102,7 @@ public class ExtEnterpriseAtomicityInfoServiceImpl implements TopInterface<ExtEn
      * @param id
      */
     public void deleteById(Long id) {
-        extEnterpriseAtomicityInfoDao.softDeleteById(id);
+        extEnterpriseAtomicityInfoDao.deleteById(id);
     }
 
     /**

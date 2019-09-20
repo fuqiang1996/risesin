@@ -68,11 +68,11 @@ public class CommentTypeServiceImpl implements TopInterface<CommentType> {
 
 	/**
 	 * 根据ID查询实体
-	 * @param pkComtTypId
+	 * @param id
 	 * @return
 	 */
-	public CommentType findById(Long pkComtTypId) {
-		return typeDao.findById(pkComtTypId).get();
+	public CommentType findById(Long id) {
+		return typeDao.findById(id).get();
 	}
 
 	/**

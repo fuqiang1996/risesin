@@ -6,6 +6,8 @@ import java.io.Serializable;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 
 import java.util.Date;
 
@@ -20,6 +22,8 @@ import java.util.Date;
 @Setter
 @Getter
 @ToString
+@DynamicInsert
+@DynamicUpdate
 @Entity
 @Table(name = "article")
 public class Article implements Serializable {
@@ -62,7 +66,7 @@ public class Article implements Serializable {
      * 是否置顶：-1 否 0 是
      */
     @Column(name = "art_ontop")
-    private Long ontop;
+    private Long onTop;
 
     /**
      * 最后修改时间
@@ -104,13 +108,13 @@ public class Article implements Serializable {
      * 是否删除  -1：已删除  0：正常
      */
     @Column(name = "art_delflag")
-    private Long delflag;
+    private Long delFlag;
 
     /**
      * 文章来源
      */
     @Column(name = "art_copyfrom")
-    private String copyfrom;
+    private String copyFrom;
 
     /**
      * 正文
@@ -128,6 +132,6 @@ public class Article implements Serializable {
      * 添加时间
      */
     @Column(name = "art_addtime")
-    private Date addtime;
+    private Date addTime;
 
 }

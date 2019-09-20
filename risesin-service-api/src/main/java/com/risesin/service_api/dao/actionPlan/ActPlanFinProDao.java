@@ -23,7 +23,8 @@ public interface ActPlanFinProDao extends JpaRepository<ActPlanFinPro, Long>, Jp
     @Transactional
     @Modifying
     @Query(value = "update ActPlanFinPro  a set a.actProId=-1,a.finProId=-1 where a.id = :id")
-    void deleteByIds(@Param("id") Long id);
+    @Override
+    void deleteById(@Param("id") Long id);
 
 
 }

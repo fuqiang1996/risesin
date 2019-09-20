@@ -3,10 +3,14 @@ package com.risesin.service_api.modules.actionPlan.entity;
 import javax.persistence.*;
 import java.io.Serializable;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 /**
@@ -17,10 +21,10 @@ import java.util.Date;
  * @Date 2019-09-16
  */
 
-@Setter
-@Getter
-@ToString
+@Data
 @Entity
+@DynamicInsert
+@DynamicUpdate
 @Table(name = "fin_imp_plan")
 public class FinImpPlan implements Serializable {
 
@@ -50,13 +54,13 @@ public class FinImpPlan implements Serializable {
      * 创建时间
      */
     @Column(name = "act_pro_addtime")
-    private Date addtime;
+    private java.time.Instant addTime;
 
     /**
      * 是否删除  -1：已删除  0：正常
      */
-    @Column(name = "act_pro_delflag")
-    private Long delflag;
+    @Column(name = "act_pro_delflag", columnDefinition = "int default 0")
+    private Long delFlag;
 
     /**
      * 外键：企业独立信息拓展表ID
@@ -68,6 +72,6 @@ public class FinImpPlan implements Serializable {
      * 诚意金
      */
     @Column(name = "act_sinceritygold")
-    private Double sinceritygold;
+    private BigDecimal sincerityGold;
 
 }

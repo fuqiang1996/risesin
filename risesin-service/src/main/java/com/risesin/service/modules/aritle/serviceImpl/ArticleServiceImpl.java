@@ -28,7 +28,7 @@ import org.springframework.stereotype.Service;
  * @author Administrator
  */
 @Service
-public class ArticleServiceImpl implements TopInterface {
+public class ArticleServiceImpl implements TopInterface<Article> {
 
     @Autowired
     private ArticleDao articleDao;
@@ -79,16 +79,7 @@ public class ArticleServiceImpl implements TopInterface {
     public Article findById(Long pkId) {
         return articleDao.findById(pkId).get();
     }
-
-    @Override
-    public void add(Object o) {
-
-    }
-
-    @Override
-    public void update(Object o) {
-
-    }
+    
 
     /**
      * 增加

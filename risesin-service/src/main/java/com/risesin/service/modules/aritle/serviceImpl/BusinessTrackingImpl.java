@@ -7,11 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.jpa.domain.Specification;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Map;
 
-public class BusinessTrackingImpl  implements TopInterface {
+@Service
+public class BusinessTrackingImpl implements TopInterface<BusinessTrack> {
 
 
     @Autowired
@@ -20,6 +22,7 @@ public class BusinessTrackingImpl  implements TopInterface {
 
     /**
      * 查询全部列表
+     *
      * @return
      */
     public List<BusinessTrack> findAll() {
@@ -63,6 +66,7 @@ public class BusinessTrackingImpl  implements TopInterface {
 
     /**
      * 根据ID查询实体
+     *
      * @param pkId
      * @return
      */
@@ -70,18 +74,10 @@ public class BusinessTrackingImpl  implements TopInterface {
         return businessTrackDao.findById(pkId).get();
     }
 
-    @Override
-    public void add(Object o) {
-
-    }
-
-    @Override
-    public void update(Object o) {
-
-    }
 
     /**
      * 增加
+     *
      * @param BusinessTrack
      */
     public void add(BusinessTrack BusinessTrack) {
@@ -91,6 +87,7 @@ public class BusinessTrackingImpl  implements TopInterface {
 
     /**
      * 修改
+     *
      * @param BusinessTrack
      */
     public void update(BusinessTrack BusinessTrack) {
@@ -99,6 +96,7 @@ public class BusinessTrackingImpl  implements TopInterface {
 
     /**
      * 删除
+     *
      * @param pkId
      */
     public void deleteById(Long pkId) {

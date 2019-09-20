@@ -6,6 +6,8 @@ import java.io.Serializable;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 
 import java.util.Date;
 
@@ -21,6 +23,8 @@ import java.util.Date;
 @Getter
 @ToString
 @Entity
+@DynamicUpdate
+@DynamicInsert
 @Table(name = "business_track")
 public class BusinessTrack implements Serializable {
 
@@ -50,7 +54,7 @@ public class BusinessTrack implements Serializable {
      * 用户IP
      */
     @Column(name = "bus_tra_tempuser_ip")
-    private String tempuserIp;
+    private String tempUserIp;
 
     /**
      * 用户来源（文章定制链接）
@@ -74,12 +78,12 @@ public class BusinessTrack implements Serializable {
      * 访问时间
      */
     @Column(name = "bus_accesstime")
-    private Date accesstime;
+    private Date accessTime;
 
     /**
      * 是否删除  -1：已删除  0：正常
      */
     @Column(name = "bus_delflag")
-    private Long delflag;
+    private Long delFlag;
 
 }

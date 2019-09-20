@@ -103,7 +103,7 @@ public class ActPlanFinProServiceImpl implements TopInterface<ActPlanFinPro> {
      * @param id
      */
     public void deleteById(Long id) {
-        actPlanFinProDao.deleteByIds(id);
+        actPlanFinProDao.deleteById(id);
     }
 
     /**

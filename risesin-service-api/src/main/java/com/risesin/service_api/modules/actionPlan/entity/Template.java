@@ -3,9 +3,12 @@ package com.risesin.service_api.modules.actionPlan.entity;
 import javax.persistence.*;
 import java.io.Serializable;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 
 import java.util.Date;
 
@@ -21,6 +24,8 @@ import java.util.Date;
 @Getter
 @ToString
 @Entity
+@DynamicUpdate
+@DynamicInsert
 @Table(name = "template")
 public class Template implements Serializable {
 
@@ -44,7 +49,7 @@ public class Template implements Serializable {
      * 模板封底
      */
     @Column(name = "tem_backcover_url")
-    private String backcoverUrl;
+    private String backCoverUrl;
 
     /**
      * 模板结尾
@@ -68,7 +73,8 @@ public class Template implements Serializable {
      * 上传时间
      */
     @Column(name = "tem_addtime")
-    private Date addtime;
+    @JsonFormat(pattern = "yyyy-MM-dd  HH:mm:ss")
+    private java.time.Instant addTime;
 
     /**
      * 产品内容
@@ -86,6 +92,6 @@ public class Template implements Serializable {
      * 最后修改时间
      */
     @Column(name = "tem_lastmodify")
-    private Date lastmodify;
+    private java.time.Instant lastModify;
 
 }
