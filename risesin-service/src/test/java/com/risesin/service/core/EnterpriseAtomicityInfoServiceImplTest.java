@@ -29,7 +29,7 @@ public class EnterpriseAtomicityInfoServiceImplTest extends RisesinServiceApplic
     @Test
     public void findById() {
         EnterpriseAtomicityInfo serviceById = enterpriseAtomicityInfoService.findById(1L);
-        Assert.assertTrue("根据id查询实体为空",serviceById.getAtoInfoId() == 1l);
+        Assert.assertTrue("根据id查询实体为空",serviceById.getId() == 1l);
     }
 
     @Test
@@ -37,7 +37,7 @@ public class EnterpriseAtomicityInfoServiceImplTest extends RisesinServiceApplic
         EnterpriseAtomicityInfo bean = new EnterpriseAtomicityInfo();
         bean.setAtoInfoCode("2");
         bean.setAtoInfoDescription("123l");
-        bean.setDelflag(0l);
+        bean.setDelFlag(0l);
         bean.setInfoTypeId(3l);
         enterpriseAtomicityInfoService.add(bean);
 
@@ -49,9 +49,9 @@ public class EnterpriseAtomicityInfoServiceImplTest extends RisesinServiceApplic
         EnterpriseAtomicityInfo bean = new EnterpriseAtomicityInfo();
         bean.setAtoInfoCode("3");
         bean.setAtoInfoDescription("123l");
-        bean.setDelflag(0l);
+        bean.setDelFlag(0l);
         bean.setInfoTypeId(3l);
-        bean.setAtoInfoId(1l);
+        bean.setId(1l);
         enterpriseAtomicityInfoService.update(bean);
 
         EnterpriseAtomicityInfo byId = enterpriseAtomicityInfoService.findById(1l);
@@ -65,7 +65,7 @@ public class EnterpriseAtomicityInfoServiceImplTest extends RisesinServiceApplic
         enterpriseAtomicityInfoService.deleteById(1L);
         List<EnterpriseAtomicityInfo> channelDefinitionList = enterpriseAtomicityInfoService.findAll();
         channelDefinitionList.forEach((EnterpriseAtomicityInfo bean)->{
-            Assert.assertTrue("根据ID删除失败",bean.getAtoInfoId() == 1L);
+            Assert.assertTrue("根据ID删除失败",bean.getId() == 1L);
         });
     }
 }

@@ -29,7 +29,7 @@ public class FintypeLinkChildcaseServiceImplTest extends RisesinServiceApplicati
     @Test
     public void findById() {
         FintypeLinkChildcase serviceById = fintypeLinkChildcaseService.findById(1L);
-        Assert.assertTrue("根据id查询实体为空",serviceById.getFinLinCasId() == 1l);
+        Assert.assertTrue("根据id查询实体为空",serviceById.getId() == 1l);
     }
 
     @Test
@@ -47,11 +47,11 @@ public class FintypeLinkChildcaseServiceImplTest extends RisesinServiceApplicati
         FintypeLinkChildcase bean = new FintypeLinkChildcase();
         bean.setCaseId(1l);
         bean.setFinTypeId(2l);
-        bean.setFinLinCasId(1l);
+        bean.setId(1l);
         fintypeLinkChildcaseService.update(bean);
 
         FintypeLinkChildcase byId = fintypeLinkChildcaseService.findById(1l);
-        Assert.assertTrue("根据id查询实体为空",byId.getFinLinCasId().equals(1l));
+        Assert.assertTrue("根据id查询实体为空",byId.getId().equals(1l));
 
     }
 
@@ -61,7 +61,7 @@ public class FintypeLinkChildcaseServiceImplTest extends RisesinServiceApplicati
         fintypeLinkChildcaseService.deleteById(1L);
         List<FintypeLinkChildcase> channelDefinitionList = fintypeLinkChildcaseService.findAll();
         channelDefinitionList.forEach((FintypeLinkChildcase bean)->{
-            Assert.assertTrue("根据ID删除失败",bean.getFinLinCasId() == 1L);
+            Assert.assertTrue("根据ID删除失败",bean.getId() == 1L);
         });
     }
 }

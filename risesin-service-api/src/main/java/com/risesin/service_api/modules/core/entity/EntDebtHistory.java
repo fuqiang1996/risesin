@@ -39,7 +39,7 @@ public class EntDebtHistory  implements Serializable {
 	 * 删除标记
 	 */
    	@Column(name = "fin_debhis_delflag" )
-	private Long delflag;
+	private Long delFlag;
 
 	/**
 	 * 是否逾期
@@ -95,6 +95,6 @@ public class EntDebtHistory  implements Serializable {
    	@Column(name = "pk_fin_debhis_id" )
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long debId;
+	private Long id;
 
 }

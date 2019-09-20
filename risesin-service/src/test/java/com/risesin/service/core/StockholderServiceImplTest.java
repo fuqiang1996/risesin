@@ -29,7 +29,7 @@ public class StockholderServiceImplTest extends RisesinServiceApplicationTests {
     @Test
     public void findById() {
         Stockholder serviceById = stockholderService.findById(1L);
-        Assert.assertTrue("根据id查询实体为空",serviceById.getStockholderId() == 1l);
+        Assert.assertTrue("根据id查询实体为空",serviceById.getId() == 1l);
     }
 
     @Test
@@ -51,7 +51,7 @@ public class StockholderServiceImplTest extends RisesinServiceApplicationTests {
         bean.setStoAge(0l);
         bean.setStoAge(2l);
         bean.setStoCode("3l");
-        bean.setStockholderId(1l);
+        bean.setId(1l);
         stockholderService.update(bean);
 
         Stockholder byId = stockholderService.findById(1l);
@@ -62,10 +62,10 @@ public class StockholderServiceImplTest extends RisesinServiceApplicationTests {
 
     @Test
     public void deleteById() {
-        stockholderService.deleteById(1L);
+        stockholderService.deleteById(2L);
         List<Stockholder> channelDefinitionList = stockholderService.findAll();
         channelDefinitionList.forEach((Stockholder bean)->{
-            Assert.assertTrue("根据ID删除失败",bean.getStockholderId() == 1L);
+            Assert.assertTrue("根据ID删除失败",bean.getId() == 2L);
         });
     }
 }

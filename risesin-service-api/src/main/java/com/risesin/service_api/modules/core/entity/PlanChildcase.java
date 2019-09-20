@@ -59,12 +59,18 @@ public class PlanChildcase  implements Serializable {
    	@Column(name = "pk_fin_cas_id" )
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long caseId;
+	private Long id;
 
 	/**
 	 * 融资主体id
 	 */
    	@Column(name = "fk_fin_ent_id" )
 	private Long entId;
+
+	/**
+	 * 删除标记
+	 */
+	@Column(name = "fin_cas_delflag" )
+	private Long delFlag;
 
 }

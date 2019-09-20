@@ -56,7 +56,7 @@ public class ExtCommonUser implements Serializable {
      * 是否删除  -1：已删除  0：正常
      */
     @Column(name = "ext_delflag")
-    private Long extDelflag;
+    private Long delFlag;
 
     /**
      * 用户名

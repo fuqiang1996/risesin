@@ -29,13 +29,13 @@ public class FinancingPlanServiceImplTest extends RisesinServiceApplicationTests
     @Test
     public void findById() {
         FinancingPlan serviceById = financingPlanService.findById(1L);
-        Assert.assertTrue("根据id查询实体为空",serviceById.getPlanId() == 1l);
+        Assert.assertTrue("根据id查询实体为空",serviceById.getId() == 1l);
     }
 
     @Test
     public void add() {
         FinancingPlan bean = new FinancingPlan();
-        bean.setDelflag(0l);
+        bean.setDelFlag(0l);
         bean.setPlanApplicant("2");
         bean.setPlanGuaranteemode("huazi");
         bean.setFinPlaDemandquota(123d);
@@ -48,17 +48,17 @@ public class FinancingPlanServiceImplTest extends RisesinServiceApplicationTests
     @Test
     public void update() {
         FinancingPlan bean = new FinancingPlan();
-        bean.setDelflag(0l);
-        bean.setDelflag(0l);
+        bean.setDelFlag(0l);
+        bean.setDelFlag(0l);
         bean.setPlanApplicant("2");
         bean.setPlanGuaranteemode("huazi");
         bean.setFinPlaDemandquota(123d);
         bean.setPlanPayment("streng");
-        bean.setPlanId(1l);
+        bean.setId(1l);
         financingPlanService.update(bean);
 
         FinancingPlan byId = financingPlanService.findById(1l);
-        Assert.assertTrue("根据id查询实体为空",byId.getPlanId().equals(1l));
+        Assert.assertTrue("根据id查询实体为空",byId.getId().equals(1l));
 
     }
 
@@ -68,7 +68,7 @@ public class FinancingPlanServiceImplTest extends RisesinServiceApplicationTests
         financingPlanService.deleteById(1L);
         List<FinancingPlan> channelDefinitionList = financingPlanService.findAll();
         channelDefinitionList.forEach((FinancingPlan bean)->{
-            Assert.assertTrue("根据ID删除失败",bean.getPlanId() == 1L);
+            Assert.assertTrue("根据ID删除失败",bean.getId() == 1L);
         });
     }
 }

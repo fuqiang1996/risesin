@@ -59,7 +59,7 @@ public class ProjectExpenseOrder  implements Serializable {
    	@Column(name = "pk_pro_ord_id" )
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long proOrderId;
+	private Long id;
 
 	/**
 	 * 创建时间
@@ -83,7 +83,7 @@ public class ProjectExpenseOrder  implements Serializable {
 	 * 删除标记
 	 */
    	@Column(name = "pro_ord_delflag" )
-	private Long delflag;
+	private Long delFlag;
 
 	/**
 	 * 备注

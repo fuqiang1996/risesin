@@ -12,4 +12,5 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 */
 public interface TasLogDao extends JpaRepository<TasLog, Long>, JpaSpecificationExecutor<TasLog> {
 
+
 }

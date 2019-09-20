@@ -39,7 +39,7 @@ public class Payment implements Serializable {
 	 * 删除标记
 	 */
    	@Column(name = "pay_delflag" )
-	private Long delflag;
+	private Long delFlag;
 
 	/**
 	 * 支付方式
@@ -65,7 +65,7 @@ public class Payment implements Serializable {
    	@Column(name = "pk_pay_id" )
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long payId;
+	private Long id;
 
 	/**
 	 * 费用订单id

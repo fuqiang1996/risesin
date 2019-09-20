@@ -110,6 +110,6 @@ public class LoanAgencyInfo implements Serializable {
      * 是否删除：-1删除 0不删除
      */
     @Column(name = "loan_del_flag")
-    private Long loanDelFlag;
+    private Long delFlag;
 
 }

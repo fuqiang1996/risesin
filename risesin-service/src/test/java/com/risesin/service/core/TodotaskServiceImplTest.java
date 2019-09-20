@@ -29,7 +29,7 @@ public class TodotaskServiceImplTest extends RisesinServiceApplicationTests {
     @Test
     public void findById() {
         Todotask serviceById = todotaskService.findById(1L);
-        Assert.assertTrue("根据id查询实体为空",serviceById.getTodoTasId() == 1l);
+        Assert.assertTrue("根据id查询实体为空",serviceById.getId() == 1l);
     }
 
     @Test
@@ -53,7 +53,7 @@ public class TodotaskServiceImplTest extends RisesinServiceApplicationTests {
         bean.setActProjectId(3l);
         bean.setTaskName("aaa");
         bean.setTaskState("3");
-        bean.setTodoTasId(1l);
+        bean.setId(1l);
         todotaskService.update(bean);
 
         Todotask byId = todotaskService.findById(1l);
@@ -67,7 +67,7 @@ public class TodotaskServiceImplTest extends RisesinServiceApplicationTests {
         todotaskService.deleteById(1L);
         List<Todotask> channelDefinitionList = todotaskService.findAll();
         channelDefinitionList.forEach((Todotask bean)->{
-            Assert.assertTrue("根据ID删除失败",bean.getTodoTasId() == 1L);
+            Assert.assertTrue("根据ID删除失败",bean.getId() == 1L);
         });
     }
 }

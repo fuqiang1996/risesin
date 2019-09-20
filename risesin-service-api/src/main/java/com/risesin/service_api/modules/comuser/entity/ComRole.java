@@ -74,6 +74,6 @@ public class ComRole implements Serializable {
      * 是否删除  -1：已删除  0：正常
      */
     @Column(name = "role_delflag")
-    private Long delflag;
+    private Long delFlag;
 
 }

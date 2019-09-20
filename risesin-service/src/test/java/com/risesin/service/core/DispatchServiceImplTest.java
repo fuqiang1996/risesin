@@ -31,7 +31,7 @@ public class DispatchServiceImplTest extends RisesinServiceApplicationTests {
     @Test
     public void findById() {
         Dispatch serviceById = dispatchService.findById(1L);
-        Assert.assertTrue("根据id查询实体为空",serviceById.getDispatchId() == 1l);
+        Assert.assertTrue("根据id查询实体为空",serviceById.getId() == 1l);
     }
 
     @Test
@@ -40,7 +40,7 @@ public class DispatchServiceImplTest extends RisesinServiceApplicationTests {
         bean.setCommonUserId(2l);
         bean.setDispatchCode("asdf");
         bean.setDispatchDesc("aaaa");
-        bean.setDelflag(0l);
+        bean.setDelFlag(0l);
         dispatchService.add(bean);
 
         Assert.assertTrue("查询信息为空",dispatchService.findAll().size() >=1 );
@@ -52,8 +52,8 @@ public class DispatchServiceImplTest extends RisesinServiceApplicationTests {
         bean.setCommonUserId(2l);
         bean.setDispatchCode("asdf");
         bean.setDispatchDesc("bbbb");
-        bean.setDelflag(0l);
-        bean.setDispatchId(1l);
+        bean.setDelFlag(0l);
+        bean.setId(1l);
         dispatchService.update(bean);
 
         Dispatch byId = dispatchService.findById(1l);
@@ -67,7 +67,7 @@ public class DispatchServiceImplTest extends RisesinServiceApplicationTests {
         dispatchService.deleteById(1L);
         List<Dispatch> channelDefinitionList = dispatchService.findAll();
         channelDefinitionList.forEach((Dispatch bean)->{
-            Assert.assertTrue("根据ID删除失败",bean.getDispatchId() == 1L);
+            Assert.assertTrue("根据ID删除失败",bean.getId() == 1L);
         });
     }
 }

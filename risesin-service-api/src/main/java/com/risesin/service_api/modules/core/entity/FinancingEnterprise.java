@@ -45,7 +45,7 @@ public class FinancingEnterprise  implements Serializable {
 	 * 删除标记
 	 */
    	@Column(name = "fin_ent_delflag" )
-	private Long delflag;
+	private Long delFlag;
 
 	/**
 	 * 固定资产
@@ -113,7 +113,7 @@ public class FinancingEnterprise  implements Serializable {
    	@Column(name = "pk_fin_ent_id" )
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long entId;
+	private Long id;
 
 	/**
 	 * 经营年限

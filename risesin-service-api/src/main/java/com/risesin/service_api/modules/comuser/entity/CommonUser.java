@@ -107,7 +107,7 @@ public class CommonUser implements Serializable {
      * 是否删除  -1：已删除  0：正常
      */
     @Column(name = "com_del_flag")
-    private Long comDelFlag;
+    private Long delFlag;
 
     /**
      * 部门ID

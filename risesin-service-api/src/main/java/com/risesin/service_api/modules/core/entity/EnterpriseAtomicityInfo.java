@@ -39,7 +39,7 @@ public class EnterpriseAtomicityInfo  implements Serializable {
 	 * 删除标记
 	 */
    	@Column(name = "fin_entinfo_delflag" )
-	private Long delflag;
+	private Long delFlag;
 
 	/**
 	 * 描述
@@ -71,6 +71,6 @@ public class EnterpriseAtomicityInfo  implements Serializable {
    	@Column(name = "pk_fin_entinfo_id" )
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long atoInfoId;
+	private Long id;
 
 }

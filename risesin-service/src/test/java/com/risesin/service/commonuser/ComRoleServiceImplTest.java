@@ -3,7 +3,6 @@ package com.risesin.service.commonuser;
 import com.risesin.service.RisesinServiceApplicationTests;
 import com.risesin.service.modules.commonuser.serviceImpl.ComRoleServiceImpl;
 import com.risesin.service_api.modules.comuser.entity.ComRole;
-import com.risesin.service_api.modules.comuser.entity.ComRoleMenu;
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,7 +35,7 @@ public class ComRoleServiceImplTest extends RisesinServiceApplicationTests {
     @Test
     public void add() {
         ComRole comRole = new ComRole();
-        comRole.setDelflag(0l);
+        comRole.setDelFlag(0l);
         comRole.setRoleName("真武");
         comRoleService.add(comRole);
         Assert.assertTrue("查询信息为空",comRoleService.findAll().size() >=1 );
@@ -45,7 +44,7 @@ public class ComRoleServiceImplTest extends RisesinServiceApplicationTests {
     @Test
     public void update() {
         ComRole comRole = new ComRole();
-        comRole.setDelflag(0l);
+        comRole.setDelFlag(0l);
         comRole.setRoleName("hh");
         comRole.setId(1l);
 

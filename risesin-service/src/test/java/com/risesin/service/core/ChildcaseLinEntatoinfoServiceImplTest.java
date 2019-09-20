@@ -29,7 +29,7 @@ public class ChildcaseLinEntatoinfoServiceImplTest extends RisesinServiceApplica
     @Test
     public void findById() {
         ChildcaseLinEntatoinfo serviceById = childcaseLinEntatoinfoService.findById(1L);
-        Assert.assertTrue("根据id查询实体为空",serviceById.getCasLinAtoInfoId() == 1l);
+        Assert.assertTrue("根据id查询实体为空",serviceById.getId() == 1l);
     }
 
     @Test
@@ -60,7 +60,7 @@ public class ChildcaseLinEntatoinfoServiceImplTest extends RisesinServiceApplica
         childcaseLinEntatoinfoService.deleteById(1L);
         List<ChildcaseLinEntatoinfo> channelDefinitionList = childcaseLinEntatoinfoService.findAll();
         channelDefinitionList.forEach((ChildcaseLinEntatoinfo bean)->{
-            Assert.assertTrue("根据ID删除失败",bean.getCasLinAtoInfoId() == 1L);
+            Assert.assertTrue("根据ID删除失败",bean.getId() == 1L);
         });
     }
 }

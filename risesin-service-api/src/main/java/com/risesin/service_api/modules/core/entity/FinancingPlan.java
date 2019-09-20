@@ -57,7 +57,7 @@ public class FinancingPlan  implements Serializable {
 	 * 删除标记
 	 */
    	@Column(name = "fin_pla_delflag" )
-	private Long delflag;
+	private Long delFlag;
 
 	/**
 	 * 资金需求额度
@@ -119,7 +119,7 @@ public class FinancingPlan  implements Serializable {
    	@Column(name = "pk_fin_pla_id" )
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long planId;
+	private Long id;
 
 	/**
 	 * 预案状态

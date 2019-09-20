@@ -31,7 +31,7 @@ public class ServiceExpenseOrderServiceImplTest extends RisesinServiceApplicatio
     @Test
     public void findById() {
         ServiceExpenseOrder serviceById = serviceExpenseOrderService.findById(1L);
-        Assert.assertTrue("根据id查询实体为空",serviceById.getSerOrderId() == 1l);
+        Assert.assertTrue("根据id查询实体为空",serviceById.getId() == 1l);
     }
 
     @Test
@@ -55,7 +55,7 @@ public class ServiceExpenseOrderServiceImplTest extends RisesinServiceApplicatio
         bean.setCommodityNum(0l);
         bean.setSerOrderCode("aaa");
         bean.setSerOrderStatus(1l);
-        bean.setSerOrderId(1l);
+        bean.setId(1l);
         serviceExpenseOrderService.update(bean);
 
         ServiceExpenseOrder byId = serviceExpenseOrderService.findById(1l);
@@ -69,7 +69,7 @@ public class ServiceExpenseOrderServiceImplTest extends RisesinServiceApplicatio
         serviceExpenseOrderService.deleteById(1L);
         List<ServiceExpenseOrder> channelDefinitionList = serviceExpenseOrderService.findAll();
         channelDefinitionList.forEach((ServiceExpenseOrder bean)->{
-            Assert.assertTrue("根据ID删除失败",bean.getSerOrderId() == 1L);
+            Assert.assertTrue("根据ID删除失败",bean.getId() == 1L);
         });
     }
 }

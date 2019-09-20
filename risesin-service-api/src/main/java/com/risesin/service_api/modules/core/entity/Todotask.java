@@ -39,7 +39,7 @@ public class Todotask  implements Serializable {
 	 * 删除标记
 	 */
    	@Column(name = "fin_tas_delflag" )
-	private Long delflag;
+	private Long delFlag;
 
 	/**
 	 * 待办事项描述信息
@@ -83,6 +83,6 @@ public class Todotask  implements Serializable {
    	@Column(name = "pk_fin_tas_id" )
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long todoTasId;
+	private Long id;
 
 }

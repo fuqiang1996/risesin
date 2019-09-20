@@ -39,7 +39,7 @@ public class Dispatch  implements Serializable {
 	 * 删除标记
 	 */
    	@Column(name = "fin_dispa_delflag" )
-	private Long delflag;
+	private Long delFlag;
 
 	/**
 	 * 描述信息
@@ -77,6 +77,6 @@ public class Dispatch  implements Serializable {
    	@Column(name = "pk_fin_dispa_id" )
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long dispatchId;
+	private Long id;
 
 }

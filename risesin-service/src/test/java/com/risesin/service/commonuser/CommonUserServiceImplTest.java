@@ -39,7 +39,7 @@ public class CommonUserServiceImplTest extends RisesinServiceApplicationTests {
         CommonUser commonUser = new CommonUser();
         commonUser.setComAccount("公司");
         commonUser.setComCity("北京");
-        commonUser.setComDelFlag(0l);
+        commonUser.setDelFlag(0l);
         commonUser.setComGmtCreate(new Date());
         commonUser.setComLiveAddress("hunanguangz");
         commonUser.setComPhone("123234");

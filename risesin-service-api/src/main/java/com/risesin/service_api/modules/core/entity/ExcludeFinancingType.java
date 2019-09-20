@@ -27,7 +27,7 @@ public class ExcludeFinancingType  implements Serializable {
 	@Column(name = "pk_exc_id" )
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long excludeId;
+	private Long id;
 
 	/**
 	 * 融资预案主键

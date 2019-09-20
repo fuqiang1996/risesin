@@ -35,7 +35,7 @@ public class TasLog implements Serializable {
    	@Column(name = "pk_tas_log_id" )
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long taskLogId;
+	private Long id;
 
 	/**
 	 * 创建时间

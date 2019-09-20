@@ -51,7 +51,7 @@ public class LegalRepresentative  implements Serializable {
 	 * 删除标记
 	 */
    	@Column(name = "fin_legrep_delflag" )
-	private Long delflag;
+	private Long delFlag;
 
 	/**
 	 * 是否有司法案件
@@ -107,6 +107,6 @@ public class LegalRepresentative  implements Serializable {
    	@Column(name = "pk_fin_legrep_id" )
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long repId;
+	private Long id;
 
 }

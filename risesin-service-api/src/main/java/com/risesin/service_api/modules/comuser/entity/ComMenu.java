@@ -86,7 +86,7 @@ public class ComMenu implements Serializable {
      * 是否删除  -1：已删除  0：正常
      */
     @Column(name = "menu_delflag")
-    private Long delflag;
+    private Long delFlag;
 
     /**
      * 排序

@@ -39,7 +39,7 @@ public class ServiceExpenseOrder  implements Serializable {
 	 * 删除标记
 	 */
    	@Column(name = "exp_ord_delflag" )
-	private Long delflag;
+	private Long delFlag;
 
 	/**
 	 * 费用金额
@@ -59,7 +59,7 @@ public class ServiceExpenseOrder  implements Serializable {
    	@Column(name = "pk_exp_ord_id" )
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long serOrderId;
+	private Long id;
 
 	/**
 	 * 费用类型id

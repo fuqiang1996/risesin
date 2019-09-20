@@ -29,7 +29,7 @@ public class ExcludeFinancingTypeServiceImplTest extends RisesinServiceApplicati
     @Test
     public void findById() {
         ExcludeFinancingType serviceById = excludeFinancingTypeService.findById(1L);
-        Assert.assertTrue("根据id查询实体为空",serviceById.getExcludeId() == 1l);
+        Assert.assertTrue("根据id查询实体为空",serviceById.getId() == 1l);
     }
 
     @Test
@@ -47,7 +47,7 @@ public class ExcludeFinancingTypeServiceImplTest extends RisesinServiceApplicati
         ExcludeFinancingType bean = new ExcludeFinancingType();
         bean.setFinPlanId(1l);
         bean.setFinTypeId(1l);
-        bean.setExcludeId(1l);
+        bean.setId(1l);
         excludeFinancingTypeService.update(bean);
 
         ExcludeFinancingType byId = excludeFinancingTypeService.findById(1l);
@@ -61,7 +61,7 @@ public class ExcludeFinancingTypeServiceImplTest extends RisesinServiceApplicati
         excludeFinancingTypeService.deleteById(1L);
         List<ExcludeFinancingType> channelDefinitionList = excludeFinancingTypeService.findAll();
         channelDefinitionList.forEach((ExcludeFinancingType bean)->{
-            Assert.assertTrue("根据ID删除失败",bean.getExcludeId() == 1L);
+            Assert.assertTrue("根据ID删除失败",bean.getId() == 1L);
         });
     }
 }

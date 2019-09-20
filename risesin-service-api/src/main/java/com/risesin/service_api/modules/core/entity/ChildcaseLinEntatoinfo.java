@@ -27,7 +27,7 @@ public class ChildcaseLinEntatoinfo  implements Serializable {
 	@Column(name = "pk_cas_lin_inf_id" )
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long casLinAtoInfoId;
+	private Long id;
 
 
 	/**

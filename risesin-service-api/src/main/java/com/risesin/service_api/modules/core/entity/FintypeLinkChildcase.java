@@ -28,7 +28,7 @@ public class FintypeLinkChildcase  implements Serializable {
 	@Column(name = "pk_fin_lin_cas_id" )
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long finLinCasId;
+	private Long id;
 
 	/**
 	 * 融资类型id

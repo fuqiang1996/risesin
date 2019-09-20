@@ -89,6 +89,11 @@ public class Stockholder  implements Serializable {
    	@Column(name = "pk_fin_sto_id" )
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long StockholderId;
+	private Long id;
 
+	/**
+	 * 删除标记
+	 */
+	@Column(name = "fin_sto_delflag" )
+	private Long delFlag;
 }
