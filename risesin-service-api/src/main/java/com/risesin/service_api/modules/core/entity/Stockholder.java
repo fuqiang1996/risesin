@@ -2,18 +2,25 @@ package com.risesin.service_api.modules.core.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.Accessors;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 
-import java.util.Date;
 
 /**
  * @Description  
  * @Author  Baby
  * @Date 2019-09-16 
  */
-
+@Accessors(chain = true) // 可将对象转换成链式设置值(流的形式)
+@DynamicInsert // 插入或者修改时 字符串为 ''
+@DynamicUpdate
 @Setter
 @Getter
 @ToString
@@ -27,7 +34,7 @@ public class Stockholder  implements Serializable {
 	 * 创建时间
 	 */
    	@Column(name = "fin_sto_addtime" )
-	private Date addtime;
+	private LocalDateTime addMime;
 
 	/**
 	 * 年龄
@@ -57,7 +64,7 @@ public class Stockholder  implements Serializable {
 	 * 最后修改时间
 	 */
    	@Column(name = "fin_sto_lastmodify" )
-	private Date lastmodify;
+	private LocalDateTime lastModify;
 
 	/**
 	 * 股东姓名
@@ -69,13 +76,13 @@ public class Stockholder  implements Serializable {
 	 * 个人资产
 	 */
    	@Column(name = "fin_sto_personalasset" )
-	private Double stoPersonalAsset;
+	private BigDecimal stoPersonalAsset;
 
 	/**
 	 * 个人债务
 	 */
    	@Column(name = "fin_sto_personaldebt" )
-	private Double stoPersonalDebt;
+	private BigDecimal stoPersonalDebt;
 
 	/**
 	 * 股份所占比例
@@ -89,6 +96,11 @@ public class Stockholder  implements Serializable {
    	@Column(name = "pk_fin_sto_id" )
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long StockholderId;
+	private Long id;
 
+	/**
+	 * 删除标记
+	 */
+	@Column(name = "fin_sto_delflag" )
+	private Long delFlag;
 }

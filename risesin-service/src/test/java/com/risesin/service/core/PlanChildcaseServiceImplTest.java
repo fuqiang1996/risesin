@@ -29,7 +29,7 @@ public class PlanChildcaseServiceImplTest extends RisesinServiceApplicationTests
     @Test
     public void findById() {
         PlanChildcase serviceById = planChildcaseService.findById(1L);
-        Assert.assertTrue("根据id查询实体为空",serviceById.getCaseId() == 1l);
+        Assert.assertTrue("根据id查询实体为空",serviceById.getId() == 1l);
     }
 
     @Test
@@ -51,7 +51,7 @@ public class PlanChildcaseServiceImplTest extends RisesinServiceApplicationTests
         bean.setPlanId(0l);
         bean.setRepId(2l);
         bean.setStockolderId(123l);
-        bean.setCaseId(1l);
+        bean.setId(1l);
         planChildcaseService.update(bean);
 
         PlanChildcase byId = planChildcaseService.findById(1l);

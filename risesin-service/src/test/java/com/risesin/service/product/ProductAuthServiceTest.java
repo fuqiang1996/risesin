@@ -42,9 +42,9 @@ public class ProductAuthServiceTest extends RisesinServiceApplicationTests {
     @Test
     public void add() {
         ProductAuth productAuth = new ProductAuth();
-        productAuth.setAddtime(new Date())
-                .setDelflag(0L)
-                .setLastmodify(new Date())
+        productAuth.setAddTime(new Date())
+                .setDelFlag(0L)
+                //.setLastmodify(new Date())
                 .setProAuthCode("编号")
                 .setProAuthRate(3.5)
                 .setProAuthState("待审核")
@@ -66,5 +66,6 @@ public class ProductAuthServiceTest extends RisesinServiceApplicationTests {
 
     @Test
     public void deleteById() {
+        productAuthService.deleteById(3L);
     }
 }

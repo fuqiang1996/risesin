@@ -2,12 +2,15 @@ package com.risesin.service_api.modules.comuser.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.Accessors;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 
-import java.util.Date;
 
 /**
  * 通用用户日志
@@ -16,7 +19,9 @@ import java.util.Date;
  * @Author Baby
  * @Date 2019-09-16
  */
-
+@Accessors(chain = true) // 可将对象转换成链式设置值(流的形式)
+@DynamicInsert // 插入或者修改时 字符串为 ''
+@DynamicUpdate
 @Setter
 @Getter
 @ToString
@@ -80,6 +85,6 @@ public class ComLog implements Serializable {
      * 创建时间
      */
     @Column(name = "log_addtime")
-    private Date addtime;
+    private LocalDateTime addTime;
 
 }

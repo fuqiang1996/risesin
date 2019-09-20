@@ -7,6 +7,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 /**
@@ -29,15 +30,15 @@ public class EntDebtHistoryServiceImplTest extends RisesinServiceApplicationTest
     @Test
     public void findById() {
         EntDebtHistory serviceById = entDebtHistoryService.findById(1L);
-        Assert.assertTrue("根据id查询实体为空",serviceById.getDebId() == 1l);
+        Assert.assertTrue("根据id查询实体为空",serviceById.getId() == 1l);
     }
 
     @Test
     public void add() {
         EntDebtHistory bean = new EntDebtHistory();
         bean.setDebHistoryCode("2");
-        bean.setDebPaid(123d);
-        bean.setDelflag(0l);
+        bean.setDebPaid(new BigDecimal(123));
+        bean.setDelFlag(0l);
         bean.setIsOverdue(3l);
         entDebtHistoryService.add(bean);
 
@@ -48,10 +49,10 @@ public class EntDebtHistoryServiceImplTest extends RisesinServiceApplicationTest
     public void update() {
         EntDebtHistory bean = new EntDebtHistory();
         bean.setDebHistoryCode("2");
-        bean.setDebPaid(123d);
-        bean.setDelflag(0l);
+        bean.setDebPaid(new BigDecimal(123));
+        bean.setDelFlag(0l);
         bean.setIsOverdue(2l);
-        bean.setDebId(1l);
+        bean.setId(1l);
         entDebtHistoryService.update(bean);
 
         EntDebtHistory byId = entDebtHistoryService.findById(1l);
@@ -65,7 +66,7 @@ public class EntDebtHistoryServiceImplTest extends RisesinServiceApplicationTest
         entDebtHistoryService.deleteById(1L);
         List<EntDebtHistory> channelDefinitionList = entDebtHistoryService.findAll();
         channelDefinitionList.forEach((EntDebtHistory bean)->{
-            Assert.assertTrue("根据ID删除失败",bean.getDebId() == 1L);
+            Assert.assertTrue("根据ID删除失败",bean.getId() == 1L);
         });
     }
 }

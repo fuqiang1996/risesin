@@ -29,7 +29,7 @@ public class LegalRepresentativeServiceImplTest extends RisesinServiceApplicatio
     @Test
     public void findById() {
         LegalRepresentative serviceById = legalRepresentativeService.findById(1L);
-        Assert.assertTrue("根据id查询实体为空",serviceById.getRepId() == 1l);
+        Assert.assertTrue("根据id查询实体为空",serviceById.getId() == 1l);
     }
 
     @Test
@@ -37,7 +37,7 @@ public class LegalRepresentativeServiceImplTest extends RisesinServiceApplicatio
         LegalRepresentative bean = new LegalRepresentative();
         bean.setHasLegalcase(1l);
         bean.setIsStockholder(2l);
-        bean.setDelflag(0l);
+        bean.setDelFlag(0l);
         bean.setRepAge(2l);
         bean.setRepCreditstatus("123");
         legalRepresentativeService.add(bean);
@@ -50,10 +50,10 @@ public class LegalRepresentativeServiceImplTest extends RisesinServiceApplicatio
         LegalRepresentative bean = new LegalRepresentative();
         bean.setHasLegalcase(1l);
         bean.setIsStockholder(2l);
-        bean.setDelflag(0l);
+        bean.setDelFlag(0l);
         bean.setRepAge(2l);
         bean.setRepCreditstatus("1");
-        bean.setRepId(1l);
+        bean.setId(1l);
         legalRepresentativeService.update(bean);
 
         LegalRepresentative byId = legalRepresentativeService.findById(1l);
@@ -67,7 +67,7 @@ public class LegalRepresentativeServiceImplTest extends RisesinServiceApplicatio
         legalRepresentativeService.deleteById(1L);
         List<LegalRepresentative> channelDefinitionList = legalRepresentativeService.findAll();
         channelDefinitionList.forEach((LegalRepresentative bean)->{
-            Assert.assertTrue("根据ID删除失败",bean.getRepId() == 1L);
+            Assert.assertTrue("根据ID删除失败",bean.getId() == 1L);
         });
     }
 }

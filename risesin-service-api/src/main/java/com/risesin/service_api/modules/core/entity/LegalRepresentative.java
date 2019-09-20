@@ -2,18 +2,25 @@ package com.risesin.service_api.modules.core.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.Accessors;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 
-import java.util.Date;
 
 /**
  * @Description  LegalRepresentative法人代表类
  * @Author  Baby
  * @Date 2019-09-16 
  */
-
+@Accessors(chain = true) // 可将对象转换成链式设置值(流的形式)
+@DynamicInsert // 插入或者修改时 字符串为 ''
+@DynamicUpdate
 @Setter
 @Getter
 @ToString
@@ -27,7 +34,7 @@ public class LegalRepresentative  implements Serializable {
 	 * 创建时间
 	 */
    	@Column(name = "fin_legrep_addtime" )
-	private Date addtime;
+	private LocalDateTime addTime;
 
 	/**
 	 * 年龄
@@ -51,7 +58,7 @@ public class LegalRepresentative  implements Serializable {
 	 * 删除标记
 	 */
    	@Column(name = "fin_legrep_delflag" )
-	private Long delflag;
+	private Long delFlag;
 
 	/**
 	 * 是否有司法案件
@@ -69,7 +76,7 @@ public class LegalRepresentative  implements Serializable {
 	 * 最后修改时间
 	 */
    	@Column(name = "fin_legrep_lastmodify" )
-	private Date lastmodify;
+	private LocalDateTime lastModify;
 
 	/**
 	 * 法人代表姓名
@@ -81,13 +88,13 @@ public class LegalRepresentative  implements Serializable {
 	 * 个人资产
 	 */
    	@Column(name = "fin_legrep_personalasset" )
-	private Double repPersonalAsset;
+	private BigDecimal repPersonalAsset;
 
 	/**
 	 * 个人负债
 	 */
    	@Column(name = "fin_legrep_personaldebt" )
-	private Double repPersonalDebt;
+	private BigDecimal repPersonalDebt;
 
 	/**
 	 * 股份所占比例
@@ -99,7 +106,7 @@ public class LegalRepresentative  implements Serializable {
 	 * 起任时间
 	 */
    	@Column(name = "fin_legrep_startingtime" )
-	private Date repStartingTime;
+	private LocalDateTime repStartingTime;
 
 	/**
 	 * 主键
@@ -107,6 +114,6 @@ public class LegalRepresentative  implements Serializable {
    	@Column(name = "pk_fin_legrep_id" )
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long repId;
+	private Long id;
 
 }

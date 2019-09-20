@@ -2,18 +2,24 @@ package com.risesin.service_api.modules.core.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.time.LocalDateTime;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.Accessors;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 
-import java.util.Date;
 
 /**
  * @Description  
  * @Author  Baby
  * @Date 2019-09-16 
  */
-
+@Accessors(chain = true) // 可将对象转换成链式设置值(流的形式)
+@DynamicInsert // 插入或者修改时 字符串为 ''
+@DynamicUpdate
 @Setter
 @Getter
 @ToString
@@ -27,13 +33,13 @@ public class PlanChildcase  implements Serializable {
 	 * 创建时间
 	 */
    	@Column(name = "fin_cas_addtime" )
-	private Date addtime;
+	private LocalDateTime addTime;
 
 	/**
 	 * 最后修改时间
 	 */
    	@Column(name = "fin_cas_lastmodify" )
-	private Date lastmodify;
+	private LocalDateTime lastModify;
 
 	/**
 	 * 法人id
@@ -59,12 +65,18 @@ public class PlanChildcase  implements Serializable {
    	@Column(name = "pk_fin_cas_id" )
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long caseId;
+	private Long id;
 
 	/**
 	 * 融资主体id
 	 */
    	@Column(name = "fk_fin_ent_id" )
 	private Long entId;
+
+	/**
+	 * 删除标记
+	 */
+	@Column(name = "fin_cas_delflag" )
+	private Long delFlag;
 
 }

@@ -8,6 +8,7 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.sql.Date;
+import java.time.LocalDateTime;
 import java.util.List;
 
 /**
@@ -39,7 +40,7 @@ public class LoanAgencyInfoServiceImplTest extends RisesinServiceApplicationTest
         loanAgencyInfo.setLoanAgenName("aa");
         loanAgencyInfo.setLoanAgenArea("zhongguo");
         loanAgencyInfo.setLoanAgenWebsite("网址aa");
-        loanAgencyInfo.setLoanAgenAddtime(new Date(new java.util.Date().getTime()));
+        loanAgencyInfo.setLoanAgenAddtime(LocalDateTime.now());
         loanAgencyInfoService.add(loanAgencyInfo);
         loanAgencyInfoService.findAll().forEach((loanAgencyInfo1 -> System.out.println(loanAgencyInfo1)));
 

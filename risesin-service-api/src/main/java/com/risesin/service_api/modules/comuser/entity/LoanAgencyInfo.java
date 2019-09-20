@@ -2,12 +2,15 @@ package com.risesin.service_api.modules.comuser.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.Accessors;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 
-import java.util.Date;
 
 /**
  * 助贷机构公司实体
@@ -16,7 +19,9 @@ import java.util.Date;
  * @Author Baby
  * @Date 2019-09-16
  */
-
+@Accessors(chain = true) // 可将对象转换成链式设置值(流的形式)
+@DynamicInsert // 插入或者修改时 字符串为 ''
+@DynamicUpdate
 @Setter
 @Getter
 @ToString
@@ -68,13 +73,13 @@ public class LoanAgencyInfo implements Serializable {
      * 创建时间
      */
     @Column(name = "loan_agen_addtime")
-    private Date loanAgenAddtime;
+    private LocalDateTime loanAgenAddtime;
 
     /**
      * 最后修改时间
      */
     @Column(name = "loan_lastmodify")
-    private Date loanLastmodify;
+    private LocalDateTime loanLastmodify;
 
     /**
      * 排序
@@ -110,6 +115,6 @@ public class LoanAgencyInfo implements Serializable {
      * 是否删除：-1删除 0不删除
      */
     @Column(name = "loan_del_flag")
-    private Long loanDelFlag;
+    private Long delFlag;
 
 }

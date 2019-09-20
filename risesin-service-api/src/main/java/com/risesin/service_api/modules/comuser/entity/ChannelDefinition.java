@@ -6,8 +6,11 @@ import java.io.Serializable;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.Accessors;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 /**
  * 渠道定义实体
@@ -16,7 +19,9 @@ import java.util.Date;
  * @Author Baby
  * @Date 2019-09-16
  */
-
+@Accessors(chain = true) // 可将对象转换成链式设置值(流的形式)
+@DynamicInsert // 插入或者修改时 字符串为 ''
+@DynamicUpdate
 @Setter
 @Getter
 @ToString
@@ -50,6 +55,6 @@ public class ChannelDefinition implements Serializable {
      * 创建时间
      */
     @Column(name = "cha_def_addtime")
-    private Date chaDefAddtime;
+    private LocalDateTime chaDefAddtime;
 
 }

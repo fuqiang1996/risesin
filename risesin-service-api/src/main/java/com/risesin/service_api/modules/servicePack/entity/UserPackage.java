@@ -6,6 +6,9 @@ import java.io.Serializable;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.Accessors;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 
 import java.util.Date;
 
@@ -16,12 +19,14 @@ import java.util.Date;
  * @Author Baby
  * @Date 2019-09-16
  */
-
+@Accessors(chain = true)
 @Setter
 @Getter
 @ToString
 @Entity
 @Table(name = "user_package")
+@DynamicInsert
+@DynamicUpdate
 public class UserPackage implements Serializable {
 
     private static final long serialVersionUID = 6330794539016641815L;
@@ -38,7 +43,7 @@ public class UserPackage implements Serializable {
      * 发布时间
      */
     @Column(name = "user_pack_addtime")
-    private Date addtime;
+    private Date addTime;
 
     /**
      * 商品编码:随机生成的一个字符串
@@ -68,7 +73,7 @@ public class UserPackage implements Serializable {
      * 最后修改时间
      */
     @Column(name = "user_pack_lastmodify")
-    private Date lastmodify;
+    private Date lastModify;
 
     /**
      * 用户包名称排序
@@ -98,7 +103,7 @@ public class UserPackage implements Serializable {
      * 是否删除：-1 已删除 0 下架 1 上架
      */
     @Column(name = "user_pack_delflag")
-    private Long delflag;
+    private Long delFlag;
 
     /**
      * 用户数量

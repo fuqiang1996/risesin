@@ -29,7 +29,7 @@ public class TasLogServiceImplTest extends RisesinServiceApplicationTests {
     @Test
     public void findById() {
         TasLog serviceById = tasLogService.findById(1L);
-        Assert.assertTrue("根据id查询实体为空",serviceById.getTaskLogId() == 1l);
+        Assert.assertTrue("根据id查询实体为空",serviceById.getId() == 1l);
     }
 
     @Test
@@ -49,7 +49,7 @@ public class TasLogServiceImplTest extends RisesinServiceApplicationTests {
         bean.setTaskLogCode("aaa");
         bean.setTaskLogOperation("3l");
         bean.setTodoTaskId(3l);
-        bean.setTaskLogId(1l);
+        bean.setId(1l);
         tasLogService.update(bean);
 
         TasLog byId = tasLogService.findById(1l);
@@ -63,7 +63,7 @@ public class TasLogServiceImplTest extends RisesinServiceApplicationTests {
         tasLogService.deleteById(1L);
         List<TasLog> channelDefinitionList = tasLogService.findAll();
         channelDefinitionList.forEach((TasLog bean)->{
-            Assert.assertTrue("根据ID删除失败",bean.getTaskLogId() == 1L);
+            Assert.assertTrue("根据ID删除失败",bean.getId() == 1L);
         });
     }
 }

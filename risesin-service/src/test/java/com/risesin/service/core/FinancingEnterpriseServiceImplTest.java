@@ -7,6 +7,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 /**
@@ -29,16 +30,16 @@ public class FinancingEnterpriseServiceImplTest extends RisesinServiceApplicatio
     @Test
     public void findById() {
         FinancingEnterprise serviceById = financingEnterpriseService.findById(1L);
-        Assert.assertTrue("根据id查询实体为空",serviceById.getEntId() == 1l);
+        Assert.assertTrue("根据id查询实体为空",serviceById.getId() == 1l);
     }
 
     @Test
     public void add() {
         FinancingEnterprise bean = new FinancingEnterprise();
-        bean.setDelflag(0l);
+        bean.setDelFlag(0l);
         bean.setEntCode("2");
         bean.setEntName("huazi");
-        bean.setEntTaxAmount(123d);
+        bean.setEntTaxAmount(new BigDecimal("123"));
         financingEnterpriseService.add(bean);
 
         Assert.assertTrue("查询信息为空",financingEnterpriseService.findAll().size() >=1 );
@@ -47,15 +48,15 @@ public class FinancingEnterpriseServiceImplTest extends RisesinServiceApplicatio
     @Test
     public void update() {
         FinancingEnterprise bean = new FinancingEnterprise();
-        bean.setDelflag(0l);
+        bean.setDelFlag(0l);
         bean.setEntCode("2");
         bean.setEntName("huazi");
-        bean.setEntTaxAmount(123d);
-        bean.setEntId(1l);
+        bean.setEntTaxAmount(new BigDecimal("123"));
+        bean.setId(1l);
         financingEnterpriseService.update(bean);
 
         FinancingEnterprise byId = financingEnterpriseService.findById(1l);
-        Assert.assertTrue("根据id查询实体为空",byId.getEntId().equals(1l));
+        Assert.assertTrue("根据id查询实体为空",byId.getId().equals(1l));
 
     }
 
@@ -65,7 +66,7 @@ public class FinancingEnterpriseServiceImplTest extends RisesinServiceApplicatio
         financingEnterpriseService.deleteById(1L);
         List<FinancingEnterprise> channelDefinitionList = financingEnterpriseService.findAll();
         channelDefinitionList.forEach((FinancingEnterprise bean)->{
-            Assert.assertTrue("根据ID删除失败",bean.getEntId() == 1L);
+            Assert.assertTrue("根据ID删除失败",bean.getId() == 1L);
         });
     }
 }

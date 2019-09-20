@@ -2,18 +2,24 @@ package com.risesin.service_api.modules.pay.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-
-import java.util.Date;
+import lombok.experimental.Accessors;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 
 /**
  * @Description  Payment支付类
  * @Author  Baby
  * @Date 2019-09-16 
  */
-
+@Accessors(chain = true) // 可将对象转换成链式设置值(流的形式)
+@DynamicInsert // 插入或者修改时 字符串为 ''
+@DynamicUpdate
 @Setter
 @Getter
 @ToString
@@ -27,7 +33,7 @@ public class Payment implements Serializable {
 	 * 创建时间
 	 */
    	@Column(name = "pay_addtime" )
-	private Date addtime;
+	private LocalDateTime addTime;
 
 	/**
 	 * 编号
@@ -39,7 +45,7 @@ public class Payment implements Serializable {
 	 * 删除标记
 	 */
    	@Column(name = "pay_delflag" )
-	private Long delflag;
+	private Long delFlag;
 
 	/**
 	 * 支付方式
@@ -51,7 +57,7 @@ public class Payment implements Serializable {
 	 * 支付金额
 	 */
    	@Column(name = "pay_money" )
-	private Double payMoney;
+	private BigDecimal payMoney;
 
 	/**
 	 * 支付状态
@@ -65,7 +71,7 @@ public class Payment implements Serializable {
    	@Column(name = "pk_pay_id" )
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long payId;
+	private Long id;
 
 	/**
 	 * 费用订单id

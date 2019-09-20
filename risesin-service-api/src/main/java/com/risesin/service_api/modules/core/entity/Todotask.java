@@ -2,18 +2,23 @@ package com.risesin.service_api.modules.core.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.time.LocalDateTime;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-
-import java.util.Date;
+import lombok.experimental.Accessors;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 
 /**
  * @Description  
  * @Author  Baby
  * @Date 2019-09-16 
  */
-
+@Accessors(chain = true) // 可将对象转换成链式设置值(流的形式)
+@DynamicInsert // 插入或者修改时 字符串为 ''
+@DynamicUpdate
 @Setter
 @Getter
 @ToString
@@ -27,7 +32,7 @@ public class Todotask  implements Serializable {
 	 * 创建时间
 	 */
    	@Column(name = "fin_tas_addtime" )
-	private Date addtime;
+	private LocalDateTime addTime;
 
 	/**
 	 * 编号
@@ -39,7 +44,7 @@ public class Todotask  implements Serializable {
 	 * 删除标记
 	 */
    	@Column(name = "fin_tas_delflag" )
-	private Long delflag;
+	private Long delFlag;
 
 	/**
 	 * 待办事项描述信息
@@ -51,7 +56,7 @@ public class Todotask  implements Serializable {
 	 * 最后修改时间
 	 */
    	@Column(name = "fin_tas_lastmodify" )
-	private Date lastmodify;
+	private LocalDateTime lastModify;
 
 	/**
 	 * 待办事项名称
@@ -83,6 +88,6 @@ public class Todotask  implements Serializable {
    	@Column(name = "pk_fin_tas_id" )
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long todoTasId;
+	private Long id;
 
 }

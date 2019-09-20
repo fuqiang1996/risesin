@@ -2,18 +2,25 @@ package com.risesin.service_api.modules.core.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.Accessors;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 
-import java.util.Date;
 
 /**
  * @Description  EntDebtHistory企业负债历史类
  * @Author  Baby
  * @Date 2019-09-16 
  */
-
+@Accessors(chain = true) // 可将对象转换成链式设置值(流的形式)
+@DynamicInsert // 插入或者修改时 字符串为 ''
+@DynamicUpdate
 @Setter
 @Getter
 @ToString
@@ -27,7 +34,7 @@ public class EntDebtHistory  implements Serializable {
 	 * 创建时间
 	 */
    	@Column(name = "fin_debhis_addtime" )
-	private Date addtime;
+	private LocalDateTime addTime;
 
 	/**
 	 * 编号
@@ -39,7 +46,7 @@ public class EntDebtHistory  implements Serializable {
 	 * 删除标记
 	 */
    	@Column(name = "fin_debhis_delflag" )
-	private Long delflag;
+	private Long delFlag;
 
 	/**
 	 * 是否逾期
@@ -51,7 +58,7 @@ public class EntDebtHistory  implements Serializable {
 	 * 最后修改时间
 	 */
    	@Column(name = "fin_debhis_lastmodify" )
-	private Date lastmodify;
+	private LocalDateTime lastModify;
 
 	/**
 	 * 负债类型
@@ -63,25 +70,25 @@ public class EntDebtHistory  implements Serializable {
 	 * 借款日期
 	 */
    	@Column(name = "fin_debhis_loandate" )
-	private Date debLoanDate;
+	private LocalDateTime debLoanDate;
 
 	/**
 	 * 未结清的款项
 	 */
    	@Column(name = "fin_debhis_nonpayment" )
-	private Double debNonpayment;
+	private BigDecimal debNonpayment;
 
 	/**
 	 * 已结清的款项
 	 */
    	@Column(name = "fin_debhis_paid" )
-	private Double debPaid;
+	private BigDecimal debPaid;
 
 	/**
 	 * 期限
 	 */
    	@Column(name = "fin_debhis_timelimit" )
-	private Date debTimelimit;
+	private LocalDateTime debTimelimit;
 
 	/**
 	 * 融资主体id(企业)
@@ -95,6 +102,6 @@ public class EntDebtHistory  implements Serializable {
    	@Column(name = "pk_fin_debhis_id" )
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long debId;
+	private Long id;
 
 }

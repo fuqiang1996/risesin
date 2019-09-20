@@ -3,10 +3,13 @@ package com.risesin.service_api.modules.entuser.entity;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.Accessors;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDateTime;
 
 /**
  * 企业用户
@@ -15,7 +18,9 @@ import java.util.Date;
  * @Author honey
  * @Date 2019-09-16
  */
-
+@Accessors(chain = true) // 可将对象转换成链式设置值(流的形式)
+@DynamicInsert // 插入或者修改时 字符串为 ''
+@DynamicUpdate
 @Setter
 @Getter
 @ToString
@@ -61,12 +66,12 @@ public class EnterpriseUser implements Serializable {
      * 创建时间
      */
     @Column(name = "ent_addtime")
-    private Date addTime;
+    private LocalDateTime addTime;
     /**
      * 修改时间
      */
     @Column(name = "ent_lastmodify")
-    private Date lastModify;
+    private LocalDateTime lastModify;
     /**
      * 创建人
      */

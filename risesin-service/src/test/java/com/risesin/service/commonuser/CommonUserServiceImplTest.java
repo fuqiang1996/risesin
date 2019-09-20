@@ -8,6 +8,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
@@ -39,8 +40,8 @@ public class CommonUserServiceImplTest extends RisesinServiceApplicationTests {
         CommonUser commonUser = new CommonUser();
         commonUser.setComAccount("公司");
         commonUser.setComCity("北京");
-        commonUser.setComDelFlag(0l);
-        commonUser.setComGmtCreate(new Date());
+        commonUser.setDelFlag(0l);
+        commonUser.setComGmtCreate(LocalDateTime.now());
         commonUser.setComLiveAddress("hunanguangz");
         commonUser.setComPhone("123234");
         commonUserService.add(commonUser);

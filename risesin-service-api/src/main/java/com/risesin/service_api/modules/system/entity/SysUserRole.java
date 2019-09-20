@@ -6,6 +6,9 @@ import java.io.Serializable;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.Accessors;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 
 /**
  * SysUserRole 对象
@@ -14,12 +17,14 @@ import lombok.ToString;
  * @Author Baby
  * @Date 2019-09-16
  */
-
+@Accessors(chain = true)
 @Setter
 @Getter
 @ToString
 @Entity
 @Table(name = "sys_user_role")
+@DynamicInsert
+@DynamicUpdate
 public class SysUserRole implements Serializable {
 
     private static final long serialVersionUID = 4631097168623753841L;

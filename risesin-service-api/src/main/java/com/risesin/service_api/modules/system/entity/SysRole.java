@@ -6,6 +6,9 @@ import java.io.Serializable;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.Accessors;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 
 import java.util.Date;
 
@@ -16,12 +19,14 @@ import java.util.Date;
  * @Author Baby
  * @Date 2019-09-16
  */
-
+@Accessors(chain = true)
 @Setter
 @Getter
 @ToString
 @Entity
 @Table(name = "sys_role")
+@DynamicInsert
+@DynamicUpdate
 public class SysRole implements Serializable {
 
     private static final long serialVersionUID = 2413038774822406361L;
@@ -32,7 +37,7 @@ public class SysRole implements Serializable {
     @Id
     @Column(name = "pk_role_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long pkRoleId;
+    private Long id;
 
     /**
      * 角色名称
@@ -50,7 +55,7 @@ public class SysRole implements Serializable {
      * 创建时间
      */
     @Column(name = "role_addtime")
-    private Date roleAddtime;
+    private Date addTime;
 
     /**
      * 最后修改时间
@@ -74,6 +79,6 @@ public class SysRole implements Serializable {
      * 是否删除  -1：已删除  0：正常
      */
     @Column(name = "role_delflag")
-    private Long roleDelflag;
+    private Long delFlag;
 
 }

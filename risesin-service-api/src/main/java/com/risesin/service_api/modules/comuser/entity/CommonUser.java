@@ -2,19 +2,24 @@ package com.risesin.service_api.modules.comuser.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.Accessors;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 
-import java.util.Date;
 
 /**
  * @Description
  * @Author Baby
  * @Date 2019-09-16
  */
-
+@Accessors(chain = true) // 可将对象转换成链式设置值(流的形式)
+@DynamicInsert // 插入或者修改时 字符串为 ''
+@DynamicUpdate
 @Setter
 @Getter
 @ToString
@@ -65,13 +70,13 @@ public class CommonUser implements Serializable {
      * 创建时间
      */
     @Column(name = "com_gmt_create")
-    private Date comGmtCreate;
+    private LocalDateTime comGmtCreate;
 
     /**
      * 修改时间
      */
     @Column(name = "com_gmt_modified")
-    private Date comGmtModified;
+    private LocalDateTime comGmtModified;
 
     /**
      * 邮箱
@@ -107,7 +112,7 @@ public class CommonUser implements Serializable {
      * 是否删除  -1：已删除  0：正常
      */
     @Column(name = "com_del_flag")
-    private Long comDelFlag;
+    private Long delFlag;
 
     /**
      * 部门ID

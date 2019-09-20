@@ -2,16 +2,14 @@ package com.risesin.service.commonuser;
 
 import com.risesin.service.RisesinServiceApplicationTests;
 import com.risesin.service.modules.commonuser.serviceImpl.ComDeptServiceImpl;
-import com.risesin.service_api.modules.comuser.entity.ComBranchCompany;
 import com.risesin.service_api.modules.comuser.entity.ComDept;
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
-
-import static org.junit.Assert.*;
 
 public class ComDeptServiceImplTest extends RisesinServiceApplicationTests {
 
@@ -33,7 +31,7 @@ public class ComDeptServiceImplTest extends RisesinServiceApplicationTests {
     @Test
     public void add() {
         ComDept comDept = new ComDept();
-        comDept.setAddtime(new Date());
+        comDept.setAddTime(LocalDateTime.now());
         comDept.setBranId("12");
         comDept.setDelFlag(1l);
         comDept.setDeptName("bbbb");
@@ -46,7 +44,7 @@ public class ComDeptServiceImplTest extends RisesinServiceApplicationTests {
     @Test
     public void update() {
         ComDept comDept = new ComDept();
-        comDept.setAddtime(new Date());
+        comDept.setAddTime(LocalDateTime.now());
         comDept.setBranId("12");
         comDept.setDelFlag(1l);
         comDept.setDeptName("aaaa");

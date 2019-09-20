@@ -31,7 +31,7 @@ public class PaymentServiceImplTest extends RisesinServiceApplicationTests {
     @Test
     public void findById() {
         Payment serviceById = paymentService.findById(1L);
-        Assert.assertTrue("根据id查询实体为空",serviceById.getPayId() == 1l);
+        Assert.assertTrue("根据id查询实体为空",serviceById.getId() == 1l);
     }
 
     @Test
@@ -53,7 +53,7 @@ public class PaymentServiceImplTest extends RisesinServiceApplicationTests {
         bean.setPayMethod("3l");
         bean.setOrderId(0l);
         bean.setPayMethod("aaa");
-        bean.setPayId(1l);
+        bean.setId(1l);
         paymentService.update(bean);
 
         Payment byId = paymentService.findById(1l);
@@ -67,7 +67,7 @@ public class PaymentServiceImplTest extends RisesinServiceApplicationTests {
         paymentService.deleteById(1L);
         List<Payment> channelDefinitionList = paymentService.findAll();
         channelDefinitionList.forEach((Payment bean)->{
-            Assert.assertTrue("根据ID删除失败",bean.getPayId() == 1L);
+            Assert.assertTrue("根据ID删除失败",bean.getId() == 1L);
         });
     }
 }

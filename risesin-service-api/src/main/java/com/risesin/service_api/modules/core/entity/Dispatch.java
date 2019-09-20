@@ -2,18 +2,24 @@ package com.risesin.service_api.modules.core.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.time.LocalDateTime;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.Accessors;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 
-import java.util.Date;
 
 /**
  * @Description  Dispatch分单派单类
  * @Author  Baby
  * @Date 2019-09-16 
  */
-
+@Accessors(chain = true) // 可将对象转换成链式设置值(流的形式)
+@DynamicInsert // 插入或者修改时 字符串为 ''
+@DynamicUpdate
 @Setter
 @Getter
 @ToString
@@ -27,7 +33,7 @@ public class Dispatch  implements Serializable {
 	 * 创建时间
 	 */
    	@Column(name = "fin_dispa_addtime" )
-	private Date addtime;
+	private LocalDateTime addTime;
 
 	/**
 	 * 编号
@@ -39,7 +45,7 @@ public class Dispatch  implements Serializable {
 	 * 删除标记
 	 */
    	@Column(name = "fin_dispa_delflag" )
-	private Long delflag;
+	private Long delFlag;
 
 	/**
 	 * 描述信息
@@ -51,7 +57,7 @@ public class Dispatch  implements Serializable {
 	 * 最后修改日期
 	 */
    	@Column(name = "fin_dispa_lastmodify" )
-	private Date lastmodify;
+	private LocalDateTime lastModify;
 
 	/**
 	 * 管理权（通用(助贷机构)用户id）
@@ -77,6 +83,6 @@ public class Dispatch  implements Serializable {
    	@Column(name = "pk_fin_dispa_id" )
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long dispatchId;
+	private Long id;
 
 }
