@@ -7,6 +7,9 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.Accessors;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 
 import java.util.Date;
 
@@ -18,11 +21,14 @@ import java.util.Date;
  * @Date 2019-09-16
  */
 
+@Accessors(chain = true)
 @Setter
 @Getter
 @ToString
 @Entity
 @Table(name = "ext_sys_user", schema = "risesin", catalog = "")
+@DynamicInsert
+@DynamicUpdate
 public class ExtSysUser implements Serializable {
 
     private static final long serialVersionUID = 5754605881869413331L;

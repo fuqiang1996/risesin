@@ -6,6 +6,9 @@ import java.io.Serializable;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.Accessors;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 
 import java.util.Date;
 
@@ -16,12 +19,14 @@ import java.util.Date;
  * @Author Baby
  * @Date 2019-09-16
  */
-
+@Accessors(chain = true)
 @Setter
 @Getter
 @ToString
 @Entity
 @Table(name = "sys_log")
+@DynamicInsert
+@DynamicUpdate
 public class SysLog implements Serializable {
 
     private static final long serialVersionUID = 2005545073237699356L;
@@ -32,7 +37,7 @@ public class SysLog implements Serializable {
     @Id
     @Column(name = "pk_log_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long pkLogId;
+    private Long id;
 
     /**
      * 平台用户id
@@ -80,6 +85,6 @@ public class SysLog implements Serializable {
      * 创建时间
      */
     @Column(name = "log_addtime")
-    private Date logAddtime;
+    private Date addTime;
 
 }

@@ -6,6 +6,9 @@ import java.io.Serializable;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.Accessors;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 
 import java.util.Date;
 
@@ -16,12 +19,14 @@ import java.util.Date;
  * @Author Baby
  * @Date 2019-09-16
  */
-
+@Accessors(chain = true)
 @Setter
 @Getter
 @ToString
 @Entity
 @Table(name = "sys_user")
+@DynamicInsert
+@DynamicUpdate
 public class SysUser implements Serializable {
 
     private static final long serialVersionUID = 7730308612614635076L;
@@ -60,13 +65,13 @@ public class SysUser implements Serializable {
      * 创建时间
      */
     @Column(name = "sys_gmt_create")
-    private Date gmtCreate;
+    private Date addTime;
 
     /**
      * 修改时间
      */
     @Column(name = "sys_gmt_modified")
-    private Date gmtModified;
+    private Date lastModify;
 
     /**
      * 邮箱

@@ -7,6 +7,9 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.Accessors;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 
 import java.util.Date;
 
@@ -18,12 +21,15 @@ import java.util.Date;
  * @Date 2019-09-16
  */
 
+@Accessors(chain = true)
 @Setter
 @Getter
 @ToString
 @Entity
 @Data
 @Table(name = "sys_dept")
+@DynamicInsert
+@DynamicUpdate
 public class SysDept implements Serializable {
 
     private static final long serialVersionUID = 8449633740536463231L;
