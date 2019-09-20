@@ -6,6 +6,8 @@ import java.io.Serializable;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 
 /**
  * PlanFinPro 对象
@@ -19,6 +21,8 @@ import lombok.ToString;
 @Getter
 @ToString
 @Entity
+@DynamicInsert
+@DynamicUpdate
 @Table(name = "act_plan_fin_pro")
 public class ActPlanFinPro implements Serializable {
 
@@ -34,7 +38,7 @@ public class ActPlanFinPro implements Serializable {
      * 方案ID
      */
     @Column(name = "fk_act_pro_id")
-    private Long proId;
+    private Long actProId;
 
     /**
      * 主键ID：自动增长

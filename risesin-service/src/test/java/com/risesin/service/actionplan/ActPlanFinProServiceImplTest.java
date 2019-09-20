@@ -4,32 +4,58 @@ import com.risesin.service.RisesinServiceApplicationTests;
 import com.risesin.service.modules.actionplan.serviceimpl.ActPlanFinProServiceImpl;
 import com.risesin.service_api.modules.actionPlan.entity.ActPlanFinPro;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-/**
- * ActPlanFinProServiceImplTest 测试类
- */
+import java.util.List;
+
 public class ActPlanFinProServiceImplTest extends RisesinServiceApplicationTests {
 
     @Autowired
     private ActPlanFinProServiceImpl actPlanFinProService;
 
+    private ActPlanFinPro actPlanFinPro;
+
+    @Before
+    public void setUp() throws Exception {
+        actPlanFinPro = new ActPlanFinPro();
+    }
+
     @Test
-    public void testActPlan_add(){
+    public void findAll() {
+        List<ActPlanFinPro> all = actPlanFinProService.findAll();
+        Assert.assertNotNull(all);
+        System.out.println(all);
+    }
 
-        ActPlanFinPro actPlanFinPro = new ActPlanFinPro();
-        actPlanFinPro.setFinProId(1L);
-        actPlanFinPro.setProId(2L);
+    @Test
+    public void findById() {
+        ActPlanFinPro byId = actPlanFinProService.findById(26L);
+        Assert.assertNotNull(byId);
+        System.out.println(byId);
+    }
 
-        actPlanFinProService.add(actPlanFinPro);
+    @Test
+    public void add() {
+//        actPlanFinPro.setFinProId(111209L);
+//        actPlanFinPro.setProId(39L);
         actPlanFinProService.add(actPlanFinPro);
     }
 
     @Test
-    public void testActPlan_query(){
-        ActPlanFinPro actPlanFinPro = actPlanFinProService.findById(1L);
-        Assert.assertNotNull("根据ID查询不为空",actPlanFinPro);
+    public void update() {
+        actPlanFinPro.setId(26L);
+        actPlanFinPro.setFinProId(1111111L);
+        actPlanFinPro.setActProId(11111L);
+        actPlanFinProService.add(actPlanFinPro);
+    }
+
+
+    @Test
+    public void deleteById() {
+//        actPlanFinProService.deleteById(26L);
+        actPlanFinProService.deleteById(27L);
 
     }
 }
