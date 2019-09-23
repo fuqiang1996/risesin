@@ -7,7 +7,6 @@ import lombok.ToString;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
-import
 
 /**
  * @Description  LoanagencyComment助贷机构评价类

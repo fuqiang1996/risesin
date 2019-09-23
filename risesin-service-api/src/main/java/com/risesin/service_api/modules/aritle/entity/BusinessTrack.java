@@ -2,6 +2,7 @@ package com.risesin.service_api.modules.aritle.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -9,7 +10,6 @@ import lombok.ToString;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
-import
 
 /**
  * 业务追踪
@@ -72,13 +72,13 @@ public class BusinessTrack implements Serializable {
      * 离开时间
      */
     @Column(name = "bus_departure_time")
-    private Date departureTime;
+    private LocalDateTime departureTime;
 
     /**
      * 访问时间
      */
     @Column(name = "bus_accesstime")
-    private Date accessTime;
+    private LocalDateTime accessTime;
 
     /**
      * 是否删除  -1：已删除  0：正常
