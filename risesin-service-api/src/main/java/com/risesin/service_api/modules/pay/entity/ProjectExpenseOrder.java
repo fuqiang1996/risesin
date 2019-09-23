@@ -54,10 +54,10 @@ public class ProjectExpenseOrder  implements Serializable {
 	private Long expTypeId;
 
 	/**
-	 * 融资项目id
+	 * 融资方案id（整个项目的具体方案）
 	 */
-   	@Column(name = "fk_pro_id" )
-	private Long projectId;
+   	@Column(name = "fk_act_pla_id" )
+	private Long actCaseId;
 
 	/**
 	 * 主键
