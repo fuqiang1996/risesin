@@ -11,7 +11,7 @@ import lombok.experimental.Accessors;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 /**
  * 平台部门实体
@@ -76,12 +76,12 @@ public class SysDept implements Serializable {
      * 创建时间
      */
     @Column(name = "dept_addtime")
-    private Date addTime;
+    private LocalDateTime addTime;
 
     /**
      * 修改时间
      */
     @Column(name = "dept_lastmodify")
-    private Date lastModify;
+    private LocalDateTime lastModify;
 
 }

@@ -1,5 +1,6 @@
 package com.risesin.service.modules.core.serviceImpl;
 
+import com.risesin.service.baseService.SingletonParent;
 import com.risesin.service.modules.TopInterface;
 import com.risesin.service_api.dao.core.TodotaskDao;
 import com.risesin.service_api.modules.core.entity.Todotask;
@@ -24,7 +25,7 @@ import java.util.Map;
  *
  */
 @Service
-public class TodotaskServiceImpl implements TopInterface<Todotask> {
+public class TodotaskServiceImpl extends SingletonParent implements TopInterface<Todotask> {
 
 	@Autowired
 	private TodotaskDao todotaskDao;

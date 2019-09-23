@@ -1,5 +1,6 @@
 package com.risesin.service.modules.core.serviceImpl;
 
+import com.risesin.service.baseService.SingletonParent;
 import com.risesin.service.modules.TopInterface;
 import com.risesin.service_api.dao.core.EnterpriseAtomicityInfoDao;
 import com.risesin.service_api.modules.core.entity.EnterpriseAtomicityInfo;
@@ -24,7 +25,7 @@ import java.util.Map;
  *
  */
 @Service
-public class EnterpriseAtomicityInfoServiceImpl implements TopInterface<EnterpriseAtomicityInfo> {
+public class EnterpriseAtomicityInfoServiceImpl  extends SingletonParent implements TopInterface<EnterpriseAtomicityInfo> {
 
 	@Autowired
 	private EnterpriseAtomicityInfoDao enterpriseAtomicityInfoDao;

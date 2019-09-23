@@ -1,5 +1,6 @@
 package com.risesin.service.modules.core.serviceImpl;
 
+import com.risesin.service.baseService.SingletonParent;
 import com.risesin.service.modules.TopInterface;
 import com.risesin.service_api.dao.core.PlanChildcaseDao;
 import com.risesin.service_api.modules.core.entity.PlanChildcase;
@@ -24,7 +25,7 @@ import java.util.Map;
  *
  */
 @Service
-public class PlanChildcaseServiceImpl implements TopInterface<PlanChildcase> {
+public class PlanChildcaseServiceImpl extends SingletonParent implements TopInterface<PlanChildcase> {
 
 	@Autowired
 	private PlanChildcaseDao childcaseDao;

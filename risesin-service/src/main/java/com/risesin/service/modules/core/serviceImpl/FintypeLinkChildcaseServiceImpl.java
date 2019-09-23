@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import com.risesin.service.baseService.SingletonParent;
 import com.risesin.service.modules.TopInterface;
 import com.risesin.service_api.dao.core.FintypeLinkChildcaseDao;
 import com.risesin.service_api.modules.core.entity.FintypeLinkChildcase;
@@ -26,7 +27,7 @@ import javax.persistence.criteria.Root;
  * @author honey
  */
 @Service
-public class FintypeLinkChildcaseServiceImpl implements TopInterface<FintypeLinkChildcase> {
+public class FintypeLinkChildcaseServiceImpl extends SingletonParent implements TopInterface<FintypeLinkChildcase> {
     private final Logger LOG = LogManager.getLogger(this.getClass());
 
     @Autowired

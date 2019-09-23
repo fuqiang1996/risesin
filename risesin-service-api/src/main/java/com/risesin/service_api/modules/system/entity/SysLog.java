@@ -10,7 +10,7 @@ import lombok.experimental.Accessors;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 /**
  * 日志对象
@@ -85,6 +85,6 @@ public class SysLog implements Serializable {
      * 创建时间
      */
     @Column(name = "log_addtime")
-    private Date addTime;
+    private LocalDateTime addTime;
 
 }

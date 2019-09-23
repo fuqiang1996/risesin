@@ -1,5 +1,6 @@
 package com.risesin.service.modules.core.serviceImpl;
 
+import com.risesin.service.baseService.SingletonParent;
 import com.risesin.service.modules.TopInterface;
 import com.risesin.service_api.dao.core.TasLogDao;
 import com.risesin.service_api.modules.core.entity.TasLog;
@@ -24,7 +25,7 @@ import java.util.Map;
  *
  */
 @Service
-public class TasLogServiceImpl implements TopInterface<TasLog> {
+public class TasLogServiceImpl extends SingletonParent implements TopInterface<TasLog> {
 
 	@Autowired
 	private TasLogDao tasLogDao;

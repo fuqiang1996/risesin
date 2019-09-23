@@ -10,7 +10,7 @@ import lombok.experimental.Accessors;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 /**
  * 菜单对象
@@ -79,13 +79,13 @@ public class SysMenu implements Serializable {
      * 创建时间
      */
     @Column(name = "menu_addtime")
-    private Date addTime;
+    private LocalDateTime addTime;
 
     /**
      * 修改时间
      */
     @Column(name = "menu_lastmodified")
-    private Date lastModify;
+    private LocalDateTime lastModify;
 
     /**
      * 是否删除  -1：已删除  0：正常

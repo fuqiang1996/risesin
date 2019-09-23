@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import com.risesin.service.baseService.SingletonParent;
 import com.risesin.service.modules.TopInterface;
 import com.risesin.service_api.dao.core.ExcludeFinancingTypeDao;
 import com.risesin.service_api.modules.core.entity.ExcludeFinancingType;
@@ -26,7 +27,7 @@ import javax.persistence.criteria.Root;
  * @author honey
  */
 @Service
-public class ExcludeFinancingTypeServiceImpl implements TopInterface<ExcludeFinancingType> {
+public class ExcludeFinancingTypeServiceImpl extends SingletonParent implements TopInterface<ExcludeFinancingType> {
     private final Logger LOG = LogManager.getLogger(this.getClass());
 
     @Autowired

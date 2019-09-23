@@ -1,5 +1,6 @@
 package com.risesin.service.modules.product.serviceImpl;
 
+import com.risesin.service.baseService.SingletonParent;
 import com.risesin.service.modules.TopInterface;
 import com.risesin.service_api.dao.product.ProductDao;
 import com.risesin.service_api.modules.product.entity.Product;
@@ -24,7 +25,7 @@ import java.util.Map;
  *
  */
 @Service
-public class ProductServiceImpl implements TopInterface<Product> {
+public class ProductServiceImpl extends SingletonParent implements TopInterface<Product> {
 
 	@Autowired
 	private ProductDao productDao;

@@ -1,5 +1,6 @@
 package com.risesin.service.modules.pay.serviceImpl;
 
+import com.risesin.service.baseService.SingletonParent;
 import com.risesin.service.modules.TopInterface;
 import com.risesin.service_api.dao.pay.ServiceExpenseOrderDao;
 import com.risesin.service_api.modules.pay.entity.ServiceExpenseOrder;
@@ -24,7 +25,7 @@ import java.util.Map;
  *
  */
 @Service
-public class ServiceExpenseOrderServiceImpl implements TopInterface<ServiceExpenseOrder> {
+public class ServiceExpenseOrderServiceImpl extends SingletonParent implements TopInterface<ServiceExpenseOrder> {
 
 	@Autowired
 	private ServiceExpenseOrderDao serviceExpenseOrderDao;
