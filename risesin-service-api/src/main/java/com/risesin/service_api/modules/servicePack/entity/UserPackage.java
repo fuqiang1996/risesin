@@ -10,7 +10,7 @@ import lombok.experimental.Accessors;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 /**
  * 用户包
@@ -43,7 +43,7 @@ public class UserPackage implements Serializable {
      * 发布时间
      */
     @Column(name = "user_pack_addtime")
-    private Date addTime;
+    private LocalDateTime addTime;
 
     /**
      * 商品编码:随机生成的一个字符串
@@ -73,7 +73,7 @@ public class UserPackage implements Serializable {
      * 最后修改时间
      */
     @Column(name = "user_pack_lastmodify")
-    private Date lastModify;
+    private LocalDateTime lastModify;
 
     /**
      * 用户包名称排序

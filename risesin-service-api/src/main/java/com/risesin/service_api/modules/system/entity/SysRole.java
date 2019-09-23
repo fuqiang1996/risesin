@@ -10,7 +10,7 @@ import lombok.experimental.Accessors;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 /**
  * 角色实体
@@ -55,13 +55,13 @@ public class SysRole implements Serializable {
      * 创建时间
      */
     @Column(name = "role_addtime")
-    private Date addTime;
+    private LocalDateTime addTime;
 
     /**
      * 最后修改时间
      */
     @Column(name = "role_lastmodified")
-    private Date roleLastmodified;
+    private LocalDateTime roleLastmodified;
 
     /**
      * 创建用户id

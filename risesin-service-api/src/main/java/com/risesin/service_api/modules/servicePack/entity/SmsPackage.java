@@ -10,7 +10,7 @@ import lombok.experimental.Accessors;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 /**
  * 短信包
@@ -91,7 +91,7 @@ public class SmsPackage implements Serializable {
      * 发布时间
      */
     @Column(name = "sms_pack_addtime")
-    private Date addTime;
+    private LocalDateTime addTime;
 
     /**
      * 短信包编码：随机生成的一个字符串
@@ -109,6 +109,6 @@ public class SmsPackage implements Serializable {
      * 最后修改时间
      */
     @Column(name = "sms_pack_lastmidify")
-    private Date lastMidify;
+    private LocalDateTime lastMidify;
 
 }

@@ -3,7 +3,6 @@ package com.risesin.service_api.modules.system.entity;
 import javax.persistence.*;
 import java.io.Serializable;
 
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -11,7 +10,7 @@ import lombok.experimental.Accessors;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 /**
  * 系统用户拓展实体
@@ -62,7 +61,7 @@ public class ExtSysUser implements Serializable {
      * 创建时间
      */
     @Column(name = "ext_sys_user_addtime")
-    private Date addTime;
+    private LocalDateTime addTime;
 
 
 }

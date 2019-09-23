@@ -9,7 +9,7 @@ import lombok.experimental.Accessors;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 /**
  * @Description  ProductAuth产品代理类
@@ -29,10 +29,18 @@ public class ProductAuth  implements Serializable {
 	private static final long serialVersionUID =  6918880329740580610L;
 
 	/**
+	 * 主键
+	 */
+	@Column(name = "pk_fin_pro_aut_id" )
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+
+	/**
 	 * 创建时间
 	 */
    	@Column(name = "fin_pro_aut_addtime")
-	private Date addTime;
+	private LocalDateTime addTime;
 
 	/**
 	 * 编号
@@ -50,7 +58,7 @@ public class ProductAuth  implements Serializable {
 	 * 最后修改时间
 	 */
    	@Column(name = "fin_pro_aut_lastmodify" )
-	private Date lastModify;
+	private LocalDateTime lastModify;
 
 	/**
 	 * 代理费率
@@ -75,13 +83,5 @@ public class ProductAuth  implements Serializable {
 	 */
    	@Column(name = "fk_sys_usr_id" )
 	private Long sysUserId;
-
-	/**
-	 * 主键
-	 */
-   	@Column(name = "pk_fin_pro_aut_id" )
-    @Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
 
 }
