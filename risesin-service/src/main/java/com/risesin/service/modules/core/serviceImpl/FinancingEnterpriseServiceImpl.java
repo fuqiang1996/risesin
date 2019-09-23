@@ -1,5 +1,6 @@
 package com.risesin.service.modules.core.serviceImpl;
 
+import com.risesin.service.baseService.SingletonParent;
 import com.risesin.service.modules.TopInterface;
 import com.risesin.service_api.dao.core.FinancingEnterpriseDao;
 import com.risesin.service_api.modules.core.entity.FinancingEnterprise;
@@ -24,7 +25,7 @@ import java.util.Map;
  *
  */
 @Service
-public class FinancingEnterpriseServiceImpl implements TopInterface<FinancingEnterprise> {
+public class FinancingEnterpriseServiceImpl extends SingletonParent implements TopInterface<FinancingEnterprise> {
 
 	@Autowired
 	private FinancingEnterpriseDao enterpriseDao;

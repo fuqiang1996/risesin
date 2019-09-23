@@ -1,5 +1,6 @@
 package com.risesin.service.modules.core.serviceImpl;
 
+import com.risesin.service.baseService.SingletonParent;
 import com.risesin.service.modules.TopInterface;
 import com.risesin.service_api.dao.core.DispatchDao;
 import com.risesin.service_api.modules.core.entity.Dispatch;
@@ -24,7 +25,7 @@ import java.util.Map;
  *
  */
 @Service
-public class DispatchServiceImpl implements TopInterface<Dispatch> {
+public class DispatchServiceImpl extends SingletonParent implements TopInterface<Dispatch> {
 
 	@Autowired
 	private DispatchDao dispatchDao;

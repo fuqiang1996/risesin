@@ -1,5 +1,6 @@
 package com.risesin.service.modules.pay.serviceImpl;
 
+import com.risesin.service.baseService.SingletonParent;
 import com.risesin.service.modules.TopInterface;
 import com.risesin.service_api.dao.pay.PaymentDao;
 import com.risesin.service_api.modules.pay.entity.Payment;
@@ -24,7 +25,7 @@ import java.util.Map;
  *
  */
 @Service
-public class PaymentServiceImpl implements TopInterface<Payment> {
+public class PaymentServiceImpl  extends SingletonParent implements TopInterface<Payment> {
 
 	@Autowired
 	private PaymentDao paymentDao;
