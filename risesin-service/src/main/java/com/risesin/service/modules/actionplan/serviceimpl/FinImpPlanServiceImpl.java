@@ -1,5 +1,6 @@
 package com.risesin.service.modules.actionplan.serviceimpl;
 
+import com.risesin.service.baseService.SingletonParent;
 import com.risesin.service.modules.TopInterface;
 import com.risesin.service_api.dao.actionPlan.FinImpPlanDao;
 import com.risesin.service_api.modules.actionPlan.entity.FinImpPlan;
@@ -22,7 +23,7 @@ import java.util.Map;
  * @author honey
  */
 @Service
-public class FinImpPlanServiceImpl implements TopInterface<FinImpPlan> {
+public class FinImpPlanServiceImpl extends SingletonParent implements TopInterface<FinImpPlan> {
     private final Logger LOG = LogManager.getLogger(this.getClass());
 
     @Autowired

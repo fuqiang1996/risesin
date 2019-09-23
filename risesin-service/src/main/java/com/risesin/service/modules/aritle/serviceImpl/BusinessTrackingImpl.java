@@ -1,5 +1,6 @@
 package com.risesin.service.modules.aritle.serviceImpl;
 
+import com.risesin.service.baseService.SingletonParent;
 import com.risesin.service.modules.TopInterface;
 import com.risesin.service_api.dao.aritle.BusinessTrackDao;
 import com.risesin.service_api.modules.aritle.entity.BusinessTrack;
@@ -13,7 +14,7 @@ import java.util.List;
 import java.util.Map;
 
 @Service
-public class BusinessTrackingImpl implements TopInterface<BusinessTrack> {
+public class BusinessTrackingImpl extends SingletonParent implements TopInterface<BusinessTrack> {
 
 
     @Autowired

@@ -9,6 +9,7 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
+import com.risesin.service.baseService.SingletonParent;
 import com.risesin.service.modules.TopInterface;
 import com.risesin.service_api.dao.base.DynamicTypeDao;
 import com.risesin.service_api.modules.base.entity.DynamicType;
@@ -25,7 +26,7 @@ import org.springframework.stereotype.Service;
  *
  */
 @Service
-public class DynamicTypeServiceImpl implements TopInterface<DynamicType> {
+public class DynamicTypeServiceImpl extends SingletonParent implements TopInterface<DynamicType> {
 
 	@Autowired
 	private DynamicTypeDao dynamicTypeDao;
