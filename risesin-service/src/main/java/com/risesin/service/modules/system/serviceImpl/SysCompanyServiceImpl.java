@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import com.risesin.service.baseService.SingletonParent;
 import com.risesin.service.modules.TopInterface;
 import com.risesin.service_api.dao.sysuser.SysCompanyDao;
 import com.risesin.service_api.modules.system.entity.SysCompany;
@@ -26,7 +27,7 @@ import javax.persistence.criteria.Root;
  * @author honey
  */
 @Service
-public class SysCompanyServiceImpl implements TopInterface<SysCompany> {
+public class SysCompanyServiceImpl extends SingletonParent implements TopInterface<SysCompany> {
     private final Logger LOG = LogManager.getLogger(this.getClass());
 
     @Autowired

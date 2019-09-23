@@ -1,5 +1,6 @@
 package com.risesin.service.modules.product.serviceImpl;
 
+import com.risesin.service.baseService.SingletonParent;
 import com.risesin.service.modules.TopInterface;
 import com.risesin.service_api.dao.product.ProductAuthDao;
 import com.risesin.service_api.modules.product.entity.ProductAuth;
@@ -24,7 +25,7 @@ import java.util.Map;
  *
  */
 @Service
-public class ProductAuthService implements TopInterface<ProductAuth> {
+public class ProductAuthService extends SingletonParent implements TopInterface<ProductAuth> {
 
 	@Autowired
 	private ProductAuthDao authDao;

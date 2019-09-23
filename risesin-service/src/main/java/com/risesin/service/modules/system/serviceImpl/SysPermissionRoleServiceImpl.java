@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import com.risesin.service.baseService.SingletonParent;
 import com.risesin.service.modules.TopInterface;
 import com.risesin.service_api.dao.sysuser.ExtSysUserDao;
 import com.risesin.service_api.dao.sysuser.SysPermissionRoleDao;
@@ -28,7 +29,7 @@ import javax.persistence.criteria.Root;
  * @author honey
  */
 @Service
-public class SysPermissionRoleServiceImpl implements TopInterface<SysPermissionRole> {
+public class SysPermissionRoleServiceImpl extends SingletonParent implements TopInterface<SysPermissionRole> {
     private final Logger LOG = LogManager.getLogger(this.getClass());
 
     @Autowired
