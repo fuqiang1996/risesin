@@ -1,19 +1,16 @@
 package com.risesin.service.modules.aritle.serviceImpl;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Expression;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
-import javax.persistence.criteria.Selection;
 
 import com.risesin.service.baseService.SingletonParent;
-import com.risesin.service.modules.TopInterface;
+import com.risesin.service.baseService.BaseInterface;
 import com.risesin.service_api.dao.aritle.ArticleDao;
 import com.risesin.service_api.modules.aritle.entity.Article;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +26,7 @@ import org.springframework.stereotype.Service;
  * @author Administrator
  */
 @Service
-public class ArticleServiceImpl extends SingletonParent implements TopInterface<Article> {
+public class ArticleServiceImpl extends SingletonParent implements BaseInterface<Article> {
 
     @Autowired
     private ArticleDao articleDao;

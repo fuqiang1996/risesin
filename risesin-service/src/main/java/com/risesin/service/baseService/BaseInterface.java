@@ -1,4 +1,4 @@
-package com.risesin.service.modules;
+package com.risesin.service.baseService;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.jpa.domain.Specification;
@@ -17,7 +17,7 @@ import java.util.Map;
  * @DESCRIPTION 顶级接口, 作为每个service的实现父级接口
  * @since 1.0.0
  */
-public interface TopInterface<T> {
+public interface BaseInterface<T> {
 
     /**
      * 查找所有

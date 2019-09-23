@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.risesin.service.baseService.SingletonParent;
-import com.risesin.service.modules.TopInterface;
+import com.risesin.service.baseService.BaseInterface;
 import com.risesin.service_api.dao.core.ChildcaseLinEntatoinfoDao;
 import com.risesin.service_api.modules.core.entity.ChildcaseLinEntatoinfo;
 import org.apache.logging.log4j.LogManager;
@@ -27,7 +27,7 @@ import javax.persistence.criteria.Root;
  * @author honey
  */
 @Service
-public class ChildcaseLinEntatoinfoServiceImpl  extends SingletonParent implements TopInterface<ChildcaseLinEntatoinfo> {
+public class ChildcaseLinEntatoinfoServiceImpl  extends SingletonParent implements BaseInterface<ChildcaseLinEntatoinfo> {
     private final Logger LOG = LogManager.getLogger(this.getClass());
 
     @Autowired

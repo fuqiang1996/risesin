@@ -1,7 +1,7 @@
 package com.risesin.service.modules.core.serviceImpl;
 
 import com.risesin.service.baseService.SingletonParent;
-import com.risesin.service.modules.TopInterface;
+import com.risesin.service.baseService.BaseInterface;
 import com.risesin.service_api.dao.core.FinancingPlanDao;
 import com.risesin.service_api.modules.core.entity.FinancingPlan;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +25,7 @@ import java.util.Map;
  *
  */
 @Service
-public class FinancingPlanServiceImpl extends SingletonParent implements TopInterface<FinancingPlan> {
+public class FinancingPlanServiceImpl extends SingletonParent implements BaseInterface<FinancingPlan> {
 
 	@Autowired
 	private FinancingPlanDao planDao;

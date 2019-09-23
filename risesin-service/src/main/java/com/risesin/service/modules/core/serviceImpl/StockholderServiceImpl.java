@@ -10,7 +10,7 @@ import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
 import com.risesin.service.baseService.SingletonParent;
-import com.risesin.service.modules.TopInterface;
+import com.risesin.service.baseService.BaseInterface;
 import com.risesin.service_api.dao.core.StockholderDao;
 import com.risesin.service_api.modules.core.entity.Stockholder;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +28,7 @@ import org.springframework.stereotype.Service;
  *
  */
 @Service
-public class StockholderServiceImpl extends SingletonParent implements TopInterface<Stockholder> {
+public class StockholderServiceImpl extends SingletonParent implements BaseInterface<Stockholder> {
 
 	@Autowired
 	private StockholderDao stockholderDao;

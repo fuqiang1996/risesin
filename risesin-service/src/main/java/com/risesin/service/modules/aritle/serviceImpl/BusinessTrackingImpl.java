@@ -1,20 +1,18 @@
 package com.risesin.service.modules.aritle.serviceImpl;
 
 import com.risesin.service.baseService.SingletonParent;
-import com.risesin.service.modules.TopInterface;
+import com.risesin.service.baseService.BaseInterface;
 import com.risesin.service_api.dao.aritle.BusinessTrackDao;
 import com.risesin.service_api.modules.aritle.entity.BusinessTrack;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Map;
 
 @Service
-public class BusinessTrackingImpl extends SingletonParent implements TopInterface<BusinessTrack> {
+public class BusinessTrackingImpl extends SingletonParent implements BaseInterface<BusinessTrack> {
 
 
     @Autowired

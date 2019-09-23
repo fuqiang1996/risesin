@@ -1,7 +1,7 @@
 package com.risesin.service.modules.pay.serviceImpl;
 
 import com.risesin.service.baseService.SingletonParent;
-import com.risesin.service.modules.TopInterface;
+import com.risesin.service.baseService.BaseInterface;
 import com.risesin.service_api.dao.pay.ServiceExpenseOrderDao;
 import com.risesin.service_api.modules.pay.entity.ServiceExpenseOrder;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +25,7 @@ import java.util.Map;
  *
  */
 @Service
-public class ServiceExpenseOrderServiceImpl extends SingletonParent implements TopInterface<ServiceExpenseOrder> {
+public class ServiceExpenseOrderServiceImpl extends SingletonParent implements BaseInterface<ServiceExpenseOrder> {
 
 	@Autowired
 	private ServiceExpenseOrderDao serviceExpenseOrderDao;

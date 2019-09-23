@@ -10,7 +10,7 @@ import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
 import com.risesin.service.baseService.SingletonParent;
-import com.risesin.service.modules.TopInterface;
+import com.risesin.service.baseService.BaseInterface;
 import com.risesin.service_api.dao.comment.LoanAgencyCommentDao;
 import com.risesin.service_api.modules.comment.entity.LoanAgencyComment;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
  * @author Darling
  */
 @Service
-public class LoanagencyCommentServiceImpl extends SingletonParent implements TopInterface<LoanAgencyComment> {
+public class LoanagencyCommentServiceImpl extends SingletonParent implements BaseInterface<LoanAgencyComment> {
 
     @Autowired
     private LoanAgencyCommentDao commentDao;

@@ -1,7 +1,7 @@
 package com.risesin.service.modules.core.serviceImpl;
 
 import com.risesin.service.baseService.SingletonParent;
-import com.risesin.service.modules.TopInterface;
+import com.risesin.service.baseService.BaseInterface;
 import com.risesin.service_api.dao.core.LegalRepresentativeDao;
 import com.risesin.service_api.modules.core.entity.LegalRepresentative;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +25,7 @@ import java.util.Map;
  *
  */
 @Service
-public class LegalRepresentativeServiceImpl extends SingletonParent implements TopInterface<LegalRepresentative> {
+public class LegalRepresentativeServiceImpl extends SingletonParent implements BaseInterface<LegalRepresentative> {
 
 	@Autowired
 	private LegalRepresentativeDao legalRepresentativeDao;

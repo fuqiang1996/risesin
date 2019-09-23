@@ -5,11 +5,9 @@ import java.util.List;
 import java.util.Map;
 
 import com.risesin.service.baseService.SingletonParent;
-import com.risesin.service.modules.TopInterface;
+import com.risesin.service.baseService.BaseInterface;
 import com.risesin.service_api.dao.servicePack.UserPackageDao;
-import com.risesin.service_api.dao.sysuser.ExtSysUserDao;
 import com.risesin.service_api.modules.servicePack.entity.UserPackage;
-import com.risesin.service_api.modules.system.entity.ExtSysUser;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +27,7 @@ import javax.persistence.criteria.Root;
  * @author honey
  */
 @Service
-public class UserPackageServiceImpl extends SingletonParent implements TopInterface<UserPackage> {
+public class UserPackageServiceImpl extends SingletonParent implements BaseInterface<UserPackage> {
     private final Logger LOG = LogManager.getLogger(this.getClass());
 
     @Autowired

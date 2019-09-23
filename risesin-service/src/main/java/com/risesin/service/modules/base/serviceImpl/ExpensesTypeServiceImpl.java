@@ -10,7 +10,7 @@ import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
 import com.risesin.service.baseService.SingletonParent;
-import com.risesin.service.modules.TopInterface;
+import com.risesin.service.baseService.BaseInterface;
 import com.risesin.service_api.dao.base.ExpensesTypeDao;
 import com.risesin.service_api.modules.base.entity.ExpensesType;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +28,7 @@ import org.springframework.stereotype.Service;
  *
  */
 @Service
-public class ExpensesTypeServiceImpl extends SingletonParent implements TopInterface<ExpensesType> {
+public class ExpensesTypeServiceImpl extends SingletonParent implements BaseInterface<ExpensesType> {
 
 	@Autowired
 	private ExpensesTypeDao expensesTypeDao;

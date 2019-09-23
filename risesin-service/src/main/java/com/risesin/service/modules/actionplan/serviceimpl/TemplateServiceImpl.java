@@ -1,7 +1,7 @@
 package com.risesin.service.modules.actionplan.serviceimpl;
 
 import com.risesin.service.baseService.SingletonParent;
-import com.risesin.service.modules.TopInterface;
+import com.risesin.service.baseService.BaseInterface;
 import com.risesin.service_api.dao.actionPlan.TemplateDao;
 import com.risesin.service_api.modules.actionPlan.entity.Template;
 import org.apache.logging.log4j.LogManager;
@@ -26,7 +26,7 @@ import java.util.Map;
  * @author honey
  */
 @Service
-public class TemplateServiceImpl extends SingletonParent implements TopInterface<Template> {
+public class TemplateServiceImpl extends SingletonParent implements BaseInterface<Template> {
     private final Logger LOG = LogManager.getLogger(this.getClass());
 
     @Autowired

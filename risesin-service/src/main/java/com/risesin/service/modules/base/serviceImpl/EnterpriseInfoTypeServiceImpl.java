@@ -1,7 +1,7 @@
 package com.risesin.service.modules.base.serviceImpl;
 
 import com.risesin.service.baseService.SingletonParent;
-import com.risesin.service.modules.TopInterface;
+import com.risesin.service.baseService.BaseInterface;
 import com.risesin.service_api.dao.base.EnterpriseInfoTypeDao;
 import com.risesin.service_api.modules.base.entity.EnterpriseInfoType;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +25,7 @@ import java.util.Map;
  *
  */
 @Service
-public class EnterpriseInfoTypeServiceImpl extends SingletonParent implements TopInterface<EnterpriseInfoType> {
+public class EnterpriseInfoTypeServiceImpl extends SingletonParent implements BaseInterface<EnterpriseInfoType> {
 
 	@Autowired
 	private EnterpriseInfoTypeDao enterpriseInfoTypeDao;

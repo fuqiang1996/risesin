@@ -1,7 +1,7 @@
 package com.risesin.service.modules.core.serviceImpl;
 
 import com.risesin.service.baseService.SingletonParent;
-import com.risesin.service.modules.TopInterface;
+import com.risesin.service.baseService.BaseInterface;
 import com.risesin.service_api.dao.core.EntDebtHistoryDao;
 import com.risesin.service_api.modules.core.entity.EntDebtHistory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +25,7 @@ import java.util.Map;
  *
  */
 @Service
-public class EntDebtHistoryServiceImpl extends SingletonParent implements TopInterface<EntDebtHistory> {
+public class EntDebtHistoryServiceImpl extends SingletonParent implements BaseInterface<EntDebtHistory> {
 
 	@Autowired
 	private EntDebtHistoryDao debtHistoryDao;

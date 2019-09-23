@@ -5,10 +5,8 @@ import java.util.List;
 import java.util.Map;
 
 import com.risesin.service.baseService.SingletonParent;
-import com.risesin.service.modules.TopInterface;
-import com.risesin.service_api.dao.sysuser.ExtSysUserDao;
+import com.risesin.service.baseService.BaseInterface;
 import com.risesin.service_api.dao.sysuser.SysRoleMenuDao;
-import com.risesin.service_api.modules.system.entity.ExtSysUser;
 import com.risesin.service_api.modules.system.entity.SysRoleMenu;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -29,7 +27,7 @@ import javax.persistence.criteria.Root;
  * @author honey
  */
 @Service
-public class SysRoleMenuServiceImpl extends SingletonParent implements TopInterface<SysRoleMenu> {
+public class SysRoleMenuServiceImpl extends SingletonParent implements BaseInterface<SysRoleMenu> {
     private final Logger LOG = LogManager.getLogger(this.getClass());
 
     @Autowired
