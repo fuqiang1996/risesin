@@ -10,7 +10,7 @@ import lombok.experimental.Accessors;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 /**
  * 系统用户
@@ -65,13 +65,13 @@ public class SysUser implements Serializable {
      * 创建时间
      */
     @Column(name = "sys_gmt_create")
-    private Date addTime;
+    private LocalDateTime addTime;
 
     /**
      * 修改时间
      */
     @Column(name = "sys_gmt_modified")
-    private Date lastModify;
+    private LocalDateTime lastModify;
 
     /**
      * 邮箱

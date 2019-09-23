@@ -10,7 +10,7 @@ import lombok.experimental.Accessors;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 /**
  * 公司表
@@ -80,13 +80,13 @@ public class SysCompany implements Serializable {
      * 创建时间
      */
     @Column(name = "bran_addtime")
-    private Date addTime;
+    private LocalDateTime addTime;
 
     /**
      * 最后修改时间
      */
     @Column(name = "bran_lastmodified")
-    private Date lastModify;
+    private LocalDateTime lastModify;
 
     /**
      * 负责人

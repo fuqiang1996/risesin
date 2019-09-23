@@ -8,11 +8,9 @@ import lombok.ToString;
 import lombok.experimental.Accessors;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
-import org.springframework.format.annotation.DateTimeFormat;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import java.util.Date;
 
 /**
  * @Description  Product产品类
@@ -33,10 +31,18 @@ public class Product implements Serializable {
 	private static final long serialVersionUID =  7314740654923115326L;
 
 	/**
+	 * 主键
+	 */
+	@Column(name = "pk_fin_pro_id" )
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+
+	/**
 	 * 创建时间
 	 */
    	@Column(name = "fin_pro_addtime" )
-	@DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
+	//@DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
 	private LocalDateTime addTime;
 
 	/**
@@ -79,7 +85,7 @@ public class Product implements Serializable {
 	 * 最后修改时间
 	 */
    	@Column(name = "fin_pro_lastmodify" )
-	private Date lastModify;
+	private LocalDateTime lastModify;
 
 	/**
 	 * 借款周期
@@ -116,14 +122,6 @@ public class Product implements Serializable {
 	 */
    	@Column(name = "fk_sys_usr_id" )
 	private Long sysUserId;
-
-	/**
-	 * 主键
-	 */
-   	@Column(name = "pk_fin_pro_id" )
-    @Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
 
 	/**
 	 * 最高额度
