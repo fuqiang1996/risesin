@@ -1,5 +1,6 @@
 package com.risesin.service.modules.aritle.serviceImpl;
 
+import com.risesin.service.baseService.SingletonParent;
 import com.risesin.service.modules.TopInterface;
 import com.risesin.service_api.dao.aritle.SharingDao;
 import com.risesin.service_api.modules.aritle.entity.Sharing;
@@ -24,7 +25,7 @@ import java.util.Map;
  *
  */
 @Service
-public class SharingServiceImpl implements TopInterface<Sharing> {
+public class SharingServiceImpl extends SingletonParent implements TopInterface<Sharing> {
 
 	@Autowired
 	private SharingDao sharingDao;

@@ -1,5 +1,6 @@
 package com.risesin.service.modules.base.serviceImpl;
 
+import com.risesin.service.baseService.SingletonParent;
 import com.risesin.service.modules.TopInterface;
 import com.risesin.service_api.dao.base.IndustryDao;
 import com.risesin.service_api.modules.base.entity.Industry;
@@ -24,7 +25,7 @@ import java.util.Map;
  *
  */
 @Service
-public class IndustryServiceImpl implements TopInterface<Industry> {
+public class IndustryServiceImpl extends SingletonParent implements TopInterface<Industry> {
 
 	@Autowired
 	private IndustryDao industryDao;

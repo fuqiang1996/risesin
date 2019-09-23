@@ -1,5 +1,6 @@
 package com.risesin.service.modules.base.serviceImpl;
 
+import com.risesin.service.baseService.SingletonParent;
 import com.risesin.service.modules.TopInterface;
 import com.risesin.service_api.dao.base.FinancingTypeDao;
 import com.risesin.service_api.modules.base.entity.FinancingType;
@@ -24,7 +25,7 @@ import java.util.Map;
  *
  */
 @Service
-public class FinancingTypeServiceImpl implements TopInterface<FinancingType> {
+public class FinancingTypeServiceImpl extends SingletonParent implements TopInterface<FinancingType> {
 
 	@Autowired
 	private FinancingTypeDao typeDao;

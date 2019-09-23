@@ -27,7 +27,7 @@ public class LoanAgencyComment implements Serializable{
 	@Id
 	@Column(name = "pk_comment_id" )
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long commentId;
+	private Long id;
 
 	/**
 	 * 评价描述
@@ -45,7 +45,7 @@ public class LoanAgencyComment implements Serializable{
 	 * 添加时间
 	 */
 	@Column(name = "comment_addtime" )
-	private Date commentAddtime;
+	private Date commentAddTime;
 
 	/**
 	 * 评分

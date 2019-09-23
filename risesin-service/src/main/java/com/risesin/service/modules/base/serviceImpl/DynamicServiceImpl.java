@@ -1,5 +1,6 @@
 package com.risesin.service.modules.base.serviceImpl;
 
+import com.risesin.service.baseService.SingletonParent;
 import com.risesin.service.modules.TopInterface;
 import com.risesin.service_api.dao.base.DynamicDao;
 import com.risesin.service_api.modules.base.entity.Dynamic;
@@ -24,7 +25,7 @@ import java.util.Map;
  *
  */
 @Service
-public class DynamicServiceImpl implements TopInterface<Dynamic> {
+public class DynamicServiceImpl extends SingletonParent implements TopInterface<Dynamic> {
 
 	@Autowired
 	private DynamicDao dynamicDao;
