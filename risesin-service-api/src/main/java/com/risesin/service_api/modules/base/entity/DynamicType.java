@@ -9,7 +9,8 @@ import lombok.ToString;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
-import java.util.Date;
+import java.time.LocalDateTime;
+
 
 /**
  * @Description DynamicType动态类型类
@@ -32,7 +33,7 @@ public class DynamicType implements Serializable {
      * 创建时间
      */
     @Column(name = "dyn_typ_addtime")
-    private Date addTime;
+    private LocalDateTime addTime;
 
     /**
      * 编号
@@ -50,7 +51,7 @@ public class DynamicType implements Serializable {
      * 最后修改时间
      */
     @Column(name = "dyn_typ_lastmodify")
-    private Date lastmodify;
+    private LocalDateTime lastModify;;
 
     /**
      * 名称

@@ -8,7 +8,8 @@ import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDateTime;
+
 
 /**
  * @Description CommentType评价类型
@@ -37,13 +38,13 @@ public class CommentType implements Serializable {
      * 创建时间
      */
     @Column(name = "comt_type_addtime")
-    private Date addTime;
+    private LocalDateTime addTime;
 
     /**
      * 最后修改时间
      */
     @Column(name = "cstt_comt_type_lastmodify")
-    private Date lastModify;
+    private LocalDateTime lastModify;;
 
     /**
      * 评价类型

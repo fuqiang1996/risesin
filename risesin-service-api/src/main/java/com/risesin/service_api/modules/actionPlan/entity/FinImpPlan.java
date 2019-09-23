@@ -11,7 +11,8 @@ import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
 import java.math.BigDecimal;
-import java.util.Date;
+import java.time.LocalDateTime;
+
 
 /**
  * 融资执行方案实体
@@ -54,7 +55,7 @@ public class FinImpPlan implements Serializable {
      * 创建时间
      */
     @Column(name = "act_pro_addtime")
-    private java.time.Instant addTime;
+    private LocalDateTime addTime;
 
     /**
      * 是否删除  -1：已删除  0：正常

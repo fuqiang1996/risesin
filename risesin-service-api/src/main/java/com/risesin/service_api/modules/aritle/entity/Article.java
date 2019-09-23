@@ -9,7 +9,8 @@ import lombok.ToString;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
-import java.util.Date;
+import java.time.LocalDateTime;
+import
 
 /**
  * 软文实体
@@ -72,7 +73,7 @@ public class Article implements Serializable {
      * 最后修改时间
      */
     @Column(name = "art_lastmodify")
-    private Date lastModify;
+    private LocalDateTime lastModify;;
 
     /**
      * 关键字
@@ -132,6 +133,6 @@ public class Article implements Serializable {
      * 添加时间
      */
     @Column(name = "art_addtime")
-    private Date addTime;
+    private LocalDateTime addTime;
 
 }

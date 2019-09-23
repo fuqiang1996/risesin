@@ -9,7 +9,8 @@ import lombok.ToString;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
-import java.util.Date;
+import java.time.LocalDateTime;
+
 
 /**
  * @Description FinancingType融资类型类
@@ -70,12 +71,12 @@ public class FinancingType implements Serializable {
      * 创建时间
      */
     @Column(name = "fin_type_addtime")
-    private Date addTime;
+    private LocalDateTime addTime;
 
     /**
      * 最后修改时间
      */
     @Column(name = "fin_type_lastmodify")
-    private Date lastModify;
+    private LocalDateTime lastModify;;
 
 }

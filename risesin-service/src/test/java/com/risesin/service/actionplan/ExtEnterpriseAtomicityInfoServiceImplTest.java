@@ -7,7 +7,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import java.time.Instant;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.util.List;
@@ -43,8 +42,8 @@ public class ExtEnterpriseAtomicityInfoServiceImplTest extends ActPlanFinProServ
 
     @Test
     public void testAdd() {
-        ZonedDateTime zonedDateTime = Instant.now().atZone(ZoneId.systemDefault());
-        extEnterpriseAtomicityInfo.setAddtime(zonedDateTime.toInstant());
+//        ZonedDateTime zonedDateTime = Instant.now().atZone(ZoneId.systemDefault());
+//        extEnterpriseAtomicityInfo.setAddtime(zonedDateTime.toInstant());
         extEnterpriseAtomicityInfo.setFileName("文件名");
         extEnterpriseAtomicityInfo.setFileType("jpg");
         extEnterpriseAtomicityInfo.setFileUrl("url");
@@ -56,8 +55,8 @@ public class ExtEnterpriseAtomicityInfoServiceImplTest extends ActPlanFinProServ
 
     @Test
     public void testUpdate() {
-        ZonedDateTime zonedDateTime = Instant.now().atZone(ZoneId.systemDefault());
-        extEnterpriseAtomicityInfo.setAddtime(zonedDateTime.toInstant());
+//        ZonedDateTime zonedDateTime = Instant.now().atZone(ZoneId.systemDefault());
+//        extEnterpriseAtomicityInfo.setAddtime(zonedDateTime.toInstant());
         extEnterpriseAtomicityInfo.setFileName("文件名3");
         extEnterpriseAtomicityInfo.setFileType("jpg3");
         extEnterpriseAtomicityInfo.setFileUrl("url3");

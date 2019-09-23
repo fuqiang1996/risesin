@@ -8,9 +8,7 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.math.BigDecimal;
-import java.time.Instant;
-import java.time.ZoneId;
-import java.time.ZonedDateTime;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -53,8 +51,8 @@ public class FinImpPlanServiceImplTest extends ActPlanFinProServiceImplTest {
         finImpPlan.setExtEntAtoInfoId(1L);
         finImpPlan.setFinCasId(1L);
         finImpPlan.setSincerityGold(new BigDecimal(0.00));
-        ZonedDateTime zonedDateTime = Instant.now().atZone(ZoneId.systemDefault());
-        finImpPlan.setAddTime(zonedDateTime.toInstant());
+//        ZonedDateTime zonedDateTime = Instant.now().atZone(ZoneId.systemDefault());
+//        finImpPlan.setAddTime(zonedDateTime.toInstant());
         finImpPlanService.add(finImpPlan);
     }
 
@@ -65,8 +63,8 @@ public class FinImpPlanServiceImplTest extends ActPlanFinProServiceImplTest {
         finImpPlan.setFinCasId(1L);
         finImpPlan.setDelFlag(0L);
         finImpPlan.setSincerityGold(new BigDecimal(222.00));
-        ZonedDateTime zonedDateTime = Instant.now().atZone(ZoneId.systemDefault());
-        finImpPlan.setAddTime(zonedDateTime.toInstant());
+//        ZonedDateTime zonedDateTime = Instant.now().atZone(ZoneId.systemDefault());
+//        finImpPlan.setAddTime(zonedDateTime.toInstant());
         finImpPlan.setId(1L);
         finImpPlanService.add(finImpPlan);
     }

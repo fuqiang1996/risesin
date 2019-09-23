@@ -6,7 +6,8 @@ import lombok.ToString;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDateTime;
+import
 
 /**
  * @Description  LoanagencyComment助贷机构评价类
@@ -45,7 +46,7 @@ public class LoanAgencyComment implements Serializable{
 	 * 添加时间
 	 */
 	@Column(name = "comment_addtime" )
-	private Date commentAddTime;
+	private LocalDateTime addTime;
 
 	/**
 	 * 评分

@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.xml.crypto.Data;
 
-import java.util.Date;
+
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -53,7 +53,6 @@ public class CommentTypeServiceImplTest extends RisesinServiceApplicationTests {
         commentType.setId(1L);
         commentType.setComtTypeName("类型名称");
         commentType.setDelFlag(10);
-        commentType.setAddTime(new Date());
         commentTypeService.add(commentType);
     }
 
@@ -62,7 +61,6 @@ public class CommentTypeServiceImplTest extends RisesinServiceApplicationTests {
         commentType.setId(1L);
         commentType.setComtTypeName("类型名称2");
         commentType.setDelFlag(10);
-        commentType.setAddTime(new Date());
         commentTypeService.update(commentType);
     }
 

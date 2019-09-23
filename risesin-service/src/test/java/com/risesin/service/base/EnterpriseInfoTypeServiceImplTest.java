@@ -8,7 +8,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import java.util.Date;
+
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -40,7 +40,6 @@ public class EnterpriseInfoTypeServiceImplTest extends RisesinServiceApplication
 
     @Test
     public void add() {
-        enterpriseInfoType.setAddTime(new Date());
         enterpriseInfoType.setInfoTypeCode("code");
 //        enterpriseInfoType.setId(1L);
         enterpriseInfoType.setInfoTypeName("infoName");
@@ -49,7 +48,6 @@ public class EnterpriseInfoTypeServiceImplTest extends RisesinServiceApplication
 
     @Test
     public void update() {
-        enterpriseInfoType.setAddTime(new Date());
         enterpriseInfoType.setInfoTypeCode("code2222223333333333");
         enterpriseInfoType.setId(2L);
         enterpriseInfoType.setInfoTypeName("infoName");

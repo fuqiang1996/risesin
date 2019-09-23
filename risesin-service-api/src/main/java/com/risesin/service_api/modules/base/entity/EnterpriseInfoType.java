@@ -9,7 +9,8 @@ import lombok.ToString;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
-import java.util.Date;
+import java.time.LocalDateTime;
+
 
 /**
  * @Description EnterpriseInfoType企业信息类型类
@@ -32,7 +33,7 @@ public class EnterpriseInfoType implements Serializable {
      * 创建时间
      */
     @Column(name = "fin_entinfotype_addtime")
-    private Date addTime;
+    private LocalDateTime addTime;
 
     /**
      * 编号
@@ -50,7 +51,7 @@ public class EnterpriseInfoType implements Serializable {
      * 最后修改时间
      */
     @Column(name = "fin_entinfotype_lastmodify")
-    private Date lastModify;
+    private LocalDateTime lastModify;;
 
     /**
      * 类型名称

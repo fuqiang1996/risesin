@@ -9,7 +9,8 @@ import lombok.ToString;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
-import java.util.Date;
+import java.time.LocalDateTime;
+
 
 /**
  * 企业独立信息拓展实体
@@ -66,7 +67,7 @@ public class ExtEnterpriseAtomicityInfo implements Serializable {
      * 创建时间
      */
     @Column(name = "ext_addtime")
-    private java.time.Instant addtime;
+    private LocalDateTime addTime;
 
     /**
      * 是否删除  -1：已删除  0：正常
@@ -84,6 +85,6 @@ public class ExtEnterpriseAtomicityInfo implements Serializable {
      * 最后修改时期
      */
     @Column(name = "ext_lastmodified")
-    private java.time.Instant lastmodified;
+    private LocalDateTime lastmodified;
 
 }

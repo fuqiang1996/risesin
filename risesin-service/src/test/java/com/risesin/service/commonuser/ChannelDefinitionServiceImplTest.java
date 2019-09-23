@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
@@ -36,8 +35,8 @@ public class ChannelDefinitionServiceImplTest extends RisesinServiceApplicationT
         System.out.println(all.get(0).getChaDefAddtime().format(dateTimeFormatter));
         System.out.println(all.get(1).getChaDefAddtime().format(dateTimeFormatter));
         LocalDateTime chaDefAddtime = all.get(1).getChaDefAddtime();
-        Instant instant = chaDefAddtime.atZone(ZoneId.systemDefault()).toInstant();
-        System.out.println(instant.toEpochMilli());
+//        Instant instant = chaDefAddtime.atZone(ZoneId.systemDefault()).toInstant();
+//        System.out.println(instant.toEpochMilli());
 
         Assert.assertTrue("查询信息为空",all.size() >=0 );
     }

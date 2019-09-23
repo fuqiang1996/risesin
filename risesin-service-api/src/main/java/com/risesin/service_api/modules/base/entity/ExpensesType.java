@@ -9,7 +9,8 @@ import lombok.ToString;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
-import java.util.Date;
+import java.time.LocalDateTime;
+
 
 /**
  * @Description ExpensesType费用类型类
@@ -32,7 +33,7 @@ public class ExpensesType implements Serializable {
      * 创建时间
      */
     @Column(name = "exp_typ_addtime")
-    private Date addTime;
+    private LocalDateTime addTime;
 
     /**
      * 编号
@@ -58,7 +59,7 @@ public class ExpensesType implements Serializable {
      * 最后修改时间
      */
     @Column(name = "exp_typ_lastmodify")
-    private Date lastModify;
+    private LocalDateTime lastModify;;
 
     /**
      * 费用类型名称

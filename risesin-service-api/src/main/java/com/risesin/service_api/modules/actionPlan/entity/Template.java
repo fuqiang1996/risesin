@@ -3,14 +3,13 @@ package com.risesin.service_api.modules.actionPlan.entity;
 import javax.persistence.*;
 import java.io.Serializable;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 /**
  * 定制模板实体
@@ -73,8 +72,7 @@ public class Template implements Serializable {
      * 上传时间
      */
     @Column(name = "tem_addtime")
-    @JsonFormat(pattern = "yyyy-MM-dd  HH:mm:ss")
-    private java.time.Instant addTime;
+    private LocalDateTime addTime;
 
     /**
      * 产品内容
@@ -92,6 +90,6 @@ public class Template implements Serializable {
      * 最后修改时间
      */
     @Column(name = "tem_lastmodify")
-    private java.time.Instant lastModify;
+    private LocalDateTime lastModify;
 
 }

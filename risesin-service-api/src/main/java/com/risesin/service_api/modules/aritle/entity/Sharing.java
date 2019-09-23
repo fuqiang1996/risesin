@@ -9,7 +9,8 @@ import lombok.ToString;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
-import java.util.Date;
+import java.time.LocalDateTime;
+import
 
 /**
  * 分享追踪
@@ -90,12 +91,12 @@ public class Sharing implements Serializable {
      * 创建时间
      */
     @Column(name = "sha_addtime")
-    private Date addtime;
+    private LocalDateTime addTime;
 
     /**
      * 最后修改时间
      */
     @Column(name = "sha_lastmodify")
-    private Date lastmodify;
+    private LocalDateTime lastModify;;
 
 }

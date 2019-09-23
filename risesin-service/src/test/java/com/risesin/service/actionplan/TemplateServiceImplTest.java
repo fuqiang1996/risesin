@@ -9,10 +9,7 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.text.SimpleDateFormat;
-import java.time.Instant;
-import java.time.ZoneId;
-import java.time.ZonedDateTime;
-import java.util.Date;
+
 import java.util.List;
 import java.util.logging.SimpleFormatter;
 
@@ -48,18 +45,18 @@ public class TemplateServiceImplTest extends ActPlanFinProServiceImplTest {
     public void testFindById() {
         Template byId = templateService.findById(5L);
         Assert.assertNotNull(byId);
-        Date from = Date.from(byId.getAddTime());
+//        Date from = Date.from(byId.getAddTime());
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-        String format1 = format.format(from);
-        System.out.println(format1);
+//        String format1 = format.format(from);
+//        System.out.println(format1);
         System.out.println(byId);
     }
 
     @Test
     public void testAdd() {
-        ZonedDateTime zonedDateTime = Instant.now().atZone(ZoneId.systemDefault());
-        template.setAddTime(new Date().toInstant());
-        Date from = Date.from(Instant.now());
+//        ZonedDateTime zonedDateTime = Instant.now().atZone(ZoneId.systemDefault());
+//        template.setAddTime(new Date().toInstant());
+//        Date from = Date.from(Instant.now());
         template.setBackCoverUrl("http:url");
         template.setEnd("end");
         template.setLoanAgenId(1L);
@@ -71,8 +68,6 @@ public class TemplateServiceImplTest extends ActPlanFinProServiceImplTest {
 
     @Test
     public void testUpdate() {
-        ZonedDateTime zonedDateTime = Instant.now().atZone(ZoneId.systemDefault());
-        template.setAddTime(zonedDateTime.toInstant());
         template.setBackCoverUrl("http:url");
         template.setEnd("end");
         template.setLoanAgenId(1L);

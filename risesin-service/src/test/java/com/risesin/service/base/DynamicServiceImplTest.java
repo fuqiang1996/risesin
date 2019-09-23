@@ -8,7 +8,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import java.util.Date;
+
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -42,7 +42,6 @@ public class DynamicServiceImplTest extends RisesinServiceApplicationTests {
     public void add() {
         dynamic.setCommonUserId(1L);
         dynamic.setDynamicContent("测试");
-        dynamic.setAddTime(new Date());
         dynamicService.add(dynamic);
     }
 
@@ -50,7 +49,6 @@ public class DynamicServiceImplTest extends RisesinServiceApplicationTests {
     public void update() {
         dynamic.setCommonUserId(1L);
         dynamic.setDynamicContent("测试222");
-        dynamic.setAddTime(new Date());
         dynamicService.add(dynamic);
     }
 

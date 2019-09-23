@@ -9,7 +9,8 @@ import lombok.ToString;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
-import java.util.Date;
+import java.time.LocalDateTime;
+
 
 /**
  * @Description Industry行业类
@@ -64,12 +65,12 @@ public class Industry implements Serializable {
      * 创建时间
      */
     @Column(name = "ind_addtime")
-    private Date addTime;
+    private LocalDateTime addTime;
 
     /**
      * 最后修改时间
      */
     @Column(name = "ind_lastmodify")
-    private Date lastModify;
+    private LocalDateTime lastModify;;
 
 }
