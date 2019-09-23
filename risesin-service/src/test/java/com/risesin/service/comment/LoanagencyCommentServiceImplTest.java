@@ -14,6 +14,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.util.List;
 
 /**
+ *
  */
 @SpringBootTest
 @RunWith(SpringRunner.class)
@@ -26,13 +27,13 @@ public class LoanagencyCommentServiceImplTest extends RisesinServiceApplicationT
     public void findAll() {
 
         List<LoanAgencyComment> all = loanagencyCommentService.findAll();
-        Assert.assertTrue("查询信息为空",all.size() >=0 );
+        Assert.assertTrue("查询信息为空", all.size() >= 0);
     }
 
     @Test
     public void findById() {
         LoanAgencyComment serviceById = loanagencyCommentService.findById(3L);
-        Assert.assertTrue("根据id查询实体为空",serviceById.getCommentId() == 3l);
+        Assert.assertTrue("根据id查询实体为空", serviceById.getId() == 3l);
     }
 
     @Test
@@ -42,7 +43,7 @@ public class LoanagencyCommentServiceImplTest extends RisesinServiceApplicationT
         loanAgencyComment.setCommentScore(1);
 
         loanagencyCommentService.add(loanAgencyComment);
-        Assert.assertTrue("查询信息为空",loanagencyCommentService.findAll().size() >=1 );
+        Assert.assertTrue("查询信息为空", loanagencyCommentService.findAll().size() >= 1);
     }
 
 
@@ -51,7 +52,7 @@ public class LoanagencyCommentServiceImplTest extends RisesinServiceApplicationT
         LoanAgencyComment loanAgencyComment = new LoanAgencyComment();
         loanAgencyComment.setCommentDescription("123");
         loanAgencyComment.setCommentScore(1);
-        loanAgencyComment.setCommentId(1l);
+        loanAgencyComment.setId(1l);
         loanagencyCommentService.update(loanAgencyComment);
     }
 
@@ -60,8 +61,8 @@ public class LoanagencyCommentServiceImplTest extends RisesinServiceApplicationT
     public void deleteById() {
         loanagencyCommentService.deleteById(1L);
         List<LoanAgencyComment> channelDefinitionList = loanagencyCommentService.findAll();
-        channelDefinitionList.forEach((LoanAgencyComment bean)->{
-            Assert.assertTrue("根据ID删除失败",bean.getCommentId() == 1L);
+        channelDefinitionList.forEach((LoanAgencyComment bean) -> {
+            Assert.assertTrue("根据ID删除失败", bean.getId() == 1L);
         });
     }
 }
