@@ -3,6 +3,7 @@ package com.risesin.service.system;
 import com.risesin.service.RisesinServiceApplicationTests;
 import com.risesin.service.modules.system.serviceImpl.SysRoleServiceImpl;
 import com.risesin.service_api.modules.system.entity.SysRole;
+import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -26,6 +27,7 @@ public class SysRoleServiceImplTest extends RisesinServiceApplicationTests {
     public void findById() {
         SysRole role = sysRoleService.findById(1L);
         System.out.println(role);
+        Assert.assertNotNull(role);
     }
 
     @Test

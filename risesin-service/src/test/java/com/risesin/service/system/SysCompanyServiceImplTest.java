@@ -3,6 +3,7 @@ package com.risesin.service.system;
 import com.risesin.service.RisesinServiceApplicationTests;
 import com.risesin.service.modules.system.serviceImpl.SysCompanyServiceImpl;
 import com.risesin.service_api.modules.system.entity.SysCompany;
+import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -28,16 +29,17 @@ public class SysCompanyServiceImplTest extends RisesinServiceApplicationTests {
     public void findById() {
         SysCompany sysCompany = sysCompanyService.findById(1L);
         System.out.println(sysCompany);
+        Assert.assertNotNull(sysCompany);
     }
 
     @Test
     public void add() {
         SysCompany sysCompany = new SysCompany();
-        sysCompany.setAddTime(new Date())
+        sysCompany//.setAddTime(new Date())
                 .setArea("area")
                 .setBusinessAddress("地址")
                 .setDelFlag(0L)
-                .setLastModify(new Date())
+                //.setLastModify(new Date())
                 .setLoanAgenId(10L)
                 .setOrderNum(10L);
         sysCompanyService.add(sysCompany);

@@ -5,6 +5,7 @@ import com.risesin.service.modules.system.serviceImpl.SysPermissionRoleServiceIm
 import com.risesin.service.modules.system.serviceImpl.SysPermissionServiceImpl;
 import com.risesin.service_api.modules.system.entity.SysPermission;
 import com.risesin.service_api.modules.system.entity.SysPermissionRole;
+import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -29,6 +30,7 @@ public class SysPermissionServiceImplTest extends RisesinServiceApplicationTests
     public void findById() {
         SysPermission permission = service.findById(1L);
         System.out.println(permission);
+        Assert.assertNotNull(permission);
     }
 
     @Test

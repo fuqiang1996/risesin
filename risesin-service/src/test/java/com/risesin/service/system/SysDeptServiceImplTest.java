@@ -3,6 +3,7 @@ package com.risesin.service.system;
 import com.risesin.service.RisesinServiceApplicationTests;
 import com.risesin.service.modules.system.serviceImpl.SysDeptServiceImpl;
 import com.risesin.service_api.modules.system.entity.SysDept;
+import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -27,15 +28,16 @@ public class SysDeptServiceImplTest extends RisesinServiceApplicationTests {
     public void findById() {
         SysDept sysDept = sysDeptService.findById(1L);
         System.out.println(sysDept);
+        Assert.assertNotNull(sysDept);
     }
 
     @Test
     public void add() {
         SysDept sysDept = new SysDept();
-        sysDept.setAddTime(new Date())
+        sysDept//.setAddTime(new Date())
                 .setBranId(10L)
                 .setDeptName("部门")
-                .setLastModify(new Date())
+                //.setLastModify(new Date())
                 .setParentId(100L);
         sysDeptService.add(sysDept);
     }

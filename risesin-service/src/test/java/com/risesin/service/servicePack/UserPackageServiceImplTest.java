@@ -7,7 +7,6 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import java.util.Date;
 import java.util.List;
 
 
@@ -34,13 +33,13 @@ public class UserPackageServiceImplTest extends RisesinServiceApplicationTests {
     @Test
     public void add() {
         UserPackage userPackage = new UserPackage();
-        userPackage.setAddTime(new Date())
+        userPackage//.setAddTime(new Date())
                 .setCode("code")
                 .setCount(123L)
                 .setDelFlag(0L)
                 .setImg("url")
                 .setKeywords("关键字")
-                .setLastModify(new Date())
+                //.setLastModify(new Date())
                 .setOrdernum(10L)
                 .setPackageDesc("描述")
                 .setPackName("名字")

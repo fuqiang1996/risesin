@@ -3,6 +3,7 @@ package com.risesin.service.system;
 import com.risesin.service.RisesinServiceApplicationTests;
 import com.risesin.service.modules.system.serviceImpl.SysLogServiceImpl;
 import com.risesin.service_api.modules.system.entity.SysLog;
+import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -28,13 +29,14 @@ public class SysLogServiceImplTest extends RisesinServiceApplicationTests {
     public void findById() {
         SysLog sysLog = sysLogService.findById(1L);
         System.out.println(sysLog);
+        Assert.assertNotNull(sysLog);
     }
 
     @Test
     public void add() {
         SysLog sysLog = new SysLog();
         sysLog.setFkLogUserId(1001L)
-                .setAddTime(new Date())
+                //.setAddTime(new Date())
                 .setLogIp("192.168.1.1")
                 .setLogMethod("wx")
                 .setLogOperation("operation")

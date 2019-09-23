@@ -3,6 +3,7 @@ package com.risesin.service.system;
 import com.risesin.service.RisesinServiceApplicationTests;
 import com.risesin.service.modules.system.serviceImpl.SysRoleMenuServiceImpl;
 import com.risesin.service_api.modules.system.entity.SysRoleMenu;
+import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -26,6 +27,7 @@ public class SysRoleMenuServiceImplTest extends RisesinServiceApplicationTests {
     public void findById() {
         SysRoleMenu roleMenu = service.findById(1L);
         System.out.println(roleMenu);
+        Assert.assertNotNull(roleMenu);
     }
 
     @Test

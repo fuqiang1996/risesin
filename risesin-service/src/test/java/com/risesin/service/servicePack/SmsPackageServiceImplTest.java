@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -41,7 +40,7 @@ public class SmsPackageServiceImplTest extends RisesinServiceApplicationTests {
     @Test
     public void add() {
         SmsPackage smsPackage = new SmsPackage();
-        smsPackage.setAddTime(new Date())
+        smsPackage//.setAddTime(new Date())
                 .setPackCode("编号")
                 .setPackCount(10L)
                 .setDelFlag(0L)
@@ -49,8 +48,8 @@ public class SmsPackageServiceImplTest extends RisesinServiceApplicationTests {
                 .setPackGrade("5")
                 .setPackName("name")
                 .setPackPrice(600.0)
-                .setPackUserCustomer("customer")
-                .setLastMidify(new Date());
+                .setPackUserCustomer("customer");
+                //.setLastMidify(new Date());
 
         smsPackageService.add(smsPackage);
     }

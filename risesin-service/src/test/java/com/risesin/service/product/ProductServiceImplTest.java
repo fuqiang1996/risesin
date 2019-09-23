@@ -8,8 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.Date;
 import java.util.List;
 
 
@@ -48,7 +46,7 @@ public class ProductServiceImplTest extends RisesinServiceApplicationTests {
         product.setDelFlag(0L);
         product.setProDescription("产品描述");
         product.setProGuarantor("担保人");
-        product.setLastModify(new Date());
+        //product.setLastModify(new Date());
         product.setProLendingCycle(12L);
         product.setProName("产品名称");
         product.setProMinquota(new BigDecimal(1000.2));

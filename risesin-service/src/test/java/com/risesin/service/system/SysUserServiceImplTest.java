@@ -3,6 +3,7 @@ package com.risesin.service.system;
 import com.risesin.service.RisesinServiceApplicationTests;
 import com.risesin.service.modules.system.serviceImpl.SysUserServiceImpl;
 import com.risesin.service_api.modules.system.entity.SysUser;
+import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -25,6 +26,7 @@ public class SysUserServiceImplTest extends RisesinServiceApplicationTests {
     public void findById() {
         SysUser sysUser = services.findById(1L);
         System.out.println(sysUser);
+        Assert.assertNotNull(sysUser);
     }
 
     @Test
