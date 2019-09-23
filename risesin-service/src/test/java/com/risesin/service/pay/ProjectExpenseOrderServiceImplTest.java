@@ -39,7 +39,7 @@ public class ProjectExpenseOrderServiceImplTest extends RisesinServiceApplicatio
         ProjectExpenseOrder bean = new ProjectExpenseOrder();
         bean.setCommodityName("2l");
         bean.setProOrderCode("3l");
-        bean.setProjectId(0l);
+        //bean.setProjectId(0l);
         bean.setProOrderRemark("nice");
         bean.setProOrderStatus(1l);
         projectExpenseOrderService.add(bean);
@@ -52,7 +52,7 @@ public class ProjectExpenseOrderServiceImplTest extends RisesinServiceApplicatio
         ProjectExpenseOrder bean = new ProjectExpenseOrder();
         bean.setCommodityName("2l");
         bean.setProOrderCode("3l");
-        bean.setProjectId(0l);
+        //bean.setProjectId(0l);
         bean.setProOrderRemark("aaa");
         bean.setProOrderStatus(1l);
         bean.setId(1l);

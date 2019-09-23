@@ -1,1 +1,23 @@
-
+server:
+  port: 9001
+# mysql
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: go_ROOT<0
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://192.168.1.199:3306/risesin?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    druid:
+      initialSize: 1
+      maxActive: 10
+      minIdle: 1
+      maxWait: 60000
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: update
+  main:
+    allow-bean-definition-overriding: true  # 因有程序中显示有类名一致,但查找又没有,故加此配置可以启动不报错
