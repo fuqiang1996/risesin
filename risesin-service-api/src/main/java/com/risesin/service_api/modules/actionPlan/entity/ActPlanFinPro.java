@@ -3,9 +3,7 @@ package com.risesin.service_api.modules.actionPlan.entity;
 import javax.persistence.*;
 import java.io.Serializable;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.Data;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
@@ -17,9 +15,8 @@ import org.hibernate.annotations.DynamicUpdate;
  * @Date 2019-09-16
  */
 
-@Setter
-@Getter
-@ToString
+
+@Data
 @Entity
 @DynamicInsert
 @DynamicUpdate

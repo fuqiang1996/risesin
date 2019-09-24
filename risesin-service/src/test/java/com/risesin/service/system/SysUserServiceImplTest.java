@@ -34,7 +34,7 @@ public class SysUserServiceImplTest extends RisesinServiceApplicationTests {
         SysUser sysUser = new SysUser();
         sysUser.setCity("city")
                 .setAccount("username")
-                .setComDeptId(10L)
+                .setDeptId(10L)
                 .setMailbox("asdf@qq.com");
 
         services.add(sysUser);

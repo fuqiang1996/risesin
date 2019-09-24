@@ -1,6 +1,6 @@
-package com.risesin.service_api.dao.actionPlan;
+package com.risesin.service_api.dao.dict;
 
-import com.risesin.service_api.modules.actionPlan.entity.ActPlanFinPro;
+import com.risesin.service_api.modules.dict.RisesinDict;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Modifying;
@@ -10,11 +10,11 @@ import org.springframework.data.repository.query.Param;
 import javax.transaction.Transactional;
 
 /**
- * ActPlanFinPro的Dao接口
+ * RisesinDict的Dao接口
  *
- * @author honey
+ * @author
  */
-public interface ActPlanFinProDao extends JpaRepository<ActPlanFinPro, Long>, JpaSpecificationExecutor<ActPlanFinPro> {
+public interface RisesinDictDao extends JpaRepository<RisesinDict, Long>, JpaSpecificationExecutor<RisesinDict> {
 
     /**
      * 软删除
@@ -23,9 +23,8 @@ public interface ActPlanFinProDao extends JpaRepository<ActPlanFinPro, Long>, Jp
      */
     @Transactional
     @Modifying
-    @Query(value = "update ActPlanFinPro  a set a.actProId=-1,a.finProId=-1 where a.id = :id")
+    @Query(value = "update RisesinDict  a set a.delFlag=-1 where a.id = :id")
     @Override
     void deleteById(@Param("id") Long id);
-
 
 }

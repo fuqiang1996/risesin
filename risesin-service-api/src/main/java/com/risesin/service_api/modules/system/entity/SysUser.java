@@ -3,9 +3,7 @@ package com.risesin.service_api.modules.system.entity;
 import javax.persistence.*;
 import java.io.Serializable;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.Data;
 import lombok.experimental.Accessors;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
@@ -20,9 +18,7 @@ import java.time.LocalDateTime;
  * @Date 2019-09-16
  */
 @Accessors(chain = true)
-@Setter
-@Getter
-@ToString
+@Data
 @Entity
 @Table(name = "sys_user")
 @DynamicInsert
@@ -95,7 +91,7 @@ public class SysUser implements Serializable {
      * 所在省份
      */
     @Column(name = "sys_province")
-    private String sprovince;
+    private String province;
 
     /**
      * 性别
@@ -119,7 +115,7 @@ public class SysUser implements Serializable {
      * 部门ID
      */
     @Column(name = "fk_com_dept_id")
-    private Long comDeptId;
+    private Long deptId;
 
     /**
      * 微信授权标识
