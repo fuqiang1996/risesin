@@ -48,6 +48,21 @@
             <version>1.18.8</version>
             <scope>provided</scope>
         </dependency>
+        <!--日志类-->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.28</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <!-- 请求调用类 -->
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.5.9</version>
+        </dependency>
+
     </dependencies>
 
     <distributionManagement>

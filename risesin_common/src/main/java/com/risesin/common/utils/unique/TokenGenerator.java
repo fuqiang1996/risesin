@@ -5,7 +5,7 @@ import java.util.UUID;
 
 /**
  * token 生成器
- * @author Louis
+ * @author baby
  * @date Sep 1, 2018
  */
 public class TokenGenerator {
