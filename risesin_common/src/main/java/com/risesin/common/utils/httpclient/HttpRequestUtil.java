@@ -1,5 +1,6 @@
 package com.risesin.common.utils.httpclient;
 
+import com.risesin.common.utils.unique.UUIDByTimeUtils;
 import org.apache.http.Header;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -19,6 +20,7 @@ import org.slf4j.LoggerFactory;
 import java.io.*;
 import java.net.URI;
 import java.net.URLEncoder;
+import java.time.Instant;
 import java.util.*;
 
 /**
@@ -78,7 +80,7 @@ public class HttpRequestUtil {
         HttpResponse response = httpClient.execute(httpPost);
         String httpEntityContent = getHttpEntityContent(response);
         httpPost.abort();
-        return post(url,data,null);
+        return httpEntityContent;
     }
 
     /**
@@ -90,20 +92,25 @@ public class HttpRequestUtil {
      * @throws ClientProtocolException
      * @throws IOException
      */
-    public static String post(String url, String data, Header header) throws ClientProtocolException, IOException {
+    public static String postForYunxin(String url, String appKey, String appSecret,String checkSum) throws ClientProtocolException, IOException {
         HttpClient httpClient = HttpClients.createDefault();
         HttpPost httpPost = new HttpPost(url);
         //设置请求和传输超时时间
         RequestConfig requestConfig = RequestConfig.custom().setSocketTimeout(60000).setConnectTimeout(60000).build();
         httpPost.setConfig(requestConfig);
 
-        if(Objects.isNull(header)){
-            httpPost.setHeader("Content-Type", "text/json; charset=utf-8");
-        }else{
-            httpPost.setHeader(header);
-        }
+        // 设置请求的header
+        httpPost.addHeader("AppKey", appKey);
+        httpPost.addHeader("Nonce", UUIDByTimeUtils.getUUIDString());
+        httpPost.addHeader("CurTime", String.valueOf(Instant.now().toEpochMilli()/1000 ));
+        httpPost.addHeader("CheckSum", checkSum);
+        httpPost.addHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
 
-        httpPost.setEntity(new StringEntity(URLEncoder.encode(data, "UTF-8")));
+        List<NameValuePair> nvps = new ArrayList<NameValuePair>();
+        nvps.add(new BasicNameValuePair("accid", "longtime"));
+        nvps.add(new BasicNameValuePair("name", "longtime"));
+        httpPost.setEntity(new UrlEncodedFormEntity(nvps, "utf-8"));
+
         HttpResponse response = httpClient.execute(httpPost);
         String httpEntityContent = getHttpEntityContent(response);
         httpPost.abort();

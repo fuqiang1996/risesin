@@ -1,3 +1,9 @@
+risesin-properties: # 项目配置
+  yunxin: # 网易云信配置
+    app-key: a2476d6cdc57cdaa69ecbc24b00a74dc
+    app-secret: 6ad80820ed5a
+    url: "https://api.netease.im/nimserver/user/create.action"
+
 server:
   port: 9001
 

@@ -7,4 +7,8 @@ package com.risesin.enterpriseuserservice.service.financingConsult;
  * @since 1.0.0
  */
 public interface FinConsultService {
+    /**
+     * 测试
+     */
+    public void testYunxin();
 }
