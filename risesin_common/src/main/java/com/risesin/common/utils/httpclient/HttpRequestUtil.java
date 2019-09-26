@@ -1,7 +1,5 @@
 package com.risesin.common.utils.httpclient;
 
-import com.risesin.common.utils.unique.UUIDByTimeUtils;
-import org.apache.http.Header;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
@@ -20,7 +18,6 @@ import org.slf4j.LoggerFactory;
 import java.io.*;
 import java.net.URI;
 import java.net.URLEncoder;
-import java.time.Instant;
 import java.util.*;
 
 /**
@@ -101,7 +98,7 @@ public class HttpRequestUtil {
         // 设置http 头
         headerParams.entrySet().forEach(entry -> httpPost.addHeader(entry.getKey(),entry.getValue()));
 
-        List<NameValuePair> nvps = new ArrayList<NameValuePair>();
+        List<NameValuePair> nvps = new ArrayList<>();
         // 设置参数
         params.entrySet().forEach(entry ->nvps.add(new BasicNameValuePair(entry.getKey(), entry.getValue())));
 
@@ -149,8 +146,12 @@ public class HttpRequestUtil {
         //设置请求和传输超时时间
         RequestConfig requestConfig = RequestConfig.custom().setSocketTimeout(60000).setConnectTimeout(60000).build();
         httpGet.setConfig(requestConfig);
-        List<NameValuePair> formparams = setHttpParams(paramMap);
-        String param = URLEncodedUtils.format(formparams, "UTF-8");
+
+        List<NameValuePair> nvps = new ArrayList<>();
+        // 设置参数
+        paramMap.entrySet().forEach(entry ->nvps.add(new BasicNameValuePair(entry.getKey(), entry.getValue())));
+
+        String param = URLEncodedUtils.format(nvps, "UTF-8");
         httpGet.setURI(URI.create(url + "?" + param));
         HttpResponse response = httpClient.execute(httpGet);
         String httpEntityContent = getHttpEntityContent(response);
