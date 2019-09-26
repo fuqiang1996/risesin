@@ -17,6 +17,6 @@ public class FinConsultServiceImplTest extends RisesinEnterpriseuserserviceAppli
 
     @Test
     public void yunxinTest(){
-        finConsultService.testYunxin();
+        finConsultService.callYunxin();
     }
 }

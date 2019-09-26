@@ -85,30 +85,26 @@ public class HttpRequestUtil {
 
     /**
      * 封装HTTP POST方法
-     *
-     * @param
-     * @param （如JSON串）
+     * @param url url
+     * @param headerParams http 头
+     * @param params 参数
      * @return
      * @throws ClientProtocolException
      * @throws IOException
      */
-    public static String postForYunxin(String url, String appKey, String appSecret,String checkSum) throws ClientProtocolException, IOException {
+    public static String postForYunxin(String url, Map<String,String> headerParams , Map<String,String> params) throws ClientProtocolException, IOException {
         HttpClient httpClient = HttpClients.createDefault();
         HttpPost httpPost = new HttpPost(url);
         //设置请求和传输超时时间
         RequestConfig requestConfig = RequestConfig.custom().setSocketTimeout(60000).setConnectTimeout(60000).build();
         httpPost.setConfig(requestConfig);
-
-        // 设置请求的header
-        httpPost.addHeader("AppKey", appKey);
-        httpPost.addHeader("Nonce", UUIDByTimeUtils.getUUIDString());
-        httpPost.addHeader("CurTime", String.valueOf(Instant.now().toEpochMilli()/1000 ));
-        httpPost.addHeader("CheckSum", checkSum);
-        httpPost.addHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
+        // 设置http 头
+        headerParams.entrySet().forEach(entry -> httpPost.addHeader(entry.getKey(),entry.getValue()));
 
         List<NameValuePair> nvps = new ArrayList<NameValuePair>();
-        nvps.add(new BasicNameValuePair("accid", "longtime"));
-        nvps.add(new BasicNameValuePair("name", "longtime"));
+        // 设置参数
+        params.entrySet().forEach(entry ->nvps.add(new BasicNameValuePair(entry.getKey(), entry.getValue())));
+
         httpPost.setEntity(new UrlEncodedFormEntity(nvps, "utf-8"));
 
         HttpResponse response = httpClient.execute(httpPost);
