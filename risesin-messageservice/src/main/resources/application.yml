@@ -1,0 +1,10 @@
+server:
+  port: 9004
+
+#阿里云短信服务
+aliyun:
+  sms:
+    accessKeyId: LTAI4FuCfCdNS2fj6tamcuoy
+    accessKeySecret: TirYu8SnprAqSCI2swsELnzG2tJZtU
+    sign_name: 中汇百纳
+    template_code: SMS_174807941
