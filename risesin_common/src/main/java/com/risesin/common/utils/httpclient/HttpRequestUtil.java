@@ -89,7 +89,7 @@ public class HttpRequestUtil {
      * @throws ClientProtocolException
      * @throws IOException
      */
-    public static String postForYunxin(String url, Map<String,String> headerParams , Map<String,String> params) throws ClientProtocolException, IOException {
+    public static String post(String url, Map<String,String> headerParams , Map<String,String> params) throws ClientProtocolException, IOException {
         HttpClient httpClient = HttpClients.createDefault();
         HttpPost httpPost = new HttpPost(url);
         //设置请求和传输超时时间

@@ -42,7 +42,7 @@ public class FinConsultServiceImpl implements FinConsultService {
             params.put("name", "longtime");
 
             // 发送请求
-            String response = HttpRequestUtil.postForYunxin(yxPro.getUrl(), headerParams,params);
+            String response = HttpRequestUtil.post(yxPro.getUrl(), headerParams,params);
             System.out.println(response);
         } catch (IOException e) {
             e.printStackTrace();
