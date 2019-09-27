@@ -7,6 +7,8 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
+import java.util.List;
+
 /**
  * SysUser的Dao接口
  *
@@ -18,4 +20,7 @@ public interface SysUserDao extends JpaRepository<SysUser, Long>, JpaSpecificati
     @Modifying
     @Query("update SysUser u set u.delFlag = -1 where u.id = :id")
     void deleteById(@Param("id") Long id);
+
+
+    List<String> findByIdIn(List<String> roleIds);
 }

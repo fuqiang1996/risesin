@@ -33,10 +33,10 @@ public class FinImpPlanServiceImplTest extends ActPlanFinProServiceImplTest {
         Assert.assertNotNull(all);
         System.out.println(all);
 
-        Map<String, Object> map = new HashMap<>();
-        map.put("proName", "方案名称");
-        List<FinImpPlan> search = finImpPlanService.findSearch(map);
-        System.out.println(search);
+//        Map<String, Object> map = new HashMap<>();
+//        map.put("proName", "方案名称");
+//        List<FinImpPlan> search = finImpPlanService.findSearch(map);
+//        System.out.println(search);
     }
 
     @Test
@@ -45,29 +45,29 @@ public class FinImpPlanServiceImplTest extends ActPlanFinProServiceImplTest {
         System.out.println(byId);
     }
 
-    @Test
-    public void testAdd() {
-        finImpPlan.setProName("方案名称");
-        finImpPlan.setExtEntAtoInfoId(1L);
-        finImpPlan.setFinCasId(1L);
-        finImpPlan.setSincerityGold(new BigDecimal(0.00));
-//        ZonedDateTime zonedDateTime = Instant.now().atZone(ZoneId.systemDefault());
-//        finImpPlan.setAddTime(zonedDateTime.toInstant());
-        finImpPlanService.add(finImpPlan);
-    }
-
-    @Test
-    public void testUpdate() {
-        finImpPlan.setProName("方案名称2");
-        finImpPlan.setExtEntAtoInfoId(1L);
-        finImpPlan.setFinCasId(1L);
-        finImpPlan.setDelFlag(0L);
-        finImpPlan.setSincerityGold(new BigDecimal(222.00));
-//        ZonedDateTime zonedDateTime = Instant.now().atZone(ZoneId.systemDefault());
-//        finImpPlan.setAddTime(zonedDateTime.toInstant());
-        finImpPlan.setId(1L);
-        finImpPlanService.add(finImpPlan);
-    }
+//    @Test
+//    public void testAdd() {
+//        finImpPlan.setProName("方案名称");
+//        finImpPlan.setExtEntAtoInfoId(1L);
+//        finImpPlan.setFinCasId(1L);
+//        finImpPlan.setSincerityGold(new BigDecimal(0.00));
+////        ZonedDateTime zonedDateTime = Instant.now().atZone(ZoneId.systemDefault());
+////        finImpPlan.setAddTime(zonedDateTime.toInstant());
+//        finImpPlanService.add(finImpPlan);
+//    }
+//
+//    @Test
+//    public void testUpdate() {
+//        finImpPlan.setProName("方案名称2");
+//        finImpPlan.setExtEntAtoInfoId(1L);
+//        finImpPlan.setFinCasId(1L);
+//        finImpPlan.setDelFlag(0L);
+//        finImpPlan.setSincerityGold(new BigDecimal(222.00));
+////        ZonedDateTime zonedDateTime = Instant.now().atZone(ZoneId.systemDefault());
+////        finImpPlan.setAddTime(zonedDateTime.toInstant());
+//        finImpPlan.setId(1L);
+//        finImpPlanService.add(finImpPlan);
+//    }
 
     @Test
     public void testDeleteById() {

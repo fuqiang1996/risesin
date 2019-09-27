@@ -41,6 +41,15 @@ public class FinImpPlanServiceImpl extends SingletonParent implements BaseInterf
 
 
     /**
+     * 查询全部列表
+     *
+     * @return
+     */
+    public List<FinImpPlan> findByEntUserPlan(Long entUserId) {
+        return finImpPlanDao.findByEntUserPlan(entUserId);
+    }
+
+    /**
      * 条件查询+分页
      *
      * @param whereMap
@@ -115,16 +124,24 @@ public class FinImpPlanServiceImpl extends SingletonParent implements BaseInterf
 
             @Override
             public Predicate toPredicate(Root<FinImpPlan> root, CriteriaQuery<?> query, CriteriaBuilder cb) {
-                List
-                        <Predicate> predicateList = new ArrayList
-                        <Predicate>();
-//                Predicate predicateExamDelFlag = cb.ge(root.get("delFlag").as(Integer.class), 0);
-//                Predicate predicateExamAll  = cb.and(predicateExamDelFlag);
-                // proName
+                List<Predicate> predicateList = new ArrayList<Predicate>();
+                // 融资执行方案名称
                 if (searchMap.get("proName") != null && !"".equals(searchMap.get("proName"))) {
-                    predicateList.add(cb.like(root.get("proName").as(String.class),
-                            "%" + (String) searchMap.get("proName") + "%"));
+                    predicateList.add(cb.like(root.get("proName").as(String.class), "%" + (String) searchMap.get("proName") + "%"));
                 }
+                // 方案来源：1、平台派单 2、自有客户
+                if (searchMap.get("finImpPlanFrom") != null && !"".equals(searchMap.get("finImpPlanFrom"))) {
+                    predicateList.add(cb.like(root.get("finImpPlanFrom").as(String.class), "%" + (String) searchMap.get("finImpPlanFrom") + "%"));
+                }
+                // 项目阶段
+                if (searchMap.get("finImpPlanStage") != null && !"".equals(searchMap.get("finImpPlanStage"))) {
+                    predicateList.add(cb.like(root.get("finImpPlanStage").as(String.class), "%" + (String) searchMap.get("finImpPlanStage") + "%"));
+                }
+                // 项目状态： 1. 已追踪 2. 变更 3. 流转 4. 历史
+                if (searchMap.get("finImpPlanState") != null && !"".equals(searchMap.get("finImpPlanState"))) {
+                    predicateList.add(cb.like(root.get("finImpPlanState").as(String.class), "%" + (String) searchMap.get("finImpPlanState") + "%"));
+                }
+
                 return cb.and(predicateList.toArray(new Predicate[predicateList.size()]));
 
             }

@@ -3,7 +3,6 @@ package com.risesin.service.commonuser;
 import com.risesin.service.RisesinServiceApplicationTests;
 import com.risesin.service.modules.comment.serviceImpl.LoanagencyCommentServiceImpl;
 import com.risesin.service_api.modules.comment.entity.LoanAgencyComment;
-import com.risesin.service_api.modules.comuser.entity.LoanAgencyInfo;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

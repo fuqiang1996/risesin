@@ -33,6 +33,28 @@ public class SysUserServiceImpl extends SingletonParent implements BaseInterface
     @Autowired
     private SysUserDao sysUserDao;
 
+    /**
+     * 获取角色名
+     *
+     * @param roleIds
+     * @return
+//     */
+//    public List<String> getRoleName(String roleIds) {
+////        String[] strings = Func.toStrArray(roleIds);
+//        List<String> roles = Func.toStrList(roleIds);
+//        return sysUserDao.findByIdIn(roles);
+//    }
+
+    /**
+     * 获取部门名
+     *
+     * @param deptIds
+     * @return
+     */
+    List<String> getDeptName(String deptIds) {
+        return null;
+    }
+
 
     /**
      * 查询全部列表
@@ -84,10 +106,11 @@ public class SysUserServiceImpl extends SingletonParent implements BaseInterface
     /**
      * 增加
      *
-     * @param value
+     * @param user
      */
-    public void add(SysUser value) {
-        sysUserDao.save(value);
+    public void add(SysUser user) {
+        SysUser sysUser = sysUserDao.save(user);
+        System.out.println(sysUser);
     }
 
     /**

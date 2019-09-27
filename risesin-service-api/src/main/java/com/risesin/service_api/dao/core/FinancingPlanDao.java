@@ -7,15 +7,19 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
+import java.util.List;
+
 /**
-* FinancingPlan的Dao接口
-*
-* @author honey
-*
-*/
+ * FinancingPlan的Dao接口
+ *
+ * @author honey
+ */
 public interface FinancingPlanDao extends JpaRepository<FinancingPlan, Long>, JpaSpecificationExecutor<FinancingPlan> {
     @Override
     @Query("update FinancingPlan t set t.delFlag = -1 where t.id = :id")
     @Modifying
     void deleteById(@Param("id") Long id);
+
+
+//    List<FinancingPlan> findByDelFlagAndCommonUserId(@Param("delFlag") Long delFlag, @Param("commonUserId") Long commonUserId);
 }
