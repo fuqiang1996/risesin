@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.jpa.domain.Specification;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.criteria.CriteriaBuilder;
@@ -86,6 +87,7 @@ public class SysLogServiceImpl extends SingletonParent implements BaseInterface<
      *
      * @param value
      */
+    @Async
     public void add(SysLog value) {
         sysLogDao.save(value);
     }

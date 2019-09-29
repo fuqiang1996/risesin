@@ -27,7 +27,7 @@ public class SwaggerConfig extends WebMvcConfigurationSupport {
     public Docket createComplaintRestApi() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
-                .groupName("系统管理")
+                .groupName("systemUser")
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.risesin.systemuserservice.controller"))
                 .paths(PathSelectors.any())

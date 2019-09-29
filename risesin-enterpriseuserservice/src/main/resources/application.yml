@@ -29,6 +29,7 @@ spring:
   main:
     allow-bean-definition-overriding: true  # 因有程序中显示有类名一致,但查找又没有,故加此配置可以启动不报错
 
+
   redis:
     host: 192.168.1.199
     port: 6379

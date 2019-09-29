@@ -38,7 +38,7 @@ public class SysUserServiceImpl extends SingletonParent implements BaseInterface
      *
      * @param roleIds
      * @return
-//     */
+    //     */
 //    public List<String> getRoleName(String roleIds) {
 ////        String[] strings = Func.toStrArray(roleIds);
 //        List<String> roles = Func.toStrList(roleIds);
@@ -99,7 +99,7 @@ public class SysUserServiceImpl extends SingletonParent implements BaseInterface
      * @return
      */
     public SysUser findById(Long id) {
-        return sysUserDao.findById(id).get();
+        return sysUserDao.getById(id);
     }
 
 
@@ -109,8 +109,7 @@ public class SysUserServiceImpl extends SingletonParent implements BaseInterface
      * @param user
      */
     public void add(SysUser user) {
-        SysUser sysUser = sysUserDao.save(user);
-        System.out.println(sysUser);
+        sysUserDao.save(user);
     }
 
     /**
@@ -131,6 +130,10 @@ public class SysUserServiceImpl extends SingletonParent implements BaseInterface
         sysUserDao.deleteById(id);
     }
 
+    public void deleteByIds(List<Long> ids) {
+        sysUserDao.deleteByIds(ids);
+    }
+
     /**
      * 动态条件构建
      *
@@ -146,49 +149,15 @@ public class SysUserServiceImpl extends SingletonParent implements BaseInterface
                 List
                         <Predicate> predicateList = new ArrayList
                         <Predicate>();
-                // 公司网址
-                if (searchMap.get("loanAgenWebsite") != null && !"".equals(searchMap.get("loanAgenWebsite"))) {
-                    predicateList.add(cb.like(root.get("loanAgenWebsite").as(String.class),
-                            "%" + (String) searchMap.get("loanAgenWebsite") + "%"));
+                // 账户名
+                if (searchMap.get("account") != null && !"".equals(searchMap.get("account"))) {
+                    predicateList.add(cb.like(root.get("account").as(String.class),
+                            "%" + (String) searchMap.get("account") + "%"));
                 }
-                // 公司名称
-                if (searchMap.get("loanAgenName") != null && !"".equals(searchMap.get("loanAgenName"))) {
-                    predicateList.add(cb.like(root.get("loanAgenName").as(String.class),
-                            "%" + (String) searchMap.get("loanAgenName") + "%"));
-                }
-                // 办公地址
-                if (searchMap.get("loanBusinessAddress") != null && !"".equals(searchMap.get("loanBusinessAddress"))) {
-                    predicateList.add(cb.like(root.get("loanBusinessAddress").as(String.class),
-                            "%" + (String) searchMap.get("loanBusinessAddress") + "%"));
-                }
-                // 英文名称
-                if (searchMap.get("loanEnglishName") != null && !"".equals(searchMap.get("loanEnglishName"))) {
-                    predicateList.add(cb.like(root.get("loanEnglishName").as(String.class),
-                            "%" + (String) searchMap.get("loanEnglishName") + "%"));
-                }
-                // 所属行业
-                if (searchMap.get("loanIndustryInvolved") != null && !"".equals(searchMap.get("loanIndustryInvolved"))) {
-                    predicateList.add(cb.like(root.get("loanIndustryInvolved").as(String.class),
-                            "%" + (String) searchMap.get("loanIndustryInvolved") + "%"));
-                }
-                // 电话
-                if (searchMap.get("loanPhone") != null && !"".equals(searchMap.get("loanPhone"))) {
-                    predicateList.add(cb.like(root.get("loanPhone").as(String.class), "%" + (String) searchMap.get("loanPhone") + "%"));
-                }
-                // 公司注册地址
-                if (searchMap.get("loanRegAddress") != null && !"".equals(searchMap.get("loanRegAddress"))) {
-                    predicateList.add(cb.like(root.get("loanRegAddress").as(String.class),
-                            "%" + (String) searchMap.get("loanRegAddress") + "%"));
-                }
-                // 区域
-                if (searchMap.get("loanAgenArea") != null && !"".equals(searchMap.get("loanAgenArea"))) {
-                    predicateList.add(cb.like(root.get("loanAgenArea").as(String.class),
-                            "%" + (String) searchMap.get("loanAgenArea") + "%"));
-                }
-                // 公司全称
-                if (searchMap.get("loanAgenFullname") != null && !"".equals(searchMap.get("loanAgenFullname"))) {
-                    predicateList.add(cb.like(root.get("loanAgenFullname").as(String.class),
-                            "%" + (String) searchMap.get("loanAgenFullname") + "%"));
+                // 姓名
+                if (searchMap.get("userName") != null && !"".equals(searchMap.get("userName"))) {
+                    predicateList.add(cb.like(root.get("userName").as(String.class),
+                            "%" + (String) searchMap.get("userName") + "%"));
                 }
 
                 return cb.and(predicateList.toArray(new Predicate[predicateList.size()]));

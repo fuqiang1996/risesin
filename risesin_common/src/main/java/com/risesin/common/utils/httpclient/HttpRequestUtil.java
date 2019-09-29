@@ -236,7 +236,7 @@ public class HttpRequestUtil {
      * @return
      */
     private static List<NameValuePair> setHttpParams(Map<String, String> paramMap) {
-        List<NameValuePair> formparams = new ArrayList<>();
+        List<NameValuePair> formparams = new ArrayList<NameValuePair>();
         Set<Map.Entry<String, String>> set = paramMap.entrySet();
         for (Map.Entry<String, String> entry : set) {
             formparams.add(new BasicNameValuePair(entry.getKey(), entry.getValue()));

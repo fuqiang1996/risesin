@@ -2,7 +2,7 @@ package com.risesin.enterpriseuserservice.financingplan.controller;
 
 import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.*;
-import com.risesin.common.tools.R;
+import com.risesin.common.vo.resultVo.R;
 import com.risesin.enterpriseuserservice.financingplan.bo.FinancingPlanBO;
 import com.risesin.service.modules.actionplan.serviceimpl.FinImpPlanServiceImpl;
 import com.risesin.service.modules.core.serviceImpl.FinancingPlanServiceImpl;

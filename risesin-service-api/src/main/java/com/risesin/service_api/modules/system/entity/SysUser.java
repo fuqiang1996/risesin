@@ -3,11 +3,13 @@ package com.risesin.service_api.modules.system.entity;
 import javax.persistence.*;
 import java.io.Serializable;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.experimental.Accessors;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDateTime;
 
@@ -23,7 +25,7 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "sys_user")
 @DynamicInsert
-@DynamicUpdate
+//@DynamicUpdate
 public class SysUser implements Serializable {
 
     private static final long serialVersionUID = 7730308612614635076L;
@@ -32,21 +34,21 @@ public class SysUser implements Serializable {
      * 账户
      */
     @Column(name = "sys_account")
-    @ApiModelProperty(value = "账户")
+    @ApiModelProperty("账户")
     private String account;
 
     /**
      * 昵称
      */
     @Column(name = "sys_user_name")
-    @ApiModelProperty(value = "昵称")
+    @ApiModelProperty("昵称")
     private String userName;
 
     /**
      * 所在城市
      */
     @Column(name = "sys_city")
-    @ApiModelProperty(value = "所在城市")
+    @ApiModelProperty("所在城市")
     private String city;
 
     /**
@@ -68,6 +70,8 @@ public class SysUser implements Serializable {
      */
     @Column(name = "sys_gmt_create")
     @ApiModelProperty(value = "创建时间")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDateTime addTime;
 
     /**
@@ -75,6 +79,8 @@ public class SysUser implements Serializable {
      */
     @Column(name = "sys_gmt_modified")
     @ApiModelProperty(value = "修改时间")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDateTime lastModify;
 
     /**

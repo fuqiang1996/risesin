@@ -18,6 +18,7 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <blade.tool.version>2.3.3</blade.tool.version>
     </properties>
 
     <dependencies>
@@ -65,6 +66,11 @@
             <artifactId>druid-spring-boot-starter</artifactId>
             <version>1.1.16</version>
         </dependency>
+<!--        <dependency>-->
+        <!--            <groupId>org.springblade</groupId>-->
+        <!--            <artifactId>blade-core-tool</artifactId>-->
+        <!--            <version>${blade.tool.version}</version>-->
+        <!--        </dependency>-->
 
         <!-- 修改好后删除该依赖
         <dependency>
@@ -88,16 +94,16 @@
     </distributionManagement>
 
     <build>
-    <plugins>
-        <!-- 资源文件拷贝插件 -->
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-resources-plugin</artifactId>
-            <configuration>
-                <encoding>UTF-8</encoding>
-            </configuration>
-        </plugin>
-    </plugins>
-</build>
+        <plugins>
+            <!-- 资源文件拷贝插件 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

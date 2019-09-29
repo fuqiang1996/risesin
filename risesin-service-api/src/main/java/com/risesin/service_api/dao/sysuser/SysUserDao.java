@@ -6,8 +6,10 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * SysUser的Dao接口
@@ -18,9 +20,30 @@ public interface SysUserDao extends JpaRepository<SysUser, Long>, JpaSpecificati
 
     @Override
     @Modifying
+    @Transactional
     @Query("update SysUser u set u.delFlag = -1 where u.id = :id")
     void deleteById(@Param("id") Long id);
 
+
+    @Modifying
+    @Transactional
+    @Query(value = "update SysUser u set u.delFlag=-1 where u.id in (:ids) ")
+    int deleteByIds(@Param("ids") List<Long> ids);
+
+//    @Transactional
+//    @Modifying
+//    @Query("update SysUser as u set c.name = ?1 where c.userid=?2")
+//    int updateById(Long id);
+
+
+    /**
+     * 查询单条
+     *
+     * @param id
+     * @return
+     */
+    @Query(value = "select * from sys_user u where u.sys_del_flag=0 and u.pk_id=?1", nativeQuery = true)
+    SysUser getById(@Param("id") Long id);
 
     List<String> findByIdIn(List<String> roleIds);
 }

@@ -3,12 +3,14 @@ package com.risesin.service_api.modules.system.entity;
 import javax.persistence.*;
 import java.io.Serializable;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.Accessors;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDateTime;
 
@@ -85,6 +87,8 @@ public class SysLog implements Serializable {
      * 创建时间
      */
     @Column(name = "log_addtime")
+    @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDateTime addTime;
 
 }
