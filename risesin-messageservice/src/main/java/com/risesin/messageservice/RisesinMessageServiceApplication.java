@@ -2,6 +2,7 @@ package com.risesin.messageservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 /**
  * @AUTHOR Darling
@@ -11,9 +12,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 
 @SpringBootApplication
+@EnableScheduling
 public class RisesinMessageServiceApplication {
     public static void main(String[] args) {
-        System.out.println("{\"code\":\"123456\"}");
         SpringApplication.run(RisesinMessageServiceApplication.class, args);
     }
 }
