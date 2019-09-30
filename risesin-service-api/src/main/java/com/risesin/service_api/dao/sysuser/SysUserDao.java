@@ -20,21 +20,13 @@ public interface SysUserDao extends JpaRepository<SysUser, Long>, JpaSpecificati
 
     @Override
     @Modifying
-    @Transactional
     @Query("update SysUser u set u.delFlag = -1 where u.id = :id")
     void deleteById(@Param("id") Long id);
 
 
     @Modifying
-    @Transactional
     @Query(value = "update SysUser u set u.delFlag=-1 where u.id in (:ids) ")
     int deleteByIds(@Param("ids") List<Long> ids);
-
-//    @Transactional
-//    @Modifying
-//    @Query("update SysUser as u set c.name = ?1 where c.userid=?2")
-//    int updateById(Long id);
-
 
     /**
      * 查询单条
@@ -44,6 +36,11 @@ public interface SysUserDao extends JpaRepository<SysUser, Long>, JpaSpecificati
      */
     @Query(value = "select * from sys_user u where u.sys_del_flag=0 and u.pk_id=?1", nativeQuery = true)
     SysUser getById(@Param("id") Long id);
+
+
+    @Query("from SysUser u where u.account=:account and u.password=:password")
+    SysUser findByAccountAndPassword(String account, String password);
+
 
     List<String> findByIdIn(List<String> roleIds);
 }

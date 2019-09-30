@@ -41,7 +41,7 @@ public class FinancingPlanController {
         List<FinancingPlan> financingPlanList = financingPlanService.findByDelFlagAndCommonUserId(delFlag, Long.valueOf(commonUserId));
         Map<String, Object> map = new HashMap<>();
         map.put("data", financingPlanList);
-        return R.ok(map);
+        return new R(map);
     }
 
     @PostMapping("/make")
