@@ -33,6 +33,10 @@ public class SysUserServiceImpl extends SingletonParent implements BaseInterface
     @Autowired
     private SysUserDao sysUserDao;
 
+    public SysUser findByAccountAndPassword(String account, String password) {
+        return sysUserDao.findByAccountAndPassword(account, password);
+    }
+
     /**
      * 获取角色名
      *

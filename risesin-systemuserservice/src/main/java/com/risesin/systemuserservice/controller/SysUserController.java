@@ -70,7 +70,7 @@ public class SysUserController {
             userService.update(sysUser);
             return R.ok();
         }
-        return R.error();
+        return R.ER();
     }
 
     /**
