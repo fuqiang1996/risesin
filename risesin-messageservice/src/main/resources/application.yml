@@ -1,13 +1,14 @@
 server:
   port: 9004
 
-#阿里云短信服务
-aliyun:
-  sms:
-    accessKeyId: LTAI4FuCfCdNS2fj6tamcuoy
-    accessKeySecret: TirYu8SnprAqSCI2swsELnzG2tJZtU
-    sign_name: 中汇百纳
-    template_code: SMS_174807941
+risesin-properties: # 项目配置
+  #阿里云短信服务
+  aliyun:
+    sms:
+      accessKeyId: LTAI4FuCfCdNS2fj6tamcuoy
+      accessKeySecret: TirYu8SnprAqSCI2swsELnzG2tJZtU
+      signName: 中汇百纳
+      templateCode: SMS_174807941
 spring:
   kafka:
     # 以逗号分隔的地址列表，用于建立与Kafka集群的初始连接(kafka 默认的端口号为9092)
