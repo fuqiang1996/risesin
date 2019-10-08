@@ -1,3 +1,5 @@
+package com.risesin.messageservice;
+
 import com.risesin.messageservice.RisesinMessageServiceApplication;
 import org.junit.After;
 import org.junit.Before;
