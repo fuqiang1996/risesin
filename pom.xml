@@ -3,6 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+
     <groupId>com.risesin</groupId>
     <artifactId>Risesin</artifactId>
     <version>1.0.0</version>
@@ -36,7 +37,6 @@
         <module>risesin-messageservice</module>
         <module>risesin-service-api</module>
         <module>risesin-service</module>
-        <module>risesin_common</module>
     </modules>
 
     <dependencyManagement>
@@ -89,6 +89,11 @@
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
             <version>${alibaba.fastjson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>risesin.common</groupId>
+            <artifactId>risesin_common</artifactId>
+            <version>1.0.0</version>
         </dependency>
     </dependencies>
 

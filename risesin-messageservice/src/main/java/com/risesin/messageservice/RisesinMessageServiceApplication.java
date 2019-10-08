@@ -7,7 +7,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 /**
  * @AUTHOR Darling
  * @CREATE 2019-09-26
- * @DESCRIPTION TODO
+ * @DESCRIPTION messageservice启动类
  * @since 1.0.0
  */
 
