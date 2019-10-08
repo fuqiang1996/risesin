@@ -46,3 +46,15 @@ spring:
       concurrency: 3
       #listner负责ack，每调用一次，就立即commit
       ack-mode: manual_immediate
+  rabbitmq:
+    host: 192.168.1.199
+    port: 5672
+    username: admin
+    password: admin
+    publisher-confirms: true
+    virtual-host: /
+
+logging:
+  level:
+    org.springframework.web: DEBUG        #Spring框架中的日志级别
+    org.apache.kafka: WARN # 控制kafka日志
