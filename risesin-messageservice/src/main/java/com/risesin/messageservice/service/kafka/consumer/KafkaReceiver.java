@@ -94,15 +94,15 @@ public class KafkaReceiver {
 
 
 
-    // 简单消费者
-    @KafkaListener(topics = {Topic.TOPNAME_1})
-    public void listen(ConsumerRecord<?, ?> record) {
-        Optional<?> kafkaMessage = Optional.ofNullable(record.value());
-        if (kafkaMessage.isPresent()) {
-            Object message = kafkaMessage.get();
-            logger.info("----------------- record =" + record);
-            logger.info("------------------ message =" + message);
-        }
-
-    }
+//    // 简单消费者
+//    @KafkaListener(topics = {Topic.TOPNAME_1})
+//    public void listen(ConsumerRecord<?, ?> record) {
+//        Optional<?> kafkaMessage = Optional.ofNullable(record.value());
+//        if (kafkaMessage.isPresent()) {
+//            Object message = kafkaMessage.get();
+//            logger.info("----------------- record =" + record);
+//            logger.info("------------------ message =" + message);
+//        }
+//
+//    }
 }
