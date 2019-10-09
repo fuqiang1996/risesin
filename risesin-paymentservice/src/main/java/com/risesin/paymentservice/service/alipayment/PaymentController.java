@@ -1,6 +1,8 @@
-package com.risesin.paymentservice.service.payment;
+package com.risesin.paymentservice.service.alipayment;
 
 import com.risesin.common.vo.resultVo.R;
+import com.risesin.paymentservice.service.alipayment.model.PayResponse;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,10 +16,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("api/service/payment/")
 public class PaymentController {
 
+    @Autowired
+    private PaymentService paymentService;
 
     @RequestMapping("pay")
-    public R<String> pay(){
-
-        return new R<>("aaa");
+    public R<PayResponse> pay(){
+        return new R<>(new PayResponse());
     }
 }

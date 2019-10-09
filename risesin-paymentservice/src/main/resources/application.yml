@@ -9,5 +9,12 @@ risesin-properties: # 项目配置
     # ali 公钥 用于加密
     ali-public-key:
     url: https://openapi.alipay.com/gateway.do # 请求地址
+
 server:
   port: 9010
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh
