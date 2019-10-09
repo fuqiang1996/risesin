@@ -1,10 +1,14 @@
 package com.risesin.paymentservice.service.alipayment;
 
 import com.risesin.common.vo.resultVo.R;
+import com.risesin.paymentservice.service.alipayment.model.PayRequest;
 import com.risesin.paymentservice.service.alipayment.model.PayResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * @AUTHOR Baby
@@ -20,7 +24,17 @@ public class PaymentController {
     private PaymentService paymentService;
 
     @RequestMapping("pay")
-    public R<PayResponse> pay(){
-        return new R<>(new PayResponse());
+    public R<PayResponse> pay(PayRequest payRequest){
+        PayResponse pay = paymentService.pay(payRequest);
+        return new R<>(pay);
+    }
+
+    @RequestMapping("notify")
+    public void notify(HttpServletRequest request){
+    }
+
+    @RequestMapping("return")
+    public void returnPage(HttpServletRequest request){
+
     }
 }

@@ -26,9 +26,7 @@ public class PaymentProperties {
     private String sign; // 商户签名
     private String signType; // 类型
     private String url; // 请求URL
-    private String version = "1.0"; // 调用的接口版本，固定为：1.0
     private String timestamp; // 发送请求的时间，格式"yyyy-MM-dd HH:mm:ss"
-    private String notify_url; // 支付宝服务器主动通知商户服务器里指定的页面http/https路径
 
     public String getTimestamp() {
         String currentDateTimeStr = LocalDateTimeUtils.getCurrentDateTimeStr();
