@@ -1,6 +1,5 @@
 package com.risesin.messageservice.core;
 
-import com.alibaba.fastjson.JSON;
 import com.aliyuncs.CommonRequest;
 import com.aliyuncs.CommonResponse;
 import com.aliyuncs.DefaultAcsClient;
@@ -11,6 +10,7 @@ import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.exceptions.ServerException;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.profile.DefaultProfile;
+import com.risesin.common.utils.fastJson.JsonUtils;
 import com.risesin.messageservice.service.properties.SmsProperties;
 import org.apache.commons.lang3.RandomStringUtils;
 
@@ -38,13 +38,12 @@ public class SmsUtil {
 
 
     /**
-     * 发送短信(单条)
+     * 发送短信验证码(单条)
      * @param smsProperties 配置信息
      * @param mobile 手机号
-     * @param code 验证码
      * @return
      */
-    public static boolean sendSms(SmsProperties smsProperties, String mobile, String code) {
+    public static boolean sendSms(SmsProperties smsProperties, String mobile) {
         //可自助调整超时时间
         System.setProperty("sun.net.client.defaultConnectTimeout", "10000");
         System.setProperty("sun.net.client.defaultReadTimeout", "10000");
@@ -60,11 +59,11 @@ public class SmsUtil {
         request.putQueryParameter("PhoneNumbers", mobile);
         request.putQueryParameter("SignName", smsProperties.getSignName());
         request.putQueryParameter("TemplateCode", smsProperties.getTemplateCode());
-        request.putQueryParameter("TemplateParam", "{\"code\":\""+code+"\"}");
+        request.putQueryParameter("TemplateParam", "{\"code\":\""+ getSmsCode() +"\"}");
         try {
             CommonResponse response = client.getCommonResponse(request);
             System.out.println(response.getData());
-            SendSmsResponse sendSmsResponse = JSON.parseObject(response.getData(), SendSmsResponse.class);
+            SendSmsResponse sendSmsResponse = JsonUtils.toBean(response.getData(), SendSmsResponse.class);
             if(sendSmsResponse.getCode() != null && sendSmsResponse.getCode().equals("OK")) {
                 return true;
             }
