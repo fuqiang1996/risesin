@@ -55,7 +55,7 @@ public class R<T> implements Serializable {
 
     //错误
     public static R ER() {
-        return new R(RC.C400.Code());
+        return new R(RC.C500.Code());
     }
 
     public static R ER(String msg) {
@@ -68,6 +68,10 @@ public class R<T> implements Serializable {
 
     public static R ER(String msg, Object data) {
         return new R(RC.C500.Code(), msg, data);
+    }
+
+    public static R ER( Integer code,String msg) {
+        return new R(code, msg);
     }
 
 }

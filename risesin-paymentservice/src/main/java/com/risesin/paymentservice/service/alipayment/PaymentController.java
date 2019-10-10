@@ -1,10 +1,13 @@
 package com.risesin.paymentservice.service.alipayment;
 
 import com.risesin.common.vo.resultVo.R;
+import com.risesin.common.vo.resultVo.RC;
+import com.risesin.paymentservice.core.exception.PayException;
 import com.risesin.paymentservice.service.alipayment.model.PayRequest;
 import com.risesin.paymentservice.service.alipayment.model.PayResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpRequest;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,7 +27,7 @@ public class PaymentController {
     private PaymentService paymentService;
 
     @RequestMapping("pay")
-    public R<PayResponse> pay(PayRequest payRequest){
+    public R<PayResponse> pay(@Validated PayRequest payRequest){
         PayResponse pay = paymentService.pay(payRequest);
         return new R<>(pay);
     }
@@ -36,5 +39,10 @@ public class PaymentController {
     @RequestMapping("return")
     public void returnPage(HttpServletRequest request){
 
+    }
+
+    @RequestMapping("exception")
+    public R testExc(HttpServletRequest request){
+        throw new PayException(RC.C404);
     }
 }

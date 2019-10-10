@@ -6,11 +6,15 @@ import com.alipay.api.request.AlipayTradePagePayRequest;
 import com.alipay.api.request.AlipayTradeQueryRequest;
 import com.alipay.api.response.AlipayTradePagePayResponse;
 import com.risesin.common.utils.fastJson.JsonUtils;
+import com.risesin.common.vo.resultVo.RC;
+import com.risesin.paymentservice.core.exception.PayException;
 import com.risesin.paymentservice.core.properties.PaymentProperties;
 import com.risesin.paymentservice.core.utils.AlipayClientUtil;
 import com.risesin.paymentservice.service.alipayment.PaymentService;
 import com.risesin.paymentservice.service.alipayment.model.PayRequest;
 import com.risesin.paymentservice.service.alipayment.model.PayResponse;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,6 +29,8 @@ import java.util.Objects;
 @Service
 public class PaymentServiceImpl implements PaymentService {
 
+    private static final Logger log = LoggerFactory.getLogger(PaymentServiceImpl.class);
+
     // 支付宝服务器主动通知商户服务器里指定的页面http/https路径。
     private static final String ALI_PAY_NOTIFY_URL = "http://localhost:9010/api/service/payment/notify";
     // 支付宝服务器返回路径
@@ -38,16 +44,17 @@ public class PaymentServiceImpl implements PaymentService {
     @Override
     public PayResponse pay(PayRequest payRequest) {
         if(Objects.isNull(payRequest)){
-            // TODO 抛出异常
+            throw new PayException(RC.C403);
         }
         AlipayClient alipayClient = AlipayClientUtil.getAlipayClient();
         AlipayTradePagePayRequest alipayTradePagePayRequest = getAlipayTradePagePayRequest(payRequest);
         try {
             AlipayTradePagePayResponse response = alipayClient.pageExecute(alipayTradePagePayRequest);
             if(response.isSuccess()){
-                System.out.println("调用成功");
+                String responseBody = response.getBody();
+                log.info("支付成功~");
             } else {
-                System.out.println("调用失败");
+                log.error("支付失败!!!");
             }
         } catch (AlipayApiException e) {
             e.printStackTrace();

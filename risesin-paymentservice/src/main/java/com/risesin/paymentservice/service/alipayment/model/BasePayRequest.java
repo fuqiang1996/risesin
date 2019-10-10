@@ -1,6 +1,9 @@
 package com.risesin.paymentservice.service.alipayment.model;
 
+import com.risesin.paymentservice.core.groups.PayGroup;
 import lombok.Data;
+
+import javax.validation.constraints.NotNull;
 
 /**
  * @AUTHOR Baby
@@ -10,5 +13,6 @@ import lombok.Data;
  */
 @Data
 public class BasePayRequest {
+    @NotNull(message = "商户订单号不能为空" , groups = PayGroup.class)
     private String out_trade_no; // 商户订单号,订单支付时传入的商户订单号,和支付宝交易号不能同时为空。
 }
