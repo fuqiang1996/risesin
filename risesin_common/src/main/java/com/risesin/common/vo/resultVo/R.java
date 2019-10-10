@@ -53,6 +53,10 @@ public class R<T> implements Serializable {
         return new R(code, data == null ? "暂无承载数据" : msg, data);
     }
 
+    public static <T> R<T> data(T data) {
+        return new R(RC.C200.code, RC.C200.title, data);
+    }
+
     //错误
     public static R ER() {
         return new R(RC.C400.Code());

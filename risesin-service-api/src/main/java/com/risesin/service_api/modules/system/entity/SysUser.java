@@ -79,8 +79,8 @@ public class SysUser implements Serializable {
      */
     @Column(name = "sys_gmt_modified")
     @ApiModelProperty(value = "修改时间")
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    @JsonFormat(pattern = "yyyy-MM-dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd") // 接受前台的时间格式，传到后台格式
+    @JsonFormat(pattern = "yyyy-MM-dd") // 后台的时间格式化,发送到前台
     private LocalDateTime lastModify;
 
     /**
