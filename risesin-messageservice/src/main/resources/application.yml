@@ -1,14 +1,17 @@
 server:
   port: 9004
 
-#阿里云短信服务
-aliyun:
-  sms:
-    accessKeyId: LTAI4FuCfCdNS2fj6tamcuoy
-    accessKeySecret: TirYu8SnprAqSCI2swsELnzG2tJZtU
-    sign_name: 中汇百纳
-    template_code: SMS_174807941
+risesin-properties: # 项目配置
+  #阿里云短信服务
+  aliyun:
+    sms:
+      accessKeyId: LTAI4FuCfCdNS2fj6tamcuoy
+      accessKeySecret: TirYu8SnprAqSCI2swsELnzG2tJZtU
+      signName: 中汇百纳
+      templateCode: SMS_174807941
 spring:
+  application:
+    name: risesin-messageservice
   kafka:
     # 以逗号分隔的地址列表，用于建立与Kafka集群的初始连接(kafka 默认的端口号为9092)
     bootstrap-servers: 192.168.1.199:9092
@@ -46,3 +49,22 @@ spring:
       concurrency: 3
       #listner负责ack，每调用一次，就立即commit
       ack-mode: manual_immediate
+  rabbitmq:
+    host: 192.168.1.199
+    port: 5672
+    username: admin
+    password: admin
+    publisher-confirms: true
+    virtual-host: /
+
+logging:
+  level:
+    org.springframework.web: DEBUG        #Spring框架中的日志级别
+    org.apache.kafka: WARN # 控制kafka日志
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://192.168.1.200:5000/eureka/,http://192.168.1.198:5001/eureka/,http://192.168.1.197:5002/eureka/
+  instance:
+    prefer-ip-address: true  #访问路径可以显示IP地址
