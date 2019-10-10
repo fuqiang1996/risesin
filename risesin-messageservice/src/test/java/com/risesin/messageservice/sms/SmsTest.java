@@ -22,8 +22,13 @@ public class SmsTest extends MessageServiceApplicationTests {
     private RabbitTemplate rabbitTemplate;
 
     @Test
-    public void sendSmsCode(){
-        //试用记得给我打钱（4毛5/次）
-        rabbitTemplate.convertAndSend("sms","1752131501");
+    public void sendSmsCode() {
+        for(int i = 0; i<10000; i++) {
+            //试用记得给我打钱（4分5/次）
+            rabbitTemplate.convertAndSend("sms","17512345678"+i);//手机号
+            System.out.println(i);
+        }
+
+
     }
 }
