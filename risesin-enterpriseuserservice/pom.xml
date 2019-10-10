@@ -37,10 +37,6 @@
             <optional>true</optional>
         </dependency>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-thymeleaf</artifactId>
-        </dependency>
-        <dependency>
             <groupId>risesin.service</groupId>
             <artifactId>risesin-service</artifactId>
             <version>${risesin.project.version}</version>

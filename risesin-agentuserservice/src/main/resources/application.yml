@@ -1,28 +1,16 @@
-redis:
-  host: 192.168.1.199
-  port: 6379
-  password: risesin_199
-  pool:
-  timeout: 0
-  jedis:
-    pool:
-      max-idle: 100
-      max-wait: 1000
+risesin-properties: # 项目配置
+  yunxin: # 网易云信配置
+    app-key: a2476d6cdc57cdaa69ecbc24b00a74dc
+    app-secret: 6ad80820ed5a
+    url: "https://api.netease.im/nimserver/user/create.action"
 
-# Tomcat
 server:
-  tomcat:
-    uri-encoding: UTF-8
-    max-threads: 1000
-    min-spare-threads: 30
-  port: 8083
-  servlet:
-    context-path: /risesin
+  port: 8081
 
 # mysql
 spring:
   application:
-    name: risesin-systemuserservice
+    name: risesin-agentuserservice
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     username: root
@@ -43,7 +31,18 @@ spring:
   main:
     allow-bean-definition-overriding: true  # 因有程序中显示有类名一致,但查找又没有,故加此配置可以启动不报错
 
-#eureka
+
+  redis:
+    host: 192.168.1.199
+    port: 6379
+    password: risesin_199
+    pool:
+    timeout: 0
+    jedis:
+      pool:
+        max-idle: 100
+        max-wait: 1000
+
 eureka:
   client:
     service-url:

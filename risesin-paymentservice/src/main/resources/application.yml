@@ -11,3 +11,16 @@ risesin-properties: # 项目配置
     url: https://openapi.alipay.com/gateway.do # 请求地址
 server:
   port: 9010
+
+spring:
+  application:
+    name: risesin-paymentservice
+
+#eureka
+eureka:
+  client:
+    service-url:
+      defaultZone: http://192.168.1.200:5000/eureka/,http://192.168.1.198:5001/eureka/,http://192.168.1.197:5002/eureka/
+  instance:
+    prefer-ip-address: true  #访问路径可以显示IP地址
+
