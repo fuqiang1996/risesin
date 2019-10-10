@@ -9,6 +9,8 @@ server:
 
 # mysql
 spring:
+  application:
+    name: enterprise-server
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     username: root
@@ -40,3 +42,12 @@ spring:
       pool:
         max-idle: 100
         max-wait: 1000
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://192.168.1.200:5000/eureka/,http://192.168.1.198:5001/eureka/,http://192.168.1.197:5002/eureka/
+  instance:
+    prefer-ip-address: true  #访问路径可以显示IP地址
+
+
