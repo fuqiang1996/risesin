@@ -36,19 +36,14 @@ public class SysCompanyServiceImplTest extends RisesinServiceApplicationTests {
     public void add() {
         SysCompany sysCompany = new SysCompany();
         sysCompany//.setAddTime(new Date())
-                .setArea("area")
-                .setBusinessAddress("地址")
-                .setDelFlag(0L)
+                .setArea("area");
                 //.setLastModify(new Date())
-                .setLoanAgenId(10L)
-                .setOrderNum(10L);
         sysCompanyService.add(sysCompany);
     }
 
     @Test
     public void update() {
         SysCompany sysCompany = sysCompanyService.findById(1L);
-        sysCompanyService.update(sysCompany.setArea("area update"));
         System.out.println(sysCompanyService.findById(1L));
     }
 }

@@ -34,6 +34,7 @@
         <module>risesin-enterpriseuserservice</module>
         <module>risesin-systemuserservice</module>
         <module>risesin-messageservice</module>
+        <module>risesin-paymentservice</module>
         <module>risesin-service-api</module>
         <module>risesin-service</module>
         <module>risesin-gateway</module>
