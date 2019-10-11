@@ -15,10 +15,15 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <risesin_common.version>1.0.0</risesin_common.version>
     </properties>
 
     <dependencies>
-
+        <dependency>
+            <groupId>risesin.common</groupId>
+            <artifactId>risesin_common</artifactId>
+            <version>${risesin_common.version}</version>
+        </dependency>
         <!--eureka 客户端-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>

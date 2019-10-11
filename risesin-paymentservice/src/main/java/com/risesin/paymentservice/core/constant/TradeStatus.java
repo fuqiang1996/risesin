@@ -1,7 +1,5 @@
 package com.risesin.paymentservice.core.constant;
 
-import org.apache.commons.lang3.StringEscapeUtils;
-
 /**
  * @AUTHOR Baby
  * @CREATE 2019/10/9
