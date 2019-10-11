@@ -1,0 +1,58 @@
+server:
+  port: 5003
+
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+    loadbalancer:
+      retry:
+        enabled: true
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: go_ROOT<0
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://192.168.1.199:3306/risesin?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    druid:
+      initialSize: 1
+      maxActive: 10
+      minIdle: 1
+      maxWait: 60000
+  application:
+    name: gateway-server
+
+management:
+  health:
+    redis:
+      enabled: false
+
+# 聚合文档配置
+risesin:
+  document:
+    resources:
+      - name: 系统模块
+        location: /risesin-systemuserservice
+#      - name: 企业模块
+#        location: /risesin-enterpriseuserservice/
+
+
+eureka:
+  instance:
+    hostname: 192.168.1.107
+  #客户端
+  client:
+    #    registerWithEureka: false
+    #    fetchRegistry: false
+    #注册中心地址
+    service-url:
+      defaultZone: http://192.168.1.200:5000/eureka
+
+
+logging:
+  level:
+    org.springframework:cloud.gateway: debug
+

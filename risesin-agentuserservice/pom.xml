@@ -16,6 +16,37 @@
     <description>AgentUserService project for Spring Boot</description>
 
     <dependencies>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+        <!--eureka 客户端-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <!--配置类使用 configuration-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>risesin.service</groupId>
+            <artifactId>risesin-service</artifactId>
+            <version>${risesin.project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>risesin.common</groupId>
+            <artifactId>risesin_common</artifactId>
+            <version>${risesin.project.version}</version>
+        </dependency>
+
     </dependencies>
 
 </project>

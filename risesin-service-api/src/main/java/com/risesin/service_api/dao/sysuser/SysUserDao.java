@@ -43,4 +43,15 @@ public interface SysUserDao extends JpaRepository<SysUser, Long>, JpaSpecificati
 
 
     List<String> findByIdIn(List<String> roleIds);
+
+
+    /**
+     * 设置菜单权限
+     *
+     * @param userIds
+     * @param roleIds
+     * @return
+     */
+    @Query("")
+    boolean grant(String userIds, String roleIds);
 }

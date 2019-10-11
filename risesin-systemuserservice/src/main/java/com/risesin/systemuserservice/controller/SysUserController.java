@@ -36,7 +36,7 @@ public class SysUserController {
     @ApiOperationSupport(order = 1)
     @ApiOperation(value = "查看详情", notes = "传入userId")
     @GetMapping("/detail")
-    public com.risesin.common.vo.resultVo.R detail(@RequestParam @ApiParam("主键ID") String id) {
+    public R detail(@RequestParam @ApiParam("主键ID") String id) {
         SysUser detail = userService.findById(Long.valueOf(id));
         return new R(detail);
     }
@@ -100,9 +100,26 @@ public class SysUserController {
     })
     @ApiOperationSupport(order = 2)
     @ApiOperation(value = "列表", notes = "传入account和realName")
-    public com.risesin.common.vo.resultVo.R list(@ApiIgnore @RequestParam Map<String, Object> user, @RequestParam @ApiParam("页码") Integer page, @RequestParam @ApiParam("页大小") Integer pageSize) {
+    public R list(@ApiIgnore @RequestParam Map<String, Object> user, @RequestParam @ApiParam("页码") Integer page, @RequestParam @ApiParam("页大小") Integer pageSize) {
         Page<SysUser> search = userService.findSearch(user, page, pageSize);
         return new R(search);
+    }
+
+
+    /**
+     * 设置菜单权限
+     *
+     * @param userIds
+     * @param roleIds
+     * @return
+     */
+    @PostMapping("/grant")
+    @ApiOperationSupport(order = 6)
+    @ApiOperation(value = "权限设置", notes = "传入roleId集合以及menuId集合")
+    public R grant(@ApiParam(value = "userId集合", required = true) @RequestParam String userIds,
+                   @ApiParam(value = "roleId集合", required = true) @RequestParam String roleIds) {
+//        boolean temp = userService.grant(userIds, roleIds);
+        return null;
     }
 
 
